@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3ny3g2ycib06"]
+[gd_scene load_steps=7 format=3 uid="uid://b3ny3g2ycib06"]
 
 [ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="1_h1lpc"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_qosxb"]
+[ext_resource type="Script" path="res://enemies/mouse/enemy_mouse.gd" id="3_6gwy1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1opf"]
 size = Vector2(121, 121)
@@ -9,10 +10,13 @@ size = Vector2(121, 121)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xn7lk"]
 size = Vector2(121, 121)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhfb"]
+size = Vector2(121, 121)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="temp_floor" type="StaticBody2D" parent="."]
-scale = Vector2(10, 1)
+scale = Vector2(20, 1)
 
 [node name="Icon" type="Sprite2D" parent="temp_floor"]
 position = Vector2(4, 148)
@@ -22,13 +26,31 @@ texture = ExtResource("1_h1lpc")
 position = Vector2(4, 148)
 shape = SubResource("RectangleShape2D_x1opf")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(664, 0)
 script = ExtResource("2_qosxb")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player"]
 texture = ExtResource("1_h1lpc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 shape = SubResource("RectangleShape2D_xn7lk")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="enemy1" type="CharacterBody2D" parent="."]
+position = Vector2(905, 20)
+script = ExtResource("3_6gwy1")
+
+[node name="ray_forward" type="RayCast2D" parent="enemy1"]
+modulate = Color(0.971398, 0.253583, 0.365241, 1)
+target_position = Vector2(200, 0)
+
+[node name="ray_floor_checker" type="RayCast2D" parent="enemy1"]
+target_position = Vector2(300, 70)
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy1"]
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy1"]
+shape = SubResource("RectangleShape2D_hkhfb")
