@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr8rwhihce8q1"]
+
+[ext_resource type="Script" path="res://enemies/mouse/enemy_mouse.gd" id="1_inbm7"]
+[ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="2_2dg0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhfb"]
+size = Vector2(121, 121)
+
+[node name="mouse_enemy" type="CharacterBody2D" groups=["enemy"]]
+position = Vector2(905, 20)
+script = ExtResource("1_inbm7")
+
+[node name="ray_forward" type="RayCast2D" parent="."]
+modulate = Color(0.971398, 0.253583, 0.365241, 1)
+target_position = Vector2(200, 0)
+
+[node name="ray_floor_checker" type="RayCast2D" parent="."]
+target_position = Vector2(300, 70)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2dg0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hkhfb")
+
+[node name="attack_build_up" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[connection signal="timeout" from="attack_build_up" to="." method="_on_attack_build_up_timeout"]

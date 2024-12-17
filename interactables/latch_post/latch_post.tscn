@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnpf5feskpylk"]
+
+[ext_resource type="Script" path="res://interactables/latch_post/latch_post.gd" id="1_egwvv"]
+[ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="2_8jqix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdc1o"]
+size = Vector2(83, 173)
+
+[node name="latch_post" type="Area2D" groups=["latch"]]
+script = ExtResource("1_egwvv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.28, 1.24)
+texture = ExtResource("2_8jqix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_xdc1o")
