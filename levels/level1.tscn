@@ -1,18 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3ny3g2ycib06"]
+[gd_scene load_steps=9 format=3 uid="uid://b3ny3g2ycib06"]
 
 [ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="1_h1lpc"]
 [ext_resource type="PackedScene" uid="uid://d1ux2mg40y56d" path="res://player/player.tscn" id="2_wb2om"]
+[ext_resource type="PackedScene" uid="uid://cebshm4lu50vl" path="res://interactables/hook/hook.tscn" id="3_0l80r"]
 [ext_resource type="PackedScene" uid="uid://dr8rwhihce8q1" path="res://enemies/mouse/mouse_enemy.tscn" id="3_xt511"]
 [ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/latch_post/latch_post.tscn" id="4_2hatq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1opf"]
-size = Vector2(130, 121)
+size = Vector2(125, 125)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lonw"]
+size = Vector2(2312, 824)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcn05"]
+size = Vector2(125, 125)
+
+[node name="level1" type="Node2D"]
 
 [node name="floor" type="StaticBody2D" parent="."]
-position = Vector2(27096, 3408)
-scale = Vector2(500, 1.908)
+position = Vector2(16048, 3408)
+scale = Vector2(325, 2)
 
 [node name="Icon" type="Sprite2D" parent="floor"]
 position = Vector2(4, 148)
@@ -26,16 +33,14 @@ shape = SubResource("RectangleShape2D_x1opf")
 
 [node name="blocks" type="Node2D" parent="bedroom"]
 
-[node name="plant_pot" type="StaticBody2D" parent="bedroom/blocks"]
-position = Vector2(-1888, 1680)
-scale = Vector2(9, 9)
+[node name="wall" type="StaticBody2D" parent="bedroom/blocks"]
+position = Vector2(-2320, 216)
+scale = Vector2(3, 100)
 
-[node name="Icon" type="Sprite2D" parent="bedroom/blocks/plant_pot"]
-position = Vector2(4, 148)
+[node name="Icon" type="Sprite2D" parent="bedroom/blocks/wall"]
 texture = ExtResource("1_h1lpc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom/blocks/plant_pot"]
-position = Vector2(4, 148)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom/blocks/wall"]
 shape = SubResource("RectangleShape2D_x1opf")
 
 [node name="window" type="StaticBody2D" parent="bedroom/blocks"]
@@ -111,11 +116,14 @@ position = Vector2(4, 148)
 shape = SubResource("RectangleShape2D_x1opf")
 
 [node name="latch_post" parent="bedroom/blocks" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
-position = Vector2(5904, 3048)
+position = Vector2(5512, 3048)
 destination = NodePath("../side_table/latch_post2")
 
+[node name="hook5" parent="bedroom/blocks" instance=ExtResource("3_0l80r")]
+position = Vector2(6128, 856)
+
 [node name="side_table" type="Node2D" parent="bedroom/blocks"]
-position = Vector2(-472, 1040)
+position = Vector2(-464, 1040)
 
 [node name="latch_post2" parent="bedroom/blocks/side_table" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
 position = Vector2(7696, 408)
@@ -218,21 +226,75 @@ shape = SubResource("RectangleShape2D_x1opf")
 position = Vector2(10936, -1376)
 destination = NodePath("../../side_table/latch_post")
 
-[node name="clothing_pile" type="Node2D" parent="bedroom/blocks"]
+[node name="latch_post2" parent="bedroom/blocks/above_bed_shelf" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
+position = Vector2(16272, -1272)
+destination = NodePath("../../latch_post3")
 
-[node name="Sprite2D" type="Sprite2D" parent="bedroom/blocks/clothing_pile"]
+[node name="clothing_pile" type="Node2D" parent="bedroom/blocks"]
+position = Vector2(0, 104)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bedroom/blocks/clothing_pile"]
+
+[node name="Sprite2D" type="Sprite2D" parent="bedroom/blocks/clothing_pile/StaticBody2D"]
 position = Vector2(18616, 3584)
 rotation = 0.0404972
 scale = Vector2(18.1803, 6.58504)
 texture = ExtResource("1_h1lpc")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom/blocks/clothing_pile/StaticBody2D"]
+position = Vector2(18628, 3540)
+shape = SubResource("RectangleShape2D_7lonw")
+
+[node name="picture_frame" type="Node2D" parent="bedroom/blocks"]
+position = Vector2(20736, 7.99958)
+rotation = -0.132973
+scale = Vector2(1, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bedroom/blocks/picture_frame"]
+scale = Vector2(7, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="bedroom/blocks/picture_frame/StaticBody2D"]
+scale = Vector2(1, 1)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom/blocks/picture_frame/StaticBody2D"]
+shape = SubResource("RectangleShape2D_rcn05")
+
+[node name="latch_post3" parent="bedroom/blocks" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
+position = Vector2(17080, 2640)
+destination = NodePath("../above_bed_shelf/latch_post2")
+
+[node name="hook" parent="bedroom/blocks" instance=ExtResource("3_0l80r")]
+position = Vector2(17032, -776)
+
+[node name="hook2" parent="bedroom/blocks" instance=ExtResource("3_0l80r")]
+position = Vector2(17984, -1040)
+
+[node name="hook3" parent="bedroom/blocks" instance=ExtResource("3_0l80r")]
+position = Vector2(18784, -488)
+
+[node name="hook4" parent="bedroom/blocks" instance=ExtResource("3_0l80r")]
+position = Vector2(19520, -840)
+
 [node name="door" type="Node2D" parent="bedroom/blocks"]
-position = Vector2(23032, 1088)
+position = Vector2(22768, 912)
 rotation = 0.0324351
 scale = Vector2(10, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="bedroom/blocks/door"]
 texture = ExtResource("1_h1lpc")
+
+[node name="hook5" parent="bedroom/blocks/door" instance=ExtResource("3_0l80r")]
+position = Vector2(-51.4131, -35.6853)
+rotation = -0.0064892
+scale = Vector2(0.0999495, 0.0202508)
+skew = -0.154342
+
+[node name="hook6" parent="bedroom/blocks/door" instance=ExtResource("3_0l80r")]
+position = Vector2(47.7605, -36.1688)
+rotation = -0.0064892
+scale = Vector2(0.0999495, 0.0202508)
+skew = -0.154342
 
 [node name="enemies" type="Node2D" parent="bedroom"]
 
@@ -244,5 +306,158 @@ position = Vector2(9192, 3376)
 
 [node name="mouse_enemy3" parent="bedroom/enemies" instance=ExtResource("3_xt511")]
 position = Vector2(15032, -1328)
+
+[node name="hallway" type="Node2D" parent="."]
+
+[node name="blocks" type="Node2D" parent="hallway"]
+
+[node name="window" type="StaticBody2D" parent="hallway/blocks"]
+position = Vector2(25160, -1032)
+scale = Vector2(10, 2)
+
+[node name="Icon" type="Sprite2D" parent="hallway/blocks/window"]
+position = Vector2(4, 148)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallway/blocks/window"]
+position = Vector2(4, 148)
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="latch_post3" parent="hallway/blocks" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
+position = Vector2(25360, 3056)
+destination = NodePath("../shelves/latch_post")
+
+[node name="shelves" type="Node2D" parent="hallway/blocks"]
+position = Vector2(640, 0)
+
+[node name="shelf" type="StaticBody2D" parent="hallway/blocks/shelves"]
+position = Vector2(27152, -416)
+scale = Vector2(10, 2)
+
+[node name="Icon" type="Sprite2D" parent="hallway/blocks/shelves/shelf"]
+position = Vector2(4, 148)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallway/blocks/shelves/shelf"]
+position = Vector2(4, 148)
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="latch_post" parent="hallway/blocks/shelves" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
+position = Vector2(26608, -416)
+destination = NodePath("../../latch_post3")
+
+[node name="shelf2" type="StaticBody2D" parent="hallway/blocks/shelves"]
+position = Vector2(29000, -416)
+scale = Vector2(10, 2)
+
+[node name="Icon" type="Sprite2D" parent="hallway/blocks/shelves/shelf2"]
+position = Vector2(4, 148)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallway/blocks/shelves/shelf2"]
+position = Vector2(4, 148)
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="shelves2" type="Node2D" parent="hallway/blocks"]
+position = Vector2(7280, 0)
+
+[node name="shelf" type="StaticBody2D" parent="hallway/blocks/shelves2"]
+position = Vector2(27152, -416)
+scale = Vector2(10, 2)
+
+[node name="Icon" type="Sprite2D" parent="hallway/blocks/shelves2/shelf"]
+position = Vector2(4, 148)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallway/blocks/shelves2/shelf"]
+position = Vector2(4, 148)
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="latch_post" parent="hallway/blocks/shelves2" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
+position = Vector2(26608, -416)
+destination = NodePath("../../table2/latch_post")
+
+[node name="shelf2" type="StaticBody2D" parent="hallway/blocks/shelves2"]
+position = Vector2(29000, -416)
+scale = Vector2(10, 2)
+
+[node name="Icon" type="Sprite2D" parent="hallway/blocks/shelves2/shelf2"]
+position = Vector2(4, 148)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallway/blocks/shelves2/shelf2"]
+position = Vector2(4, 148)
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="table2" type="Node2D" parent="hallway/blocks"]
+
+[node name="table" type="StaticBody2D" parent="hallway/blocks/table2"]
+position = Vector2(31792, 984)
+scale = Vector2(20, 2)
+
+[node name="Icon" type="Sprite2D" parent="hallway/blocks/table2/table"]
+position = Vector2(4, 148)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallway/blocks/table2/table"]
+position = Vector2(4, 148)
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="latch_post" parent="hallway/blocks/table2" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
+position = Vector2(32504, 968)
+destination = NodePath("../../shelves2/latch_post")
+
+[node name="latch_post" parent="hallway/blocks" node_paths=PackedStringArray("destination") instance=ExtResource("4_2hatq")]
+position = Vector2(33720, 3024)
+destination = NodePath("../table2/latch_post")
+
+[node name="stairs" type="Node2D" parent="hallway/blocks"]
+
+[node name="kitty_fence_and_post" type="StaticBody2D" parent="hallway/blocks/stairs"]
+position = Vector2(37384, 2184)
+scale = Vector2(4.44, 23.96)
+
+[node name="Icon" type="Sprite2D" parent="hallway/blocks/stairs/kitty_fence_and_post"]
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallway/blocks/stairs/kitty_fence_and_post"]
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="railing" type="StaticBody2D" parent="hallway/blocks/stairs"]
+position = Vector2(48264, 7208)
+rotation = -1.0472
+scale = Vector2(4.44, 200)
+
+[node name="Icon" type="Sprite2D" parent="hallway/blocks/stairs/railing"]
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hallway/blocks/stairs/railing"]
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="living_room" type="Node2D" parent="."]
+
+[node name="floor" type="StaticBody2D" parent="living_room"]
+position = Vector2(77392, 16056)
+scale = Vector2(325, 2)
+
+[node name="Icon" type="Sprite2D" parent="living_room/floor"]
+position = Vector2(4, 148)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="living_room/floor"]
+position = Vector2(4, 148)
+shape = SubResource("RectangleShape2D_x1opf")
+
+[node name="blocks" type="Node2D" parent="living_room"]
+
+[node name="kitty_fence_and_post" type="StaticBody2D" parent="living_room/blocks"]
+position = Vector2(58944, 14720)
+scale = Vector2(4.44, 23.96)
+
+[node name="Icon" type="Sprite2D" parent="living_room/blocks/kitty_fence_and_post"]
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="living_room/blocks/kitty_fence_and_post"]
+shape = SubResource("RectangleShape2D_x1opf")
 
 [node name="player" parent="." instance=ExtResource("2_wb2om")]

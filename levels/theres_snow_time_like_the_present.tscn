@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=4 uid="uid://du5njk6cl8jve"]
+
+[ext_resource type="Texture2D" uid="uid://do2v3ade1i3wk" path="res://tiles/background/white_wall_with_trim_96x256.png" id="1_wuagu"]
+[ext_resource type="Texture2D" uid="uid://b2v08ed1jmb67" path="res://tiles/foreground/blue_carpet_96x48.png" id="2_on1yt"]
+[ext_resource type="PackedScene" uid="uid://bi3s58deafa4i" path="res://surfaces/bedroom_window.tscn" id="2_x41i6"]
+[ext_resource type="PackedScene" uid="uid://d1ux2mg40y56d" path="res://player/player.tscn" id="4_ngv3a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lijra"]
+texture = ExtResource("1_wuagu")
+texture_region_size = Vector2i(96, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bvy7f"]
+tile_size = Vector2i(96, 256)
+sources/0 = SubResource("TileSetAtlasSource_lijra")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rsquf"]
+texture = ExtResource("2_on1yt")
+texture_region_size = Vector2i(96, 48)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nxivf"]
+tile_size = Vector2i(96, 48)
+sources/1 = SubResource("TileSetAtlasSource_rsquf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daolp"]
+size = Vector2(1728, 32)
+
+[node name="TheresSnowTimeLikeThePresent" type="Node2D"]
+
+[node name="building" type="Node2D" parent="."]
+position = Vector2(-16, 88)
+
+[node name="background_tiles" type="TileMapLayer" parent="building"]
+position = Vector2(-128, -232)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_bvy7f")
+
+[node name="window" parent="building/background_tiles" instance=ExtResource("2_x41i6")]
+position = Vector2(144, 120)
+
+[node name="forground_tiles" type="TileMapLayer" parent="building"]
+position = Vector2(-192, 24)
+tile_map_data = PackedByteArray("AAABAAAAAQABAAAAAAAAAAAAAQAAAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQABAAAAAAAPAAAAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQACAAAAAAA=")
+tile_set = SubResource("TileSet_nxivf")
+
+[node name="foreground_collider" type="StaticBody2D" parent="building/forground_tiles"]
+position = Vector2(1112, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="building/forground_tiles/foreground_collider"]
+position = Vector2(-248, 8)
+shape = SubResource("RectangleShape2D_daolp")
+
+[node name="player" parent="." instance=ExtResource("4_ngv3a")]
