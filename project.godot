@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Xmas-Game-Jam"
-run/main_scene="res://levels/level1.tscn"
+run/main_scene="res://levels/theres_snow_time_like_the_present.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

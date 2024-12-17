@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://jygrnwqrbs5j"]
+
+[ext_resource type="Texture2D" uid="uid://bab53uaj7kqke" path="res://tiles/surface/dresser_84x89.png" id="1_b5buo"]
+[ext_resource type="Script" path="res://surfaces/bedroom_dresser/dresser.gd" id="1_ntgdj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo1ix"]
+size = Vector2(64, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfqg2"]
+size = Vector2(61, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00odb"]
+size = Vector2(74, 55)
+
+[node name="dresser" type="Node2D"]
+script = ExtResource("1_ntgdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b5buo")
+
+[node name="top" type="StaticBody2D" parent="."]
+position = Vector2(0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_vo1ix")
+
+[node name="drawer" type="StaticBody2D" parent="."]
+position = Vector2(-18, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drawer"]
+position = Vector2(6.5, -4)
+shape = SubResource("RectangleShape2D_vfqg2")
+
+[node name="hide_top_on_collision" type="Area2D" parent="."]
+position = Vector2(-13, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hide_top_on_collision"]
+position = Vector2(8, -34.5)
+shape = SubResource("RectangleShape2D_00odb")
+debug_color = Color(0.931495, 0.199017, 0.435464, 0.42)
+
+[connection signal="body_entered" from="hide_top_on_collision" to="." method="_on_hide_top_on_collision_body_entered"]
+[connection signal="body_exited" from="hide_top_on_collision" to="." method="_on_hide_top_on_collision_body_exited"]

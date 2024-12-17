@@ -2,9 +2,9 @@ extends CharacterBody2D
 # player
 
 var health: int = 3
-@export var speed: int = 1200
-@export var jump_speed: int = -1800
-var gravity: int = 4000
+@export var speed: int = 150
+@export var jump_speed: int = -200
+var gravity: int = 300
 var zipping: bool = false #TODO replace w/ state machine?
 var hooked: bool = false
 var zip_dest: Vector2

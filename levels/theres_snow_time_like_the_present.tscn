@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=11 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://do2v3ade1i3wk" path="res://tiles/background/white_wall_with_trim_96x256.png" id="1_wuagu"]
 [ext_resource type="Texture2D" uid="uid://b2v08ed1jmb67" path="res://tiles/foreground/blue_carpet_96x48.png" id="2_on1yt"]
-[ext_resource type="PackedScene" uid="uid://bi3s58deafa4i" path="res://surfaces/bedroom_window.tscn" id="2_x41i6"]
+[ext_resource type="PackedScene" uid="uid://bi3s58deafa4i" path="res://surfaces/bedroom_window/bedroom_window.tscn" id="2_x41i6"]
 [ext_resource type="PackedScene" uid="uid://d1ux2mg40y56d" path="res://player/player.tscn" id="4_ngv3a"]
+[ext_resource type="PackedScene" uid="uid://jygrnwqrbs5j" path="res://surfaces/bedroom_dresser/dresser.tscn" id="4_nkocn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lijra"]
 texture = ExtResource("1_wuagu")
@@ -26,12 +27,12 @@ tile_size = Vector2i(96, 48)
 sources/1 = SubResource("TileSetAtlasSource_rsquf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daolp"]
-size = Vector2(1728, 32)
+size = Vector2(1736, 40)
 
 [node name="TheresSnowTimeLikeThePresent" type="Node2D"]
 
 [node name="building" type="Node2D" parent="."]
-position = Vector2(-16, 88)
+position = Vector2(0, 80)
 
 [node name="background_tiles" type="TileMapLayer" parent="building"]
 position = Vector2(-128, -232)
@@ -50,7 +51,13 @@ tile_set = SubResource("TileSet_nxivf")
 position = Vector2(1112, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="building/forground_tiles/foreground_collider"]
-position = Vector2(-248, 8)
+position = Vector2(-204, 4)
 shape = SubResource("RectangleShape2D_daolp")
 
+[node name="furniture" type="Node2D" parent="."]
+
+[node name="dresser" parent="furniture" instance=ExtResource("4_nkocn")]
+position = Vector2(152, 72)
+
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
+position = Vector2(0, 0)
