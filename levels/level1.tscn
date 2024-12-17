@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3ny3g2ycib06"]
+[gd_scene load_steps=10 format=3 uid="uid://b3ny3g2ycib06"]
 
 [ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="1_h1lpc"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_qosxb"]
 [ext_resource type="Script" path="res://enemies/mouse/enemy_mouse.gd" id="3_6gwy1"]
+[ext_resource type="Script" path="res://interactables/latch_post/latch_post.gd" id="4_0kp2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1opf"]
 size = Vector2(121, 121)
@@ -10,10 +11,28 @@ size = Vector2(121, 121)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xn7lk"]
 size = Vector2(121, 121)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dirlo"]
+size = Vector2(200, 200)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhfb"]
 size = Vector2(121, 121)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdc1o"]
+size = Vector2(83, 173)
+
 [node name="Node2D" type="Node2D"]
+
+[node name="temp_floor2" type="StaticBody2D" parent="."]
+position = Vector2(4941, -1745)
+scale = Vector2(25, 1)
+
+[node name="Icon" type="Sprite2D" parent="temp_floor2"]
+position = Vector2(4, 148)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp_floor2"]
+position = Vector2(4, 148)
+shape = SubResource("RectangleShape2D_x1opf")
 
 [node name="temp_floor" type="StaticBody2D" parent="."]
 scale = Vector2(20, 1)
@@ -38,19 +57,49 @@ shape = SubResource("RectangleShape2D_xn7lk")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 
-[node name="enemy1" type="CharacterBody2D" parent="."]
+[node name="detection_area" type="Area2D" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/detection_area"]
+shape = SubResource("RectangleShape2D_dirlo")
+
+[node name="mouse_enemy" type="CharacterBody2D" parent="." groups=["enemy"]]
 position = Vector2(905, 20)
 script = ExtResource("3_6gwy1")
 
-[node name="ray_forward" type="RayCast2D" parent="enemy1"]
+[node name="ray_forward" type="RayCast2D" parent="mouse_enemy"]
 modulate = Color(0.971398, 0.253583, 0.365241, 1)
 target_position = Vector2(200, 0)
 
-[node name="ray_floor_checker" type="RayCast2D" parent="enemy1"]
+[node name="ray_floor_checker" type="RayCast2D" parent="mouse_enemy"]
 target_position = Vector2(300, 70)
 
-[node name="Sprite2D" type="Sprite2D" parent="enemy1"]
+[node name="Sprite2D" type="Sprite2D" parent="mouse_enemy"]
 texture = ExtResource("1_h1lpc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse_enemy"]
 shape = SubResource("RectangleShape2D_hkhfb")
+
+[node name="latch_post" type="Area2D" parent="." node_paths=PackedStringArray("destination") groups=["latch"]]
+script = ExtResource("4_0kp2t")
+destination = NodePath("../latch_post2")
+
+[node name="Sprite2D" type="Sprite2D" parent="latch_post"]
+scale = Vector2(0.28, 1.24)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="latch_post"]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_xdc1o")
+
+[node name="latch_post2" type="Area2D" parent="." node_paths=PackedStringArray("destination") groups=["latch"]]
+position = Vector2(3507, -1760)
+script = ExtResource("4_0kp2t")
+destination = NodePath("../latch_post")
+
+[node name="Sprite2D" type="Sprite2D" parent="latch_post2"]
+scale = Vector2(0.28, 1.24)
+texture = ExtResource("1_h1lpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="latch_post2"]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_xdc1o")
