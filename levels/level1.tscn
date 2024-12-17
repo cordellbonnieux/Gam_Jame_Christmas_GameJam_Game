@@ -46,7 +46,7 @@ position = Vector2(4, 148)
 shape = SubResource("RectangleShape2D_x1opf")
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(664, 0)
+position = Vector2(532, 0)
 script = ExtResource("2_qosxb")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
@@ -56,6 +56,13 @@ texture = ExtResource("1_h1lpc")
 shape = SubResource("RectangleShape2D_xn7lk")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="RayCast2D" type="RayCast2D" parent="player"]
+target_position = Vector2(300, 0)
+
+[node name="cooldown" type="Timer" parent="player"]
+wait_time = 0.25
+one_shot = true
 
 [node name="detection_area" type="Area2D" parent="player"]
 

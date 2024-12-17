@@ -1,4 +1,5 @@
 extends CharacterBody2D
+# player
 
 var health: int = 3
 @export var speed: int = 1200
@@ -9,6 +10,8 @@ var zip_dest: Vector2
 @export_range(0.0, 1.0) var friction: float = 0.1
 @export_range(0.0 , 1.0) var acceleration: float = 0.25
 @onready var detection_area: Area2D = $detection_area
+@onready var attack_ray: RayCast2D =  $RayCast2D
+@onready var cooldown_timer: Timer = $cooldown
 
 
 func _physics_process(delta):	
@@ -30,6 +33,13 @@ func _physics_process(delta):
 			velocity.x = lerp(velocity.x, dir * speed, acceleration)
 		else:
 			velocity.x = lerp(velocity.x, 0.0, friction)
+			
+		#NOTE cordie you know this is bad practice!!!
+		#TODO sync up anims 
+		if dir == -1:
+			attack_ray.target_position.x = -300
+		elif dir == 1:
+			attack_ray.target_position.x = 300
 
 	move_and_slide()
 
@@ -42,10 +52,14 @@ func _input(event: InputEvent) -> void:
 				zipping = true
 				return
 	elif event.is_action_pressed("hit"):
-		pass
+		#NOTE this is the attack
+		if cooldown_timer.is_stopped() && attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
+			attack_ray.get_collider().damage(1)
+			cooldown_timer.start()
+			
 
 func damage(amount: int) -> void:
-	health -= 1
+	health -= amount
 	print("ouch")
 	if health <= 0:
 		print("die!")

@@ -1,5 +1,7 @@
 extends CharacterBody2D
+# enemy mouse
 
+var health: int = 2
 var speed: int = 800
 var friction: float = 0.1
 var direction: float = 1.0
@@ -38,8 +40,14 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, direction * speed, friction)
 		
 	move_and_slide()
+	
+func damage(amount: int) -> void:
+	health -= amount
+	if health <= 0:
+		queue_free()
 
 
 func _on_attack_build_up_timeout() -> void:
 	if ray_forward.get_collider() && ray_forward.get_collider() == target:
 		target.damage(1)
+		print("strike")
