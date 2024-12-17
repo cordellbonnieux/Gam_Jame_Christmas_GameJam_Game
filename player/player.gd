@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var health: int = 3
 @export var speed: int = 1200
 @export var jump_speed: int = -1800
 var gravity: int = 4000
@@ -42,3 +43,9 @@ func _input(event: InputEvent) -> void:
 				return
 	elif event.is_action_pressed("hit"):
 		pass
+
+func damage(amount: int) -> void:
+	health -= 1
+	print("ouch")
+	if health <= 0:
+		print("die!")

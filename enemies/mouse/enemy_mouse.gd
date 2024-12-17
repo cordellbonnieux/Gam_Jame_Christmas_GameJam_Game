@@ -4,17 +4,24 @@ var speed: int = 800
 var friction: float = 0.1
 var direction: float = 1.0
 var gravity: int = 4000
+var target: CharacterBody2D = null
 @onready var ray_forward: RayCast2D = $ray_forward
 @onready var ray_down_forward: RayCast2D = $ray_floor_checker
+@onready var attack_build_up_timer: Timer = $attack_build_up
 
 func _physics_process(delta):
+	if !attack_build_up_timer.is_stopped():
+		return
+	
 	if !is_on_floor():
 		velocity.y += gravity * delta
 		
 	elif ray_forward.get_collider():
 		if ray_forward.get_collider().is_in_group("player"):
 			# attack
-			return
+			attack_build_up_timer.start()
+			target = ray_forward.get_collider()
+			
 		else:
 			# change dir
 			direction *= -1
@@ -31,3 +38,8 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, direction * speed, friction)
 		
 	move_and_slide()
+
+
+func _on_attack_build_up_timeout() -> void:
+	if ray_forward.get_collider() && ray_forward.get_collider() == target:
+		target.damage(1)

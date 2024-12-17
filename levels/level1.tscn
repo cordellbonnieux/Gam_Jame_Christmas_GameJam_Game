@@ -79,6 +79,10 @@ texture = ExtResource("1_h1lpc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mouse_enemy"]
 shape = SubResource("RectangleShape2D_hkhfb")
 
+[node name="attack_build_up" type="Timer" parent="mouse_enemy"]
+wait_time = 0.75
+one_shot = true
+
 [node name="latch_post" type="Area2D" parent="." node_paths=PackedStringArray("destination") groups=["latch"]]
 script = ExtResource("4_0kp2t")
 destination = NodePath("../latch_post2")
@@ -103,3 +107,5 @@ texture = ExtResource("1_h1lpc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="latch_post2"]
 position = Vector2(0.5, -6.5)
 shape = SubResource("RectangleShape2D_xdc1o")
+
+[connection signal="timeout" from="mouse_enemy/attack_build_up" to="mouse_enemy" method="_on_attack_build_up_timeout"]
