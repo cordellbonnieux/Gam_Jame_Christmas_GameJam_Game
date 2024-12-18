@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 var health: int = 3
 @export var speed: int = 100
-@export var jump_speed: int = -250
+@export var jump_speed: int = -200
 var sugar_level: int = 0
 var gravity: int = 300
 # yikes what a mess!
