@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=13 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://do2v3ade1i3wk" path="res://tiles/background/white_wall_with_trim_96x256.png" id="1_wuagu"]
 [ext_resource type="Texture2D" uid="uid://b2v08ed1jmb67" path="res://tiles/foreground/blue_carpet_96x48.png" id="2_on1yt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ux2mg40y56d" path="res://player/player.tscn" id="4_ngv3a"]
 [ext_resource type="PackedScene" uid="uid://jygrnwqrbs5j" path="res://surfaces/bedroom_dresser/dresser.tscn" id="4_nkocn"]
 [ext_resource type="PackedScene" uid="uid://toafyyebqskq" path="res://surfaces/bed/bed.tscn" id="5_ro3tp"]
+[ext_resource type="PackedScene" uid="uid://d0n0n43uyw3eb" path="res://surfaces/picture_in_frame/picture.tscn" id="6_0p2ji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lijra"]
 texture = ExtResource("1_wuagu")
@@ -62,6 +63,10 @@ position = Vector2(160, 72)
 
 [node name="Bed" parent="furniture" instance=ExtResource("5_ro3tp")]
 position = Vector2(367, 69)
+
+[node name="picture" parent="furniture" instance=ExtResource("6_0p2ji")]
+position = Vector2(417, -37)
+rotation = -0.0589802
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
 position = Vector2(0, 0)
