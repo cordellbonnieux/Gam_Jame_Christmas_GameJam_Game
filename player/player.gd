@@ -1,9 +1,12 @@
 extends CharacterBody2D
 # player
 
+# TODO add candy meter, the higher it is the faster you go
+
 var health: int = 3
-@export var speed: int = 150
+@export var speed: int = 100
 @export var jump_speed: int = -200
+var sugar_level: int = 0
 var gravity: int = 300
 # yikes what a mess!
 var zipping: bool = false #TODO replace w/ state machine?
@@ -27,23 +30,24 @@ func _physics_process(delta):
 		if hooked:
 			hooked = false
 			current_hook.unhook()
+			velocity.y *= 1.5
 	elif zipping:
 		if abs(zip_dest - global_position).x > 1 && abs(zip_dest - global_position).y > 1:
-			velocity = lerp(velocity, (zip_dest - global_position).normalized() * speed, acceleration * 2)
+			velocity = lerp(velocity, (zip_dest - global_position).normalized() * (speed + 200), acceleration * 2)
 		else:
 			zipping = false
 	elif hooked:
 		#NOTE grapple just below the wreath
 		#TODO messy using ints like this
 		if abs((current_hook.global_position + Vector2(0, 64)).y - global_position.y) > 1 && abs(current_hook.global_position.x - global_position.x) > 1:
-			velocity = lerp(velocity, (current_hook.global_position + Vector2(0, 64) - global_position).normalized() * speed, acceleration * 2)
+			velocity = lerp(velocity, (current_hook.global_position + Vector2(0, 64) - global_position).normalized() * (speed + sugar_level) * 2, acceleration * 2)
 		else:
 			velocity = Vector2.ZERO
 	else:
 		velocity.y += gravity * delta
 		var dir = Input.get_axis("left", "right")
 		if dir != 0:
-			velocity.x = lerp(velocity.x, dir * speed, acceleration)
+			velocity.x = lerp(velocity.x, dir * (speed + sugar_level), acceleration)
 		else:
 			velocity.x = lerp(velocity.x, 0.0, friction)
 			
@@ -60,13 +64,18 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("latch"):
 		for area in detection_area.get_overlapping_areas():
 			if area.is_in_group("latch"):#TODO rename zip?
-				zip_dest = area.latch()
-				zipping = true
-				return
+				if area.destination:
+					zip_dest = area.latch()
+					zipping = true
+					return
 			elif area.is_in_group("hook"):
-				hooked = !hooked
-				current_hook = area
-				current_hook.hook()
+				if hooked:
+					hooked = false
+					current_hook.unhook()
+				else:
+					hooked = true
+					current_hook = area
+					current_hook.hook()
 				
 	elif event.is_action_pressed("hit"):
 		#NOTE this is the attack

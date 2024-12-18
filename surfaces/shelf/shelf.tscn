@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://mrnfvamp3hxc"]
+
+[ext_resource type="Texture2D" uid="uid://drkmxectv62eh" path="res://tiles/surface/window_ledge_78x16.png" id="1_gf0xv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xfq2s"]
+radius = 3.0
+height = 72.0
+
+[node name="shelf" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gf0xv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xfq2s")

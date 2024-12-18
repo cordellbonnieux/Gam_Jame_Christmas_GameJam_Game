@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://interactables/latch_post/latch_post.gd" id="1_egwvv"]
 [ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="2_8jqix"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdc1o"]
-size = Vector2(83, 173)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jknco"]
+radius = 128.0
 
 [node name="latch_post" type="Area2D" groups=["latch"]]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_egwvv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.28, 1.24)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_8jqix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -6.5)
-shape = SubResource("RectangleShape2D_xdc1o")
+shape = SubResource("CircleShape2D_jknco")
