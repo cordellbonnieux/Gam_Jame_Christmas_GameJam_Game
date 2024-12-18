@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rx3pxcgnrk05"
-path="res://.godot/imported/blue_carpet_96x96.png-ff7bf5cef868f22aa544fe8e43c3b9b1.ctex"
+uid="uid://3wr62ua6sd43"
+path="res://.godot/imported/snow_ground.png-966d1b8a7b9036a23033ddf5bc853ba2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/foreground/blue_carpet_96x96.png"
-dest_files=["res://.godot/imported/blue_carpet_96x96.png-ff7bf5cef868f22aa544fe8e43c3b9b1.ctex"]
+source_file="res://tiles/background/snow_ground.png"
+dest_files=["res://.godot/imported/snow_ground.png-966d1b8a7b9036a23033ddf5bc853ba2.ctex"]
 
 [params]
 

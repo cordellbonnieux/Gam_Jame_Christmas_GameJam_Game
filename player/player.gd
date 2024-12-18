@@ -30,6 +30,7 @@ func _physics_process(delta):
 		if hooked:
 			hooked = false
 			current_hook.unhook()
+			velocity *= 1.5
 	elif zipping:
 		if abs(zip_dest - global_position).x > 1 && abs(zip_dest - global_position).y > 1:
 			velocity = lerp(velocity, (zip_dest - global_position).normalized() * (speed + 200), acceleration * 2)

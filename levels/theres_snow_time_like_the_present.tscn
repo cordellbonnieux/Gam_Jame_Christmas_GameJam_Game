@@ -1,5 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=32 format=4 uid="uid://du5njk6cl8jve"]
 
+[ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
+[ext_resource type="Texture2D" uid="uid://3wr62ua6sd43" path="res://tiles/background/snow_ground.png" id="1_tejdp"]
 [ext_resource type="Texture2D" uid="uid://do2v3ade1i3wk" path="res://tiles/background/white_wall_with_trim_96x256.png" id="1_wuagu"]
 [ext_resource type="PackedScene" uid="uid://bi3s58deafa4i" path="res://surfaces/bedroom_window/bedroom_window.tscn" id="2_x41i6"]
 [ext_resource type="PackedScene" uid="uid://mrnfvamp3hxc" path="res://surfaces/shelf/shelf.tscn" id="3_kpjoh"]
@@ -13,8 +15,24 @@
 [ext_resource type="Texture2D" uid="uid://csbfakp0ueqa8" path="res://tiles/foreground/stair_post.png" id="6_86t4m"]
 [ext_resource type="PackedScene" uid="uid://cebshm4lu50vl" path="res://interactables/hook/hook.tscn" id="7_fnp4g"]
 [ext_resource type="Texture2D" uid="uid://c7rexmxanap04" path="res://tiles/foreground/stair_railing.png" id="7_iaj3p"]
+[ext_resource type="Texture2D" uid="uid://ccjc23rql7rcu" path="res://tiles/foreground/blue_house_siding_right_corner_back.png" id="8_xttvp"]
 [ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/latch_post/latch_post.tscn" id="10_5auit"]
 [ext_resource type="PackedScene" uid="uid://b4fp3kra56qr4" path="res://surfaces/xmas_tree/xmas_tree.tscn" id="10_8gr0d"]
+[ext_resource type="Texture2D" uid="uid://e04e1mwfb00k" path="res://tiles/foreground/blue_house_siding_right_corner_front.png" id="19_ht1fe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukmb7"]
+texture = ExtResource("1_tejdp")
+texture_region_size = Vector2i(160, 112)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dijbh"]
+tile_size = Vector2i(160, 112)
+sources/0 = SubResource("TileSetAtlasSource_ukmb7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwesy"]
+size = Vector2(1423, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lijra"]
 texture = ExtResource("1_wuagu")
@@ -37,287 +55,380 @@ tile_size = Vector2i(160, 112)
 sources/1 = SubResource("TileSetAtlasSource_hapad")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daolp"]
-size = Vector2(1744, 41)
+size = Vector2(1704, 67.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kieb"]
 radius = 4.0
 height = 1090.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_od31i"]
-size = Vector2(50, 8)
+size = Vector2(50.9957, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5665x"]
+size = Vector2(3.6049, 174.742)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbq5i"]
+size = Vector2(5, 168)
 
 [node name="TheresSnowTimeLikeThePresent" type="Node2D"]
 
-[node name="building" type="Node2D" parent="."]
+[node name="area2_bg" type="Node2D" parent="."]
+
+[node name="surfaces" type="Node2D" parent="area2_bg"]
+position = Vector2(-100, 3)
+
+[node name="stone1" parent="area2_bg/surfaces" instance=ExtResource("1_0vkjw")]
+position = Vector2(4396, 629)
+
+[node name="stone2" parent="area2_bg/surfaces" instance=ExtResource("1_0vkjw")]
+position = Vector2(4672, 624)
+scale = Vector2(2, 2)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="area2_bg"]
+position = Vector2(4192, 632)
+tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAD+/wAAAAAAAAAAAAAAAAAAAAACAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAACAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAABAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAABAAAAAAARAAAAAAACAAAAAAAKAAAAAAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAABAAAAAAAaAAAAAAACAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAABAAAAAAAdAAAAAAACAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAABAAAAAAAgAAAAAAACAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAABAAAAAAAjAAAAAAACAAAAAAA=")
+tile_set = SubResource("TileSet_dijbh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
+position = Vector2(-41, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D"]
+position = Vector2(609.5, 0)
+shape = SubResource("RectangleShape2D_pwesy")
+
+[node name="area1_bg" type="Node2D" parent="."]
+
+[node name="building" type="Node2D" parent="area1_bg"]
 position = Vector2(0, 80)
 
-[node name="background_tiles" type="TileMapLayer" parent="building"]
-position = Vector2(-128, -232)
+[node name="background_tiles" type="TileMapLayer" parent="area1_bg/building"]
+position = Vector2(-124, -232)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAYAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD//wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP//AAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAARAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAfAAIAAAAAAAAAAAAgAAIAAAAAAAAAAAAhAAIAAAAAAAAAAAAiAAIAAAAAAAAAAAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAAnAAEAAAAAAAAAAAAmAAEAAAAAAAAAAAAlAAEAAAAAAAAAAAAkAAEAAAAAAAAAAAAjAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAoAAEAAAAAAAAAAAAoAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAdAP//AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAiAP//AAAAAAAAAAAjAP//AAAAAAAAAAAkAP//AAAAAAAAAAAlAP//AAAAAAAAAAAmAP//AAAAAAAAAAAnAP//AAAAAAAAAAAoAP//AAAAAAAAAAApAAIAAAAAAAAAAAAqAAIAAAAAAAAAAAAqAP//AAAAAAAAAAApAP//AAAAAAAAAAApAAAAAAAAAAAAAAApAAEAAAAAAAAAAAAqAAEAAAAAAAAAAAAqAAAAAAAAAAAAAAArAAIAAAAAAAAAAAArAAEAAAAAAAAAAAArAAAAAAAAAAAAAAArAP//AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_bvy7f")
 
-[node name="staircase_steps" type="Node2D" parent="building"]
+[node name="staircase_steps" type="Node2D" parent="area1_bg/building"]
 position = Vector2(1520, 112)
 
-[node name="stair0" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair0" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 texture = ExtResource("4_gfho2")
 
-[node name="stair1" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair1" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(64, 32)
 texture = ExtResource("4_gfho2")
 
-[node name="stair2" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair2" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(128, 64)
 texture = ExtResource("4_gfho2")
 
-[node name="stair3" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair3" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(192, 96)
 texture = ExtResource("4_gfho2")
 
-[node name="stair4" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair4" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(256, 128)
 texture = ExtResource("4_gfho2")
 
-[node name="stair5" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair5" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(320, 160)
 texture = ExtResource("4_gfho2")
 
-[node name="stair6" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair6" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(384, 192)
 texture = ExtResource("4_gfho2")
 
-[node name="stair7" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair7" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(448, 224)
 texture = ExtResource("4_gfho2")
 
-[node name="stair8" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair8" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(512, 256)
 texture = ExtResource("4_gfho2")
 
-[node name="stair9" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair9" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(576, 288)
 texture = ExtResource("4_gfho2")
 
-[node name="stair10" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair10" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(640, 320)
 texture = ExtResource("4_gfho2")
 
-[node name="stair11" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair11" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(704, 352)
 texture = ExtResource("4_gfho2")
 
-[node name="stair12" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair12" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(768, 384)
 texture = ExtResource("4_gfho2")
 
-[node name="stair13" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair13" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(832, 416)
 texture = ExtResource("4_gfho2")
 
-[node name="stair14" type="Sprite2D" parent="building/staircase_steps"]
+[node name="stair14" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
 position = Vector2(896, 448)
 texture = ExtResource("4_gfho2")
 
-[node name="top_floor_ground_tiles" type="TileMapLayer" parent="building"]
+[node name="top_floor_ground_tiles" type="TileMapLayer" parent="area1_bg/building"]
 position = Vector2(-192, 24)
 tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_rdsc2")
 
-[node name="ground_collider" type="StaticBody2D" parent="building/top_floor_ground_tiles"]
+[node name="ground_collider" type="StaticBody2D" parent="area1_bg/building/top_floor_ground_tiles"]
 position = Vector2(1110, 46)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="building/top_floor_ground_tiles/ground_collider"]
-position = Vector2(-372.5, 28.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_bg/building/top_floor_ground_tiles/ground_collider"]
+position = Vector2(-362, 26)
 shape = SubResource("RectangleShape2D_daolp")
 
-[node name="lower_floor_ground_tiles" type="TileMapLayer" parent="building"]
+[node name="lower_floor_ground_tiles" type="TileMapLayer" parent="area1_bg/building"]
 position = Vector2(2528, 536)
 tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_rdsc2")
 
-[node name="ground_collider" type="StaticBody2D" parent="building/lower_floor_ground_tiles"]
+[node name="ground_collider" type="StaticBody2D" parent="area1_bg/building/lower_floor_ground_tiles"]
 position = Vector2(1110, 46)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="building/lower_floor_ground_tiles/ground_collider"]
-position = Vector2(-397, 29.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_bg/building/lower_floor_ground_tiles/ground_collider"]
+position = Vector2(-427.5, 18.75)
 shape = SubResource("RectangleShape2D_daolp")
 
-[node name="platforms" type="Node2D" parent="building"]
+[node name="platforms" type="Node2D" parent="area1_bg/building"]
 position = Vector2(-128, -232)
 
-[node name="window" parent="building/platforms" instance=ExtResource("2_x41i6")]
+[node name="window" parent="area1_bg/building/platforms" instance=ExtResource("2_x41i6")]
 position = Vector2(48, 118)
 
-[node name="shelf2" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(815, 160)
+[node name="shelf2" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(754, 160)
 
-[node name="shelf3" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(879, 160)
+[node name="shelf3" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(818, 160)
 
-[node name="shelf4" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(943, 160)
+[node name="shelf4" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(882, 160)
 
-[node name="shelf5" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1197, 260)
+[node name="shelf8" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1420, 93)
 
-[node name="shelf6" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1318, 206)
+[node name="shelf15" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1484, 93)
 
-[node name="shelf7" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1447, 164)
+[node name="shelf16" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1548, 93)
 
-[node name="shelf9" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(2815, 597)
+[node name="shelf5" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(998, 241)
 
-[node name="shelf10" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(2879, 597)
+[node name="shelf6" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1104, 196)
 
-[node name="shelf11" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(2943, 597)
+[node name="shelf7" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1200, 144)
 
-[node name="shelf12" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3070, 489)
+[node name="shelf9" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(2669, 597)
 
-[node name="shelf13" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3169, 339)
+[node name="shelf10" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(2733, 597)
 
-[node name="shelf14" parent="building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3233, 339)
+[node name="shelf11" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(2797, 597)
 
-[node name="furniture" type="Node2D" parent="."]
+[node name="shelf12" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(2920, 745)
+
+[node name="shelf13" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3043, 693)
+
+[node name="shelf14" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3107, 693)
+
+[node name="shelf17" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3213, 644)
+
+[node name="shelf19" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3046, 601)
+
+[node name="shelf18" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3109, 601)
+
+[node name="shelf20" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3061, 488)
+
+[node name="shelf21" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3218, 536)
+
+[node name="shelf22" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3218, 536)
+
+[node name="house_siding" type="Sprite2D" parent="area1_bg/building"]
+position = Vector2(4033, 212)
+texture = ExtResource("8_xttvp")
+
+[node name="furniture" type="Node2D" parent="area1_bg"]
 position = Vector2(-114, 0)
 
-[node name="dresser" parent="furniture" instance=ExtResource("4_nkocn")]
+[node name="dresser" parent="area1_bg/furniture" instance=ExtResource("4_nkocn")]
 position = Vector2(176, 77)
 scale = Vector2(1.5, 1.25)
 
-[node name="Bed" parent="furniture" instance=ExtResource("5_ro3tp")]
-position = Vector2(419, 69)
+[node name="Bed" parent="area1_bg/furniture" instance=ExtResource("5_ro3tp")]
+position = Vector2(419, 65)
 
-[node name="picture" parent="furniture" instance=ExtResource("6_0p2ji")]
-position = Vector2(614, -38)
+[node name="picture" parent="area1_bg/furniture" instance=ExtResource("6_0p2ji")]
+position = Vector2(615, -25)
 rotation = -0.0589802
 
-[node name="hook2" parent="furniture" instance=ExtResource("7_fnp4g")]
-position = Vector2(1066, -51)
+[node name="hook2" parent="area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+position = Vector2(993, -76)
 
-[node name="hook" parent="furniture" instance=ExtResource("7_fnp4g")]
-position = Vector2(2624, 478)
+[node name="hook" parent="area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+position = Vector2(2527, 460)
 
-[node name="xmas_tree" parent="furniture" instance=ExtResource("10_8gr0d")]
+[node name="xmas_tree" parent="area1_bg/furniture" instance=ExtResource("10_8gr0d")]
 modulate = Color(0.155261, 0.422404, 0.066043, 1)
-position = Vector2(3412, 380)
+position = Vector2(3348, 372)
 
-[node name="picture2" parent="furniture" instance=ExtResource("6_0p2ji")]
-position = Vector2(1568, -55)
+[node name="picture2" parent="area1_bg/furniture" instance=ExtResource("6_0p2ji")]
+position = Vector2(1279, -61)
 
-[node name="ziplights" type="Node2D" parent="."]
+[node name="hook3" parent="area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+position = Vector2(2865, 360)
 
-[node name="latch_post4" parent="ziplights" instance=ExtResource("10_5auit")]
-position = Vector2(3367, 153)
+[node name="ziplights" type="Node2D" parent="area1_bg"]
 
-[node name="latch_post5" parent="ziplights" instance=ExtResource("10_5auit")]
-position = Vector2(3482, 298)
+[node name="latch_post" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(3190, 445)
+destination = NodePath("../latch_post4")
 
-[node name="latch_post" parent="ziplights" instance=ExtResource("10_5auit")]
-position = Vector2(3264, 468)
+[node name="latch_post4" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(3313, 149)
+destination = NodePath("../latch_post5")
 
-[node name="latch_post2" parent="ziplights" instance=ExtResource("10_5auit")]
+[node name="latch_post5" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(3416, 309)
+destination = NodePath("../latch_post2")
+
+[node name="latch_post2" parent="area1_bg/ziplights" instance=ExtResource("10_5auit")]
 position = Vector2(3758, 597)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(-88, 1)
+position = Vector2(3840, 595)
 
-[node name="foreground" type="Node2D" parent="."]
+[node name="area1_fg" type="Node2D" parent="."]
 
-[node name="door" type="Sprite2D" parent="foreground"]
+[node name="door" type="Sprite2D" parent="area1_fg"]
+visible = false
 position = Vector2(592, 0)
 texture = ExtResource("4_wq3dm")
 
-[node name="stairs" type="Node2D" parent="foreground"]
+[node name="stairs" type="Node2D" parent="area1_fg"]
 position = Vector2(1405, 120)
 
-[node name="top_post" type="Sprite2D" parent="foreground/stairs"]
+[node name="top_post" type="Sprite2D" parent="area1_fg/stairs"]
 texture = ExtResource("6_86t4m")
 
-[node name="rail0" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail0" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(35, 24)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail1" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail1" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(99, 56)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail2" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail2" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(163, 88)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail3" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail3" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(227, 120)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail4" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail4" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(291, 152)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail5" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail5" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(355, 184)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail6" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail6" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(419, 216)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail7" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail7" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(483, 248)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail8" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail8" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(547, 280)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail9" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail9" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(611, 312)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail10" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail10" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(675, 344)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail11" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail11" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(739, 376)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail12" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail12" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(803, 408)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail13" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail13" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(867, 440)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail14" type="Sprite2D" parent="foreground/stairs"]
+[node name="rail14" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(931, 472)
 texture = ExtResource("7_iaj3p")
 
-[node name="bottom_post" type="Sprite2D" parent="foreground/stairs"]
+[node name="bottom_post" type="Sprite2D" parent="area1_fg/stairs"]
 position = Vector2(967, 499)
 scale = Vector2(1, 1.20001)
 texture = ExtResource("6_86t4m")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="foreground/stairs"]
+[node name="StaticBody2D" type="StaticBody2D" parent="area1_fg/stairs"]
 position = Vector2(478, 197)
 rotation = -1.10828
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/stairs/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_fg/stairs/StaticBody2D"]
 position = Vector2(3.12338, 6.26454)
 shape = SubResource("CapsuleShape2D_2kieb")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="foreground/stairs"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="area1_fg/stairs"]
 position = Vector2(389, 255)
 rotation = 0.453786
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/stairs/StaticBody2D2"]
-position = Vector2(147.028, -11.9508)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_fg/stairs/StaticBody2D2"]
+position = Vector2(135.299, -11.9508)
 scale = Vector2(23.56, 1)
 shape = SubResource("RectangleShape2D_od31i")
+
+[node name="house_siding2" type="Sprite2D" parent="area1_fg"]
+position = Vector2(3999, 292)
+texture = ExtResource("19_ht1fe")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="area1_fg/house_siding2"]
+position = Vector2(19, 344)
+rotation = 0.959931
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_fg/house_siding2/StaticBody2D"]
+position = Vector2(-47.5857, 2.82007)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_5665x")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="area1_fg/house_siding2"]
+position = Vector2(63, 374)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_fg/house_siding2/StaticBody2D2"]
+position = Vector2(-0.5, -35)
+shape = SubResource("RectangleShape2D_fbq5i")
+
+[node name="stone1" parent="area1_fg" instance=ExtResource("1_0vkjw")]
+position = Vector2(3931, 712)

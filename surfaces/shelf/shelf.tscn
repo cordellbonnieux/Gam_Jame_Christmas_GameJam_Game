@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://mrnfvamp3hxc"]
+[gd_scene load_steps=5 format=3 uid="uid://mrnfvamp3hxc"]
 
+[ext_resource type="Script" path="res://surfaces/shelf/shelf.gd" id="1_bpy7r"]
 [ext_resource type="Texture2D" uid="uid://drkmxectv62eh" path="res://tiles/surface/window_ledge_78x16.png" id="1_gf0xv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xfq2s"]
-radius = 3.0
+radius = 2.0
 height = 72.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ih3hl"]
+size = Vector2(77, 9)
+
 [node name="shelf" type="StaticBody2D"]
+script = ExtResource("1_bpy7r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_gf0xv")
@@ -15,3 +20,13 @@ texture = ExtResource("1_gf0xv")
 position = Vector2(-1, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xfq2s")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, 5.5)
+shape = SubResource("RectangleShape2D_ih3hl")
+debug_color = Color(0.744713, 0.0293552, 0.145212, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

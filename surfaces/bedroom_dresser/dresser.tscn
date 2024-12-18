@@ -1,16 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://jygrnwqrbs5j"]
+[gd_scene load_steps=7 format=3 uid="uid://jygrnwqrbs5j"]
 
 [ext_resource type="Texture2D" uid="uid://bab53uaj7kqke" path="res://tiles/surface/dresser_84x89.png" id="1_b5buo"]
 [ext_resource type="Script" path="res://surfaces/bedroom_dresser/dresser.gd" id="1_ntgdj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vo1ix"]
-size = Vector2(64, 8)
+size = Vector2(64, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfqg2"]
-size = Vector2(61, 8)
+size = Vector2(61, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00odb"]
-size = Vector2(74, 55)
+size = Vector2(88, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50vis"]
+size = Vector2(97, 25)
 
 [node name="dresser" type="Node2D"]
 script = ExtResource("1_ntgdj")
@@ -22,23 +25,32 @@ texture = ExtResource("1_b5buo")
 position = Vector2(0, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
-position = Vector2(0, -4)
+position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_vo1ix")
 
 [node name="drawer" type="StaticBody2D" parent="."]
 position = Vector2(-18, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drawer"]
-position = Vector2(6.5, -4)
+position = Vector2(6.5, -7)
 shape = SubResource("RectangleShape2D_vfqg2")
 
 [node name="hide_top_on_collision" type="Area2D" parent="."]
 position = Vector2(-13, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hide_top_on_collision"]
-position = Vector2(8, -34.5)
+position = Vector2(11, -33)
 shape = SubResource("RectangleShape2D_00odb")
 debug_color = Color(0.931495, 0.199017, 0.435464, 0.42)
 
+[node name="hide_bottom_on_collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hide_bottom_on_collision"]
+position = Vector2(-5.5, 31.5)
+shape = SubResource("RectangleShape2D_50vis")
+debug_color = Color(0.962844, 0.066702, 0.458583, 0.42)
+
 [connection signal="body_entered" from="hide_top_on_collision" to="." method="_on_hide_top_on_collision_body_entered"]
 [connection signal="body_exited" from="hide_top_on_collision" to="." method="_on_hide_top_on_collision_body_exited"]
+[connection signal="body_entered" from="hide_bottom_on_collision" to="." method="_on_hide_bottom_on_collision_body_entered"]
+[connection signal="body_exited" from="hide_bottom_on_collision" to="." method="_on_hide_bottom_on_collision_body_exited"]
