@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://toafyyebqskq"]
+[gd_scene load_steps=13 format=3 uid="uid://toafyyebqskq"]
 
 [ext_resource type="Script" path="res://surfaces/bed/bed.gd" id="1_k1fxx"]
 [ext_resource type="Texture2D" uid="uid://d0jdm7t3388fi" path="res://tiles/surface/bed_288x176.png" id="1_nh15t"]
@@ -9,19 +9,29 @@ size = Vector2(160, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wbo3"]
 size = Vector2(160, 34)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_41yi3"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx8vr"]
+size = Vector2(16, 2)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vackd"]
-radius = 8.5
-height = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6xwk"]
+size = Vector2(16, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c7qf6"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1dth"]
+size = Vector2(16, 2)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ujmxy"]
-radius = 8.5
-height = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4yue"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmgp4"]
+size = Vector2(16, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w7hj"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqhm1"]
+size = Vector2(16, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev8x5"]
+size = Vector2(16, 32)
 
 [node name="Bed" type="Node2D"]
 script = ExtResource("1_k1fxx")
@@ -47,52 +57,60 @@ debug_color = Color(0.776471, 0.027451, 0, 0.419608)
 position = Vector2(-128, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knob_left"]
-shape = SubResource("CircleShape2D_41yi3")
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_cx8vr")
 
 [node name="Area2D" type="Area2D" parent="knob_left"]
 position = Vector2(0, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knob_left/Area2D"]
-shape = SubResource("CapsuleShape2D_vackd")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_b6xwk")
 debug_color = Color(0.891454, 0.16452, 0.687193, 0.42)
 
 [node name="knob_left_back" type="StaticBody2D" parent="."]
 position = Vector2(-32, -80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knob_left_back"]
-shape = SubResource("CircleShape2D_41yi3")
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_e1dth")
 
 [node name="Area2D" type="Area2D" parent="knob_left_back"]
 position = Vector2(0, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knob_left_back/Area2D"]
-shape = SubResource("CapsuleShape2D_vackd")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_o4yue")
 debug_color = Color(0.891454, 0.16452, 0.687193, 0.42)
 
 [node name="knob_right" type="StaticBody2D" parent="."]
 position = Vector2(32, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knob_right"]
-shape = SubResource("CircleShape2D_c7qf6")
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_kmgp4")
 
 [node name="Area2D" type="Area2D" parent="knob_right"]
 position = Vector2(0, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knob_right/Area2D"]
-shape = SubResource("CapsuleShape2D_ujmxy")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_8w7hj")
 debug_color = Color(0.878492, 0.255228, 0.574528, 0.42)
 
 [node name="knob_right_back" type="StaticBody2D" parent="."]
 position = Vector2(128, -80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knob_right_back"]
-shape = SubResource("CircleShape2D_c7qf6")
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_hqhm1")
 
 [node name="Area2D" type="Area2D" parent="knob_right_back"]
 position = Vector2(0, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knob_right_back/Area2D"]
-shape = SubResource("CapsuleShape2D_ujmxy")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ev8x5")
 debug_color = Color(0.878492, 0.255228, 0.574528, 0.42)
 
 [connection signal="body_entered" from="mid_frame/Area2D" to="." method="center_off"]
