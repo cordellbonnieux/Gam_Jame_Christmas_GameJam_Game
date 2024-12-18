@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgljdfv6woyh7"]
+
+[ext_resource type="Texture2D" uid="uid://btm718mvg8f85" path="res://tiles/background/xmas_tree.png" id="1_ktpoo"]
+
+[node name="fir_tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ktpoo")

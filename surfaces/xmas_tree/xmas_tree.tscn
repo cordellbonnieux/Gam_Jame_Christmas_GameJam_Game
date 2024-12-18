@@ -1,19 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4fp3kra56qr4"]
 
-[ext_resource type="Texture2D" uid="uid://do2v3ade1i3wk" path="res://tiles/background/white_wall_with_trim_96x256.png" id="1_vbk4x"]
+[ext_resource type="Texture2D" uid="uid://btm718mvg8f85" path="res://tiles/background/xmas_tree.png" id="1_nldjy"]
 
 [node name="xmas_tree" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 2)
-texture = ExtResource("1_vbk4x")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(148, 0)
-scale = Vector2(1, 2)
-texture = ExtResource("1_vbk4x")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(96, 0)
-scale = Vector2(1, 2)
-texture = ExtResource("1_vbk4x")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_nldjy")
