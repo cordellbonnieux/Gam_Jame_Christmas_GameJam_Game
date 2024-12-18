@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cnpf5feskpylk"]
 
-[ext_resource type="Script" path="res://interactables/latch_post/latch_post.gd" id="1_egwvv"]
+[ext_resource type="Script" path="res://interactables/zip_post/zip_post.gd" id="1_egwvv"]
 [ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="2_8jqix"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jknco"]
 radius = 128.0
 
-[node name="latch_post" type="Area2D" groups=["zip"]]
+[node name="zip_post" type="Area2D" groups=["zip"]]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_egwvv")
 

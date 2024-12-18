@@ -46,6 +46,7 @@ func _physics_process(delta):
 					
 	elif fsm.current_state.name == "hooking":
 		if abs((current_hook.global_position + Vector2(0, 32)).y - global_position.y) > 1 && abs(current_hook.global_position.x - global_position.x) > 1:
+			#BUG sometimes causes wierd movement
 			velocity = lerp(velocity, (current_hook.global_position + Vector2(0, 32) - global_position).normalized() * zip_speed, 1)
 		else:
 			velocity = Vector2.ZERO
@@ -79,8 +80,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("latch"):
 		for area in detection_area.get_overlapping_areas():
 			if area.is_in_group("zip"):
-				if area.destinations.size() > 0: #TODO IMPLIMENT THIS
-					zip([area.global_position, area.destinations])
+				if area.destination:
+					zip(area)
 					return
 			elif area.is_in_group("hook"):
 				if fsm.current_state.name == "hooking":
@@ -112,8 +113,9 @@ func damage(amount: int) -> void:
 			knock_back_timer.start()
 
 
-func zip(global_positions_to_zip_to: Array[Vector2]) -> void:
-	current_zips = global_positions_to_zip_to
+func zip(area: Area2D) -> void:
+	current_zips = [area.global_position]
+	current_zips.append_array(area.get_destination_global_coords())
 	fsm.current_state.exit("zipping")
 
 

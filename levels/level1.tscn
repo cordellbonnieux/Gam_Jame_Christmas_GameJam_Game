@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ux2mg40y56d" path="res://player/player.tscn" id="2_wb2om"]
 [ext_resource type="PackedScene" uid="uid://cebshm4lu50vl" path="res://interactables/hook/hook.tscn" id="3_0l80r"]
 [ext_resource type="PackedScene" uid="uid://dr8rwhihce8q1" path="res://enemies/mouse/mouse_enemy.tscn" id="3_xt511"]
-[ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/latch_post/latch_post.tscn" id="4_2hatq"]
+[ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="4_2hatq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1opf"]
 size = Vector2(125, 125)

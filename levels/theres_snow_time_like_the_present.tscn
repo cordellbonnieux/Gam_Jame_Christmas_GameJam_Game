@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cebshm4lu50vl" path="res://interactables/hook/hook.tscn" id="7_fnp4g"]
 [ext_resource type="Texture2D" uid="uid://c7rexmxanap04" path="res://tiles/foreground/stair_railing.png" id="7_iaj3p"]
 [ext_resource type="Texture2D" uid="uid://ccjc23rql7rcu" path="res://tiles/foreground/blue_house_siding_right_corner_back.png" id="8_xttvp"]
-[ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/latch_post/latch_post.tscn" id="10_5auit"]
+[ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="10_5auit"]
 [ext_resource type="PackedScene" uid="uid://b4fp3kra56qr4" path="res://surfaces/xmas_tree/xmas_tree.tscn" id="10_8gr0d"]
 [ext_resource type="Texture2D" uid="uid://e04e1mwfb00k" path="res://tiles/foreground/blue_house_siding_right_corner_front.png" id="19_ht1fe"]
 
@@ -333,19 +333,19 @@ position = Vector2(3305, 384)
 
 [node name="ziplights" type="Node2D" parent="area1_bg"]
 
-[node name="latch_post" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="zip0" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(3201, 434)
-destination = NodePath("../latch_post4")
+destination = NodePath("../zip1")
 
-[node name="latch_post4" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="zip1" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(3313, 149)
-destination = NodePath("../latch_post5")
+destination = NodePath("../zip2")
 
-[node name="latch_post5" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="zip2" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(3393, 330)
-destination = NodePath("../latch_post2")
+destination = NodePath("../zip3")
 
-[node name="latch_post2" parent="area1_bg/ziplights" instance=ExtResource("10_5auit")]
+[node name="zip3" parent="area1_bg/ziplights" instance=ExtResource("10_5auit")]
 position = Vector2(3619, 593)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
@@ -472,13 +472,11 @@ position = Vector2(3931, 712)
 
 [node name="ziplatches" type="Node2D" parent="area2_fg"]
 
-[node name="latch_post" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post" parent="area2_fg/ziplatches" instance=ExtResource("10_5auit")]
 position = Vector2(4665, 529)
-destination = NodePath("../latch_post2")
 
-[node name="latch_post2" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post2" parent="area2_fg/ziplatches" instance=ExtResource("10_5auit")]
 position = Vector2(5322, 180)
-destination = NodePath("../latch_post3")
 
 [node name="latch_post3" parent="area2_fg/ziplatches" instance=ExtResource("10_5auit")]
 position = Vector2(6039, 199)
