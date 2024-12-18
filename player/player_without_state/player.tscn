@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1ux2mg40y56d"]
+[gd_scene load_steps=5 format=3 uid="uid://ykr86jr2ugj4"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_kxvr3"]
-[ext_resource type="Texture2D" uid="uid://b2p8w4atcelky" path="res://temp-char.png" id="2_pcq8f"]
-[ext_resource type="Script" path="res://classes/StateMachine.gd" id="3_ewm8s"]
-[ext_resource type="Script" path="res://classes/State.gd" id="4_07ssj"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_lhvqi"]
+[ext_resource type="Texture2D" uid="uid://b2p8w4atcelky" path="res://temp-char.png" id="2_f7ocm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mwuv"]
 radius = 8.0
@@ -14,10 +12,10 @@ radius = 48.0
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(532, 0)
-script = ExtResource("1_kxvr3")
+script = ExtResource("1_lhvqi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_pcq8f")
+texture = ExtResource("2_f7ocm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7mwuv")
@@ -37,9 +35,3 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 shape = SubResource("CircleShape2D_hcv7k")
-
-[node name="StateMachine" type="Node" parent="."]
-script = ExtResource("3_ewm8s")
-
-[node name="State" type="Node" parent="StateMachine"]
-script = ExtResource("4_07ssj")
