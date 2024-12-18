@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 var health: int = 3
 @export var speed: int = 100
-@export var jump_speed: int = -200
+@export var jump_speed: int = -250
 var sugar_level: int = 0
 var gravity: int = 300
 # yikes what a mess!
@@ -30,7 +30,6 @@ func _physics_process(delta):
 		if hooked:
 			hooked = false
 			current_hook.unhook()
-			velocity.y *= 1.5
 	elif zipping:
 		if abs(zip_dest - global_position).x > 1 && abs(zip_dest - global_position).y > 1:
 			velocity = lerp(velocity, (zip_dest - global_position).normalized() * (speed + 200), acceleration * 2)

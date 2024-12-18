@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=20 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://do2v3ade1i3wk" path="res://tiles/background/white_wall_with_trim_96x256.png" id="1_wuagu"]
 [ext_resource type="PackedScene" uid="uid://bi3s58deafa4i" path="res://surfaces/bedroom_window/bedroom_window.tscn" id="2_x41i6"]
 [ext_resource type="PackedScene" uid="uid://mrnfvamp3hxc" path="res://surfaces/shelf/shelf.tscn" id="3_kpjoh"]
-[ext_resource type="Texture2D" uid="uid://dpqoy2ny7qyq5" path="res://tiles/foreground/blue_carpet_160x96.png" id="4_4cxii"]
+[ext_resource type="Texture2D" uid="uid://cj7j33qqujraw" path="res://tiles/foreground/stair_step_blue_carpet.png" id="4_gfho2"]
 [ext_resource type="PackedScene" uid="uid://d1ux2mg40y56d" path="res://player/player.tscn" id="4_ngv3a"]
 [ext_resource type="PackedScene" uid="uid://jygrnwqrbs5j" path="res://surfaces/bedroom_dresser/dresser.tscn" id="4_nkocn"]
 [ext_resource type="Texture2D" uid="uid://y0a081ottvve" path="res://tiles/foreground/door_96x304.png" id="4_wq3dm"]
+[ext_resource type="Texture2D" uid="uid://bma0eif63pjk" path="res://tiles/foreground/blue_carpet_160x112.png" id="4_x4ygh"]
 [ext_resource type="PackedScene" uid="uid://toafyyebqskq" path="res://surfaces/bed/bed.tscn" id="5_ro3tp"]
 [ext_resource type="PackedScene" uid="uid://d0n0n43uyw3eb" path="res://surfaces/picture_in_frame/picture.tscn" id="6_0p2ji"]
 [ext_resource type="Texture2D" uid="uid://csbfakp0ueqa8" path="res://tiles/foreground/stair_post.png" id="6_86t4m"]
@@ -23,19 +24,19 @@ texture_region_size = Vector2i(96, 256)
 tile_size = Vector2i(96, 256)
 sources/0 = SubResource("TileSetAtlasSource_lijra")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uyiny"]
-texture = ExtResource("4_4cxii")
-texture_region_size = Vector2i(160, 96)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hapad"]
+texture = ExtResource("4_x4ygh")
+texture_region_size = Vector2i(160, 112)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rdsc2"]
-tile_size = Vector2i(160, 96)
-sources/0 = SubResource("TileSetAtlasSource_uyiny")
+tile_size = Vector2i(160, 112)
+sources/1 = SubResource("TileSetAtlasSource_hapad")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daolp"]
-size = Vector2(1770, 16)
+size = Vector2(1793, 39)
 
 [node name="TheresSnowTimeLikeThePresent" type="Node2D"]
 
@@ -44,58 +45,129 @@ position = Vector2(0, 80)
 
 [node name="background_tiles" type="TileMapLayer" parent="building"]
 position = Vector2(-128, -232)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAdAAMAAAAAAAAAAAAcAAMAAAAAAAAAAAAbAAMAAAAAAAAAAAAaAAMAAAAAAAAAAAAZAAMAAAAAAAAAAAAYAAMAAAAAAAAAAAAXAAMAAAAAAAAAAAAWAAMAAAAAAAAAAAAVAAMAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAYAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAYAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD//wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP//AAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAARAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAfAAIAAAAAAAAAAAAgAAIAAAAAAAAAAAAhAAIAAAAAAAAAAAAiAAIAAAAAAAAAAAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAAnAAEAAAAAAAAAAAAmAAEAAAAAAAAAAAAlAAEAAAAAAAAAAAAkAAEAAAAAAAAAAAAjAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAoAAEAAAAAAAAAAAAoAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAdAP//AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAiAP//AAAAAAAAAAAjAP//AAAAAAAAAAAkAP//AAAAAAAAAAAlAP//AAAAAAAAAAAmAP//AAAAAAAAAAAnAP//AAAAAAAAAAAoAP//AAAAAAAAAAApAAIAAAAAAAAAAAAqAAIAAAAAAAAAAAArAAIAAAAAAAAAAAAsAAIAAAAAAAAAAAAtAAIAAAAAAAAAAAAsAAEAAAAAAAAAAAAtAAEAAAAAAAAAAAAtAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAsAP//AAAAAAAAAAArAP//AAAAAAAAAAAqAP//AAAAAAAAAAApAP//AAAAAAAAAAApAAAAAAAAAAAAAAApAAEAAAAAAAAAAAAqAAEAAAAAAAAAAAArAAEAAAAAAAAAAAArAAAAAAAAAAAAAAAqAAAAAAAAAAAAAAAtAP//AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_bvy7f")
 
 [node name="window" parent="building/background_tiles" instance=ExtResource("2_x41i6")]
-position = Vector2(108, 111)
-
-[node name="shelf" parent="building/background_tiles" instance=ExtResource("3_kpjoh")]
-position = Vector2(811, 95)
+position = Vector2(48, 118)
 
 [node name="shelf2" parent="building/background_tiles" instance=ExtResource("3_kpjoh")]
-position = Vector2(908, 131)
+position = Vector2(816, 144)
 
 [node name="shelf3" parent="building/background_tiles" instance=ExtResource("3_kpjoh")]
-position = Vector2(1003, 97)
-
-[node name="shelf4" parent="building/background_tiles" instance=ExtResource("3_kpjoh")]
-position = Vector2(1387, 126)
+position = Vector2(1008, 143)
 
 [node name="shelf5" parent="building/background_tiles" instance=ExtResource("3_kpjoh")]
-position = Vector2(1484, 95)
+position = Vector2(1333, 144)
 
 [node name="shelf6" parent="building/background_tiles" instance=ExtResource("3_kpjoh")]
-position = Vector2(1579, 62)
+position = Vector2(1397, 144)
 
-[node name="ground_tiles" type="TileMapLayer" parent="building"]
+[node name="shelf7" parent="building/background_tiles" instance=ExtResource("3_kpjoh")]
+position = Vector2(1461, 144)
+
+[node name="shelf8" parent="building/background_tiles" instance=ExtResource("3_kpjoh")]
+position = Vector2(1584, 88)
+
+[node name="staircase_steps" type="Node2D" parent="building"]
+position = Vector2(1520, 112)
+
+[node name="stair0" type="Sprite2D" parent="building/staircase_steps"]
+texture = ExtResource("4_gfho2")
+
+[node name="stair1" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(64, 32)
+texture = ExtResource("4_gfho2")
+
+[node name="stair2" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(128, 64)
+texture = ExtResource("4_gfho2")
+
+[node name="stair3" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(192, 96)
+texture = ExtResource("4_gfho2")
+
+[node name="stair4" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(256, 128)
+texture = ExtResource("4_gfho2")
+
+[node name="stair5" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(320, 160)
+texture = ExtResource("4_gfho2")
+
+[node name="stair6" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(384, 192)
+texture = ExtResource("4_gfho2")
+
+[node name="stair7" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(448, 224)
+texture = ExtResource("4_gfho2")
+
+[node name="stair8" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(512, 256)
+texture = ExtResource("4_gfho2")
+
+[node name="stair9" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(576, 288)
+texture = ExtResource("4_gfho2")
+
+[node name="stair10" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(640, 320)
+texture = ExtResource("4_gfho2")
+
+[node name="stair11" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(704, 352)
+texture = ExtResource("4_gfho2")
+
+[node name="stair12" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(768, 384)
+texture = ExtResource("4_gfho2")
+
+[node name="stair13" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(832, 416)
+texture = ExtResource("4_gfho2")
+
+[node name="stair14" type="Sprite2D" parent="building/staircase_steps"]
+position = Vector2(896, 448)
+texture = ExtResource("4_gfho2")
+
+[node name="top_floor_ground_tiles" type="TileMapLayer" parent="building"]
 position = Vector2(-192, 24)
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_rdsc2")
 
-[node name="ground_collider" type="StaticBody2D" parent="building/ground_tiles"]
-position = Vector2(1112, 24)
+[node name="ground_collider" type="StaticBody2D" parent="building/top_floor_ground_tiles"]
+position = Vector2(1110, 46)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="building/ground_tiles/ground_collider"]
-position = Vector2(-296, 16)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="building/top_floor_ground_tiles/ground_collider"]
+position = Vector2(-372.5, 29.5)
+shape = SubResource("RectangleShape2D_daolp")
+
+[node name="lower_floor_ground_tiles" type="TileMapLayer" parent="building"]
+position = Vector2(2528, 536)
+tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQACAAAAAAA=")
+tile_set = SubResource("TileSet_rdsc2")
+
+[node name="ground_collider" type="StaticBody2D" parent="building/lower_floor_ground_tiles"]
+position = Vector2(1110, 46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="building/lower_floor_ground_tiles/ground_collider"]
+position = Vector2(-372.5, 29.5)
 shape = SubResource("RectangleShape2D_daolp")
 
 [node name="furniture" type="Node2D" parent="."]
 position = Vector2(-114, 0)
 
 [node name="dresser" parent="furniture" instance=ExtResource("4_nkocn")]
-position = Vector2(232, 70)
-scale = Vector2(1.5, 1)
+position = Vector2(159, 66)
+scale = Vector2(1.5, 1.25)
 
 [node name="Bed" parent="furniture" instance=ExtResource("5_ro3tp")]
-position = Vector2(367, 69)
+position = Vector2(419, 69)
 
 [node name="picture" parent="furniture" instance=ExtResource("6_0p2ji")]
-position = Vector2(417, -37)
+position = Vector2(614, -38)
 rotation = -0.0589802
-
-[node name="hook" parent="furniture" instance=ExtResource("7_fnp4g")]
-position = Vector2(610, -64)
 
 [node name="hook2" parent="furniture" instance=ExtResource("7_fnp4g")]
 position = Vector2(1185, -50)
@@ -110,7 +182,7 @@ destination = NodePath("../latch_post2")
 position = Vector2(1071, 2)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(0, 0)
+position = Vector2(-88, 1)
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -119,92 +191,72 @@ position = Vector2(592, 0)
 texture = ExtResource("4_wq3dm")
 
 [node name="stairs" type="Node2D" parent="foreground"]
-position = Vector2(-315, 137)
+position = Vector2(1405, 120)
 
 [node name="top_post" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1720, -16)
 texture = ExtResource("6_86t4m")
 
 [node name="rail0" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1740, -1)
+position = Vector2(35, 24)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail1" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1772, 15)
+position = Vector2(99, 56)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail2" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1804, 31)
+position = Vector2(163, 88)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail3" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1836, 47)
+position = Vector2(227, 120)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail4" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1868, 63)
+position = Vector2(291, 152)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail5" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1900, 79)
+position = Vector2(355, 184)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail6" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1932, 95)
+position = Vector2(419, 216)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail7" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1964, 111)
+position = Vector2(483, 248)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail8" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(1996, 127)
+position = Vector2(547, 280)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail9" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2028, 143)
+position = Vector2(611, 312)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail10" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2060, 159)
+position = Vector2(675, 344)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail11" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2092, 175)
+position = Vector2(739, 376)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail12" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2124, 191)
+position = Vector2(803, 408)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail13" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2156, 207)
+position = Vector2(867, 440)
 texture = ExtResource("7_iaj3p")
 
 [node name="rail14" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2188, 223)
+position = Vector2(931, 472)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail15" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2220, 239)
-texture = ExtResource("7_iaj3p")
-
-[node name="rail16" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2252, 255)
-texture = ExtResource("7_iaj3p")
-
-[node name="rail17" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2284, 271)
-texture = ExtResource("7_iaj3p")
-
-[node name="rail18" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2316, 287)
-texture = ExtResource("7_iaj3p")
-
-[node name="rail19" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2348, 303)
-texture = ExtResource("7_iaj3p")
-
-[node name="rail20" type="Sprite2D" parent="foreground/stairs"]
-position = Vector2(2380, 319)
-texture = ExtResource("7_iaj3p")
+[node name="bottom_post" type="Sprite2D" parent="foreground/stairs"]
+position = Vector2(967, 499)
+scale = Vector2(1, 1.20001)
+texture = ExtResource("6_86t4m")
