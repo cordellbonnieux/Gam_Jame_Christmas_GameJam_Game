@@ -29,8 +29,16 @@ zoom = Vector2(4, 4)
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(48, 0)
 
-[node name="cooldown" type="Timer" parent="."]
+[node name="attack_cooldown_timer" type="Timer" parent="."]
 wait_time = 0.25
+one_shot = true
+
+[node name="knock_back_timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="invulnerability_timer" type="Timer" parent="."]
+wait_time = 1.5
 one_shot = true
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -41,5 +49,28 @@ shape = SubResource("CircleShape2D_hcv7k")
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_ewm8s")
 
-[node name="State" type="Node" parent="StateMachine"]
+[node name="idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_07ssj")
+
+[node name="running" type="Node" parent="StateMachine"]
+script = ExtResource("4_07ssj")
+
+[node name="hooking" type="Node" parent="StateMachine"]
+script = ExtResource("4_07ssj")
+
+[node name="zipping" type="Node" parent="StateMachine"]
+script = ExtResource("4_07ssj")
+
+[node name="falling" type="Node" parent="StateMachine"]
+script = ExtResource("4_07ssj")
+
+[node name="invulnerable" type="Node" parent="StateMachine"]
+script = ExtResource("4_07ssj")
+
+[node name="dead" type="Node" parent="StateMachine"]
+script = ExtResource("4_07ssj")
+
+[node name="knock-back" type="Node" parent="StateMachine"]
+script = ExtResource("4_07ssj")
+
+[connection signal="timeout" from="knock_back_timer" to="." method="knock_back_timer_finished"]

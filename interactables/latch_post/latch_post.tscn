@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jknco"]
 radius = 128.0
 
-[node name="latch_post" type="Area2D" groups=["latch"]]
+[node name="latch_post" type="Area2D" groups=["zip"]]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_egwvv")
 

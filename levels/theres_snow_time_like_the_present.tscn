@@ -349,7 +349,7 @@ destination = NodePath("../latch_post2")
 position = Vector2(3619, 593)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(3840, 595)
+position = Vector2(2583, 387)
 
 [node name="area1_fg" type="Node2D" parent="."]
 
@@ -456,7 +456,6 @@ rotation = 0.959931
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area1_fg/house_siding2/StaticBody2D"]
 position = Vector2(-47.5857, 2.82007)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5665x")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="area1_fg/house_siding2"]
