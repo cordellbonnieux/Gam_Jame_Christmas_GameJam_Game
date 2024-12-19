@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=48 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ccjc23rql7rcu" path="res://tiles/foreground/blue_house_siding_right_corner_back.png" id="8_xttvp"]
 [ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="10_5auit"]
 [ext_resource type="PackedScene" uid="uid://b4fp3kra56qr4" path="res://surfaces/xmas_tree/xmas_tree.tscn" id="10_8gr0d"]
+[ext_resource type="Texture2D" uid="uid://b5onwckk6r7bi" path="res://tiles/background/wall_left_corner.png" id="12_tykq4"]
 [ext_resource type="PackedScene" uid="uid://dnwnmo4oklsjr" path="res://interactables/slide_edge/slide_edge.tscn" id="14_pytdj"]
 [ext_resource type="PackedScene" uid="uid://dr8rwhihce8q1" path="res://enemies/mouse/mouse_enemy.tscn" id="17_uyd7v"]
 [ext_resource type="PackedScene" uid="uid://dkfclo2yc0hg8" path="res://interactables/perppermint/peppermint_candy.tscn" id="18_m5lbo"]
@@ -110,6 +111,9 @@ sources/1 = SubResource("TileSetAtlasSource_hapad")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daolp"]
 size = Vector2(1704, 67.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a3tq"]
+size = Vector2(86.5, 520)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_od31i"]
 size = Vector2(50.9957, 8)
 
@@ -121,1179 +125,1259 @@ size = Vector2(5, 168)
 
 [node name="TheresSnowTimeLikeThePresent" type="Node2D"]
 
-[node name="area2_bg" type="Node2D" parent="."]
+[node name="background" type="Node2D" parent="."]
 
-[node name="cliff_tilemaplayer" type="TileMapLayer" parent="area2_bg"]
+[node name="area2_bg" type="Node2D" parent="background"]
+
+[node name="cliff_tilemaplayer" type="TileMapLayer" parent="background/area2_bg"]
 position = Vector2(8875, 914)
 tile_map_data = PackedByteArray("AAD///7/AAAAAAAAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAAAAP7/AAAAAAAAAAAAAAAAAAAAAAIAAAD//wAAAAAAAAIAAAABAP7/AAAAAAAAAAABAP//AAAAAAEAAAABAAAAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_00lxd")
 
-[node name="bg_forest4" type="Node2D" parent="area2_bg"]
+[node name="bg_forest4" type="Node2D" parent="background/area2_bg"]
 position = Vector2(6161, 30)
 
-[node name="fir_tree13" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree13" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(6245, 311)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree16" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree16" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4558, 221)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree18" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree18" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4915, 324)
 scale = Vector2(0.695, 0.695)
 
-[node name="fir_tree12" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree12" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5346, 155)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree20" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree20" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5914, 185)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree15" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree15" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4243, 295)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5266, 294)
 scale = Vector2(0.75, 0.75)
 
-[node name="fir_tree4" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree4" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5546, 329)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree7" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree7" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5810, 261)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree19" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree19" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5128, 341)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree8" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree8" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4412, 256)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree9" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree9" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4632, 321)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree10" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree10" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4807, 221)
 scale = Vector2(0.8, 0.8)
 
-[node name="fir_tree11" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree11" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5036, 298)
 scale = Vector2(0.7, 0.7)
 
-[node name="fir_tree6" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree6" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5663, 361)
 scale = Vector2(0.45, 0.45)
 
-[node name="fir_tree5" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree5" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(5433, 324)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree2" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree2" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(6045, 238)
 
-[node name="fir_tree3" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree3" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4727, 292)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree14" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree14" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4144, 216)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree17" parent="area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree17" parent="background/area2_bg/bg_forest4" instance=ExtResource("1_k8xc5")]
 position = Vector2(4327, 348)
 scale = Vector2(0.5, 0.5)
 
-[node name="bg_forest3" type="Node2D" parent="area2_bg"]
+[node name="bg_forest3" type="Node2D" parent="background/area2_bg"]
 position = Vector2(4125, 30)
 
-[node name="fir_tree13" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree13" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(6245, 311)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree16" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree16" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4558, 221)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree18" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree18" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4915, 324)
 scale = Vector2(0.695, 0.695)
 
-[node name="fir_tree12" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree12" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5346, 155)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree20" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree20" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5914, 185)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree15" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree15" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4243, 295)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5266, 294)
 scale = Vector2(0.75, 0.75)
 
-[node name="fir_tree4" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree4" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5546, 329)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree7" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree7" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5810, 261)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree19" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree19" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5128, 341)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree8" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree8" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4412, 256)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree9" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree9" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4632, 321)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree10" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree10" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4807, 221)
 scale = Vector2(0.8, 0.8)
 
-[node name="fir_tree11" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree11" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5036, 298)
 scale = Vector2(0.7, 0.7)
 
-[node name="fir_tree6" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree6" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5663, 361)
 scale = Vector2(0.45, 0.45)
 
-[node name="fir_tree5" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree5" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(5433, 324)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree2" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree2" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(6045, 238)
 
-[node name="fir_tree3" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree3" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4727, 292)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree14" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree14" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4144, 216)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree17" parent="area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree17" parent="background/area2_bg/bg_forest3" instance=ExtResource("1_k8xc5")]
 position = Vector2(4327, 348)
 scale = Vector2(0.5, 0.5)
 
-[node name="bg_forest2" type="Node2D" parent="area2_bg"]
+[node name="bg_forest2" type="Node2D" parent="background/area2_bg"]
 position = Vector2(2049, 0)
 
-[node name="fir_tree13" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree13" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(6245, 311)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree16" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree16" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4558, 221)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree18" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree18" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4915, 324)
 scale = Vector2(0.695, 0.695)
 
-[node name="fir_tree12" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree12" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5346, 155)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree20" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree20" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5914, 185)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree15" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree15" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4243, 295)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5266, 294)
 scale = Vector2(0.75, 0.75)
 
-[node name="fir_tree4" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree4" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5546, 329)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree7" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree7" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5810, 261)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree19" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree19" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5128, 341)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree8" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree8" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4412, 256)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree9" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree9" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4632, 321)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree10" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree10" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4807, 221)
 scale = Vector2(0.8, 0.8)
 
-[node name="fir_tree11" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree11" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5036, 298)
 scale = Vector2(0.7, 0.7)
 
-[node name="fir_tree6" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree6" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5663, 361)
 scale = Vector2(0.45, 0.45)
 
-[node name="fir_tree5" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree5" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(5433, 324)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree2" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree2" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(6045, 238)
 
-[node name="fir_tree3" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree3" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4727, 292)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree14" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree14" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4144, 216)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree17" parent="area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree17" parent="background/area2_bg/bg_forest2" instance=ExtResource("1_k8xc5")]
 position = Vector2(4327, 348)
 scale = Vector2(0.5, 0.5)
 
-[node name="bg_forest" type="Node2D" parent="area2_bg"]
+[node name="bg_forest" type="Node2D" parent="background/area2_bg"]
 
-[node name="fir_tree13" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree13" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(6245, 311)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree16" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree16" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4558, 221)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree18" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree18" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4915, 324)
 scale = Vector2(0.695, 0.695)
 
-[node name="fir_tree12" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree12" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5346, 155)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree20" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree20" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5914, 185)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree15" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree15" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4243, 295)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5266, 294)
 scale = Vector2(0.75, 0.75)
 
-[node name="fir_tree4" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree4" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5546, 329)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree7" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree7" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5810, 261)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree19" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree19" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5128, 341)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree8" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree8" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4412, 256)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree9" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree9" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4632, 321)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree10" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree10" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4807, 221)
 scale = Vector2(0.8, 0.8)
 
-[node name="fir_tree11" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree11" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5036, 298)
 scale = Vector2(0.7, 0.7)
 
-[node name="fir_tree6" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree6" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5663, 361)
 scale = Vector2(0.45, 0.45)
 
-[node name="fir_tree5" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree5" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(5433, 324)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree2" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree2" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(6045, 238)
 
-[node name="fir_tree3" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree3" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4727, 292)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree14" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree14" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4144, 216)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree17" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree17" parent="background/area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
 position = Vector2(4327, 348)
 scale = Vector2(0.5, 0.5)
 
-[node name="snowy_backdrop" type="Sprite2D" parent="area2_bg"]
+[node name="snowy_backdrop" type="Sprite2D" parent="background/area2_bg"]
 position = Vector2(4884, 530)
 texture = ExtResource("1_prxnj")
 
-[node name="snowy_backdrop2" type="Sprite2D" parent="area2_bg"]
+[node name="snowy_backdrop2" type="Sprite2D" parent="background/area2_bg"]
 position = Vector2(6480, 530)
 texture = ExtResource("1_prxnj")
 
-[node name="trees" type="Node2D" parent="area2_bg"]
+[node name="trees" type="Node2D" parent="background/area2_bg"]
 
-[node name="fir_tree" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(5049, 474)
 scale = Vector2(0.75, 0.75)
 
-[node name="fir_tree4" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree4" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(5329, 509)
 scale = Vector2(0.5, 0.5)
 
-[node name="fir_tree7" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree7" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(5593, 441)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree8" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree8" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(4195, 436)
 scale = Vector2(0.9, 0.9)
 
-[node name="fir_tree9" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree9" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(4415, 501)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree10" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree10" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(4590, 401)
 scale = Vector2(0.8, 0.8)
 
-[node name="fir_tree11" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree11" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(4819, 478)
 scale = Vector2(0.7, 0.7)
 
-[node name="fir_tree6" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree6" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(5446, 541)
 scale = Vector2(0.45, 0.45)
 
-[node name="fir_tree5" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree5" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(5216, 504)
 scale = Vector2(0.6, 0.6)
 
-[node name="fir_tree2" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree2" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(5828, 418)
 
-[node name="fir_tree3" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree3" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(8068, 396)
 
-[node name="fir_tree12" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+[node name="fir_tree12" parent="background/area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(6903, 378)
 
-[node name="surfaces" type="Node2D" parent="area2_bg"]
+[node name="surfaces" type="Node2D" parent="background/area2_bg"]
 position = Vector2(-100, 3)
 
-[node name="stone1" parent="area2_bg/surfaces" instance=ExtResource("1_0vkjw")]
+[node name="stone1" parent="background/area2_bg/surfaces" instance=ExtResource("1_0vkjw")]
 position = Vector2(4396, 629)
 
-[node name="stone2" parent="area2_bg/surfaces" instance=ExtResource("1_0vkjw")]
+[node name="stone2" parent="background/area2_bg/surfaces" instance=ExtResource("1_0vkjw")]
 position = Vector2(4672, 624)
 scale = Vector2(2, 2)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="area2_bg"]
+[node name="TileMapLayer" type="TileMapLayer" parent="background/area2_bg"]
 position = Vector2(4192, 632)
-tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAD+/wAAAAAAAAAAAAAAAAAAAAACAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAACAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAABAAAAAAAKAAAAAAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAANAAAAAQAAAAAAAAAOAAAAAQABAAAAAAAPAAAAAQACAAAAAAAQAAAAAQADAAAAAAARAAAAAQAEAAAAAAASAAAAAAABAAAAAAATAAAAAAACAAAAAAAUAAAAAgAAAAAAAAAVAAAAAgABAAAAAAAVAAEAAgABAAEAAAAWAAEAAgACAAEAAAAWAAAAAgACAAAAAAAWAAIAAgACAAIAAAAXAAEAAgADAAEAAAAXAAIAAgADAAIAAAAYAAIAAgAEAAIAAAAZAAIAAgAFAAIAAAAaAAIAAgAAAAAAAAAbAAIAAgABAAAAAAAbAAMAAgABAAEAAAAcAAIAAgACAAAAAAAcAAMAAgACAAEAAAAcAAQAAgACAAIAAAAdAAMAAgADAAEAAAAdAAQAAgADAAIAAAAeAAQAAgAEAAIAAAAfAAQAAgAFAAIAAAAgAAQAAAAAAAAAAAAhAAQAAAABAAAAAAAiAAQAAAACAAAAAAAjAAQAAAAAAAAAAAAkAAQAAAABAAAAAAAlAAQAAAACAAAAAAAmAAQAAAAAAAAAAAAnAAQAAAABAAAAAAAoAAQAAAACAAAAAAApAAQAAAAAAAAAAAAqAAQAAAABAAAAAAArAAQAAAACAAAAAAAsAAQAAAAAAAAAAAAtAAQAAAABAAAAAAAuAAQAAAAAAAAAAAAvAAQAAAABAAAAAAAwAAQAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAD+/wAAAAAAAAAAAAAAAAAAAAACAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAACAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAABAAAAAAAKAAAAAAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAANAAAAAQAAAAAAAAAOAAAAAQABAAAAAAAPAAAAAQACAAAAAAAQAAAAAQADAAAAAAARAAAAAQAEAAAAAAASAAAAAAABAAAAAAATAAAAAAACAAAAAAAUAAAAAgAAAAAAAAAVAAAAAgABAAAAAAAVAAEAAgABAAEAAAAWAAEAAgACAAEAAAAWAAAAAgACAAAAAAAWAAIAAgACAAIAAAAXAAEAAgADAAEAAAAXAAIAAgADAAIAAAAYAAIAAgAEAAIAAAAZAAIAAgAFAAIAAAAaAAIAAgAAAAAAAAAbAAIAAgABAAAAAAAbAAMAAgABAAEAAAAcAAIAAgACAAAAAAAcAAMAAgACAAEAAAAcAAQAAgACAAIAAAAdAAMAAgADAAEAAAAdAAQAAgADAAIAAAAeAAQAAgAEAAIAAAAfAAQAAgAFAAIAAAAgAAQAAAAAAAAAAAAhAAQAAAABAAAAAAAiAAQAAAACAAAAAAAjAAQAAAAAAAAAAAAkAAQAAAABAAAAAAAlAAQAAAACAAAAAAAmAAQAAAAAAAAAAAAnAAQAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_dijbh")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
+[node name="StaticBody2D" type="StaticBody2D" parent="background/area2_bg/TileMapLayer"]
 position = Vector2(-41, 64)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area2_bg/TileMapLayer/StaticBody2D"]
 position = Vector2(1650, 0)
 shape = SubResource("RectangleShape2D_pwesy")
 
-[node name="slide_edge" parent="area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
+[node name="slide_edge" parent="background/area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
 position = Vector2(3357, 61.0002)
 rotation = 0.523599
 scale = Vector2(5, 5)
 
-[node name="slide_edge2" parent="area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
-position = Vector2(3824, 311)
+[node name="slide_edge2" parent="background/area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
+position = Vector2(3813, 311)
 scale = Vector2(5, 5)
 
-[node name="slide_edge3" parent="area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
-position = Vector2(4340, 319)
+[node name="slide_edge3" parent="background/area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
+position = Vector2(4310, 309)
 rotation = 0.453786
 scale = Vector2(4.5, 4.5)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="background/area2_bg/TileMapLayer"]
 position = Vector2(3813, 294)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area2_bg/TileMapLayer/StaticBody2D2"]
 position = Vector2(-8, 16.4999)
 shape = SubResource("RectangleShape2D_j0x8v")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
-position = Vector2(4337, 311)
+[node name="StaticBody2D3" type="StaticBody2D" parent="background/area2_bg/TileMapLayer"]
+position = Vector2(4746, 505)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D3"]
-position = Vector2(-14, 19)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area2_bg/TileMapLayer/StaticBody2D3"]
+position = Vector2(-26, 21)
 shape = SubResource("CircleShape2D_4u8ru")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="background/area2_bg/TileMapLayer"]
 position = Vector2(4940, 515)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area2_bg/TileMapLayer/StaticBody2D4"]
 position = Vector2(1349.5, 0.5)
 shape = SubResource("RectangleShape2D_jbla0")
 
-[node name="stone3" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+[node name="stone3" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(4370, 651)
 scale = Vector2(0.6, 0.607)
 
-[node name="stone4" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+[node name="stone4" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(4353, 719)
 rotation = 2.75593
 scale = Vector2(0.3, 0.3)
 
-[node name="stone5" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+[node name="stone5" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(4656, 719)
 scale = Vector2(0.5, 0.5)
 
-[node name="stone6" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+[node name="stone6" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(4681, 650)
 rotation = 0.0859217
 scale = Vector2(0.7, 0.7)
 
-[node name="stone8" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+[node name="stone8" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(5159, 639)
 rotation = -0.0180547
 
-[node name="stone7" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+[node name="stone7" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(9113, 1096)
 
-[node name="stone9" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+[node name="stone12" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(9560, 964)
+
+[node name="stone13" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(9366, 913)
+
+[node name="stone14" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(9727, 912)
+
+[node name="stone15" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(9911, 1042)
+
+[node name="stone16" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(9962, 853)
+scale = Vector2(2, 1)
+
+[node name="stone11" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(9349, 1046)
+scale = Vector2(1.68, 1)
+
+[node name="stone9" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(6374, 682)
 rotation = -0.304926
 scale = Vector2(0.7, 0.7)
 
-[node name="stone10" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+[node name="stone10" parent="background/area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(6990, 663)
 rotation = 0.0212521
 scale = Vector2(-0.7, 0.5)
 
-[node name="area1_bg" type="Node2D" parent="."]
+[node name="area1_bg" type="Node2D" parent="background"]
 
-[node name="building" type="Node2D" parent="area1_bg"]
+[node name="behind building" type="Node2D" parent="background/area1_bg"]
+
+[node name="Sprite2D" type="Sprite2D" parent="background/area1_bg/behind building"]
+position = Vector2(-413, 88)
+texture = ExtResource("1_prxnj")
+
+[node name="building" type="Node2D" parent="background/area1_bg"]
 position = Vector2(0, 80)
 
-[node name="background_tiles" type="TileMapLayer" parent="area1_bg/building"]
+[node name="background_tiles" type="TileMapLayer" parent="background/area1_bg/building"]
 position = Vector2(-124, -232)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAYAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD//wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP//AAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAARAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAfAAIAAAAAAAAAAAAgAAIAAAAAAAAAAAAhAAIAAAAAAAAAAAAiAAIAAAAAAAAAAAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAAnAAEAAAAAAAAAAAAmAAEAAAAAAAAAAAAlAAEAAAAAAAAAAAAkAAEAAAAAAAAAAAAjAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAoAAEAAAAAAAAAAAAoAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAdAP//AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAiAP//AAAAAAAAAAAjAP//AAAAAAAAAAAkAP//AAAAAAAAAAAlAP//AAAAAAAAAAAmAP//AAAAAAAAAAAnAP//AAAAAAAAAAAoAP//AAAAAAAAAAApAAIAAAAAAAAAAAAqAAIAAAAAAAAAAAAqAP//AAAAAAAAAAApAP//AAAAAAAAAAApAAAAAAAAAAAAAAApAAEAAAAAAAAAAAAqAAEAAAAAAAAAAAAqAAAAAAAAAAAAAAArAAIAAAAAAAAAAAArAAEAAAAAAAAAAAArAAAAAAAAAAAAAAArAP//AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAYAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP//AAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAARAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAfAAIAAAAAAAAAAAAgAAIAAAAAAAAAAAAhAAIAAAAAAAAAAAAiAAIAAAAAAAAAAAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAAnAAEAAAAAAAAAAAAmAAEAAAAAAAAAAAAlAAEAAAAAAAAAAAAkAAEAAAAAAAAAAAAjAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAoAAEAAAAAAAAAAAAoAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAdAP//AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAiAP//AAAAAAAAAAAjAP//AAAAAAAAAAAkAP//AAAAAAAAAAAlAP//AAAAAAAAAAAmAP//AAAAAAAAAAAnAP//AAAAAAAAAAAoAP//AAAAAAAAAAApAAIAAAAAAAAAAAAqAAIAAAAAAAAAAAAqAP//AAAAAAAAAAApAP//AAAAAAAAAAApAAAAAAAAAAAAAAApAAEAAAAAAAAAAAAqAAEAAAAAAAAAAAAqAAAAAAAAAAAAAAArAAIAAAAAAAAAAAArAAEAAAAAAAAAAAArAAAAAAAAAAAAAAArAP//AAAAAAAAAAAWAAIAAAAAAAAAAAAQAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_bvy7f")
 
-[node name="staircase_steps" type="Node2D" parent="area1_bg/building"]
+[node name="staircase_steps" type="Node2D" parent="background/area1_bg/building"]
 position = Vector2(1520, 112)
 
-[node name="stair0" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair0" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 texture = ExtResource("4_gfho2")
 
-[node name="stair1" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair1" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(64, 32)
 texture = ExtResource("4_gfho2")
 
-[node name="stair2" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair2" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(128, 64)
 texture = ExtResource("4_gfho2")
 
-[node name="stair3" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair3" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(192, 96)
 texture = ExtResource("4_gfho2")
 
-[node name="stair4" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair4" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(256, 128)
 texture = ExtResource("4_gfho2")
 
-[node name="stair5" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair5" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(320, 160)
 texture = ExtResource("4_gfho2")
 
-[node name="stair6" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair6" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(384, 192)
 texture = ExtResource("4_gfho2")
 
-[node name="stair7" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair7" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(448, 224)
 texture = ExtResource("4_gfho2")
 
-[node name="stair8" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair8" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(512, 256)
 texture = ExtResource("4_gfho2")
 
-[node name="stair9" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair9" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(576, 288)
 texture = ExtResource("4_gfho2")
 
-[node name="stair10" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair10" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(640, 320)
 texture = ExtResource("4_gfho2")
 
-[node name="stair11" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair11" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(704, 352)
 texture = ExtResource("4_gfho2")
 
-[node name="stair12" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair12" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(768, 384)
 texture = ExtResource("4_gfho2")
 
-[node name="stair13" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair13" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(832, 416)
 texture = ExtResource("4_gfho2")
 
-[node name="stair14" type="Sprite2D" parent="area1_bg/building/staircase_steps"]
+[node name="stair14" type="Sprite2D" parent="background/area1_bg/building/staircase_steps"]
 position = Vector2(896, 448)
 texture = ExtResource("4_gfho2")
 
-[node name="top_floor_ground_tiles" type="TileMapLayer" parent="area1_bg/building"]
+[node name="top_floor_ground_tiles" type="TileMapLayer" parent="background/area1_bg/building"]
 position = Vector2(-192, 24)
 tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_rdsc2")
 
-[node name="ground_collider" type="StaticBody2D" parent="area1_bg/building/top_floor_ground_tiles"]
+[node name="ground_collider" type="StaticBody2D" parent="background/area1_bg/building/top_floor_ground_tiles"]
 position = Vector2(1110, 46)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_bg/building/top_floor_ground_tiles/ground_collider"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area1_bg/building/top_floor_ground_tiles/ground_collider"]
 position = Vector2(-362, 26)
 shape = SubResource("RectangleShape2D_daolp")
 
-[node name="lower_floor_ground_tiles" type="TileMapLayer" parent="area1_bg/building"]
+[node name="lower_floor_ground_tiles" type="TileMapLayer" parent="background/area1_bg/building"]
 position = Vector2(2528, 536)
 tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_rdsc2")
 
-[node name="ground_collider" type="StaticBody2D" parent="area1_bg/building/lower_floor_ground_tiles"]
+[node name="ground_collider" type="StaticBody2D" parent="background/area1_bg/building/lower_floor_ground_tiles"]
 position = Vector2(1110, 46)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_bg/building/lower_floor_ground_tiles/ground_collider"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area1_bg/building/lower_floor_ground_tiles/ground_collider"]
 position = Vector2(-427.5, 18.75)
 shape = SubResource("RectangleShape2D_daolp")
 
-[node name="platforms" type="Node2D" parent="area1_bg/building"]
-position = Vector2(-128, -232)
+[node name="back_wall_corner" type="StaticBody2D" parent="background/area1_bg/building"]
 
-[node name="window" parent="area1_bg/building/platforms" instance=ExtResource("2_x41i6")]
-position = Vector2(48, 118)
+[node name="back_wall_corner" type="Sprite2D" parent="background/area1_bg/building/back_wall_corner"]
+position = Vector2(-272, -81)
+texture = ExtResource("12_tykq4")
 
-[node name="shelf2" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(754, 160)
+[node name="back_wall_corner2" type="Sprite2D" parent="background/area1_bg/building/back_wall_corner"]
+position = Vector2(-272, -302)
+texture = ExtResource("12_tykq4")
 
-[node name="shelf3" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(818, 160)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area1_bg/building/back_wall_corner"]
+position = Vector2(-308.75, -156)
+shape = SubResource("RectangleShape2D_4a3tq")
 
-[node name="shelf4" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(882, 160)
-
-[node name="shelf8" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1420, 93)
-
-[node name="shelf15" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1484, 93)
-
-[node name="shelf16" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1548, 93)
-
-[node name="shelf5" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(998, 241)
-
-[node name="shelf6" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1104, 196)
-
-[node name="shelf7" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1200, 144)
-
-[node name="shelf9" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(2669, 597)
-
-[node name="shelf10" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(2733, 597)
-
-[node name="shelf11" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(2797, 597)
-
-[node name="shelf12" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(2920, 745)
-
-[node name="shelf13" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3043, 693)
-
-[node name="shelf14" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3107, 693)
-
-[node name="shelf17" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3213, 644)
-
-[node name="shelf19" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3002, 601)
-
-[node name="shelf18" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3065, 601)
-
-[node name="shelf20" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3061, 488)
-
-[node name="shelf21" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3218, 536)
-
-[node name="shelf22" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3218, 536)
-
-[node name="house_siding" type="Sprite2D" parent="area1_bg/building"]
+[node name="house_siding" type="Sprite2D" parent="background/area1_bg/building"]
 position = Vector2(4033, 212)
 texture = ExtResource("8_xttvp")
 
-[node name="slide_edge" parent="area1_bg/building" instance=ExtResource("14_pytdj")]
+[node name="slide_edge" parent="background/area1_bg/building" instance=ExtResource("14_pytdj")]
 position = Vector2(1403, -5.99995)
 rotation = 0.462512
 scale = Vector2(10.8, 4)
 
-[node name="furniture" type="Node2D" parent="area1_bg"]
+[node name="furniture" type="Node2D" parent="background/area1_bg"]
 position = Vector2(-114, 0)
 
-[node name="dresser" parent="area1_bg/furniture" instance=ExtResource("4_nkocn")]
+[node name="dresser" parent="background/area1_bg/furniture" instance=ExtResource("4_nkocn")]
 position = Vector2(176, 77)
 scale = Vector2(1.5, 1.25)
 
-[node name="Bed" parent="area1_bg/furniture" instance=ExtResource("5_ro3tp")]
+[node name="Bed" parent="background/area1_bg/furniture" instance=ExtResource("5_ro3tp")]
 position = Vector2(419, 65)
 
-[node name="picture" parent="area1_bg/furniture" instance=ExtResource("6_0p2ji")]
-position = Vector2(615, -25)
+[node name="picture" parent="background/area1_bg/furniture" instance=ExtResource("6_0p2ji")]
+position = Vector2(566, -98)
 rotation = -0.0589802
 
-[node name="hook2" parent="area1_bg/furniture" instance=ExtResource("7_fnp4g")]
-position = Vector2(993, -76)
+[node name="hook2" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+position = Vector2(470, -97)
 
-[node name="hook" parent="area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+[node name="hook" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
 position = Vector2(2527, 460)
 
-[node name="picture2" parent="area1_bg/furniture" instance=ExtResource("6_0p2ji")]
+[node name="picture2" parent="background/area1_bg/furniture" instance=ExtResource("6_0p2ji")]
 position = Vector2(1279, -61)
 
-[node name="picture3" parent="area1_bg/furniture" instance=ExtResource("6_0p2ji")]
+[node name="picture3" parent="background/area1_bg/furniture" instance=ExtResource("6_0p2ji")]
 position = Vector2(3687, 431)
 
-[node name="hook3" parent="area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+[node name="hook3" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
 position = Vector2(2865, 360)
 
-[node name="xmas_tree" parent="area1_bg" instance=ExtResource("10_8gr0d")]
+[node name="xmas_tree" parent="background/area1_bg/furniture" instance=ExtResource("10_8gr0d")]
 modulate = Color(0.155261, 0.422404, 0.066043, 1)
-position = Vector2(3305, 384)
+position = Vector2(3419, 384)
 
-[node name="ziplights" type="Node2D" parent="area1_bg"]
+[node name="platforms" type="Node2D" parent="background/area1_bg/furniture"]
+position = Vector2(-14, -152)
 
-[node name="zip0" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="window" parent="background/area1_bg/furniture/platforms" instance=ExtResource("2_x41i6")]
+position = Vector2(48, 118)
+
+[node name="shelf2" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(678, 149)
+
+[node name="shelf3" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(754, 54)
+
+[node name="shelf4" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(834, 179)
+
+[node name="shelf8" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1410, 81)
+
+[node name="shelf15" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1474, 81)
+
+[node name="shelf16" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1538, 81)
+
+[node name="shelf5" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(967, 242)
+
+[node name="shelf6" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1086, 198)
+
+[node name="shelf7" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(1200, 144)
+
+[node name="shelf9" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(2669, 597)
+
+[node name="shelf10" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(2733, 597)
+
+[node name="shelf11" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(2797, 597)
+
+[node name="shelf12" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(2920, 745)
+
+[node name="shelf13" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3043, 693)
+
+[node name="shelf14" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3107, 693)
+
+[node name="shelf17" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3213, 644)
+
+[node name="shelf19" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3002, 601)
+
+[node name="shelf18" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3065, 601)
+
+[node name="shelf20" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3061, 488)
+
+[node name="shelf21" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3218, 536)
+
+[node name="shelf22" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
+position = Vector2(3218, 536)
+
+[node name="ziplights" type="Node2D" parent="background/area1_bg"]
+
+[node name="zip0" parent="background/area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(3201, 434)
 destination = NodePath("../zip1")
 
-[node name="zip1" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="zip1" parent="background/area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(3313, 149)
 destination = NodePath("../zip2")
 
-[node name="zip2" parent="area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="zip2" parent="background/area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(3393, 330)
 destination = NodePath("../zip3")
 
-[node name="zip3" parent="area1_bg/ziplights" instance=ExtResource("10_5auit")]
+[node name="zip3" parent="background/area1_bg/ziplights" instance=ExtResource("10_5auit")]
 position = Vector2(3619, 593)
 
-[node name="area1_enemies" type="Node2D" parent="."]
+[node name="enemies_and_pickups" type="Node2D" parent="."]
 
-[node name="mouse_enemy" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+[node name="area1_enemies" type="Node2D" parent="enemies_and_pickups"]
+
+[node name="mouse_enemy" parent="enemies_and_pickups/area1_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(457, 133)
 
-[node name="mouse_enemy2" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
-position = Vector2(1353, -73)
+[node name="mouse_enemy6" parent="enemies_and_pickups/area1_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(1004, 132)
 
-[node name="mouse_enemy3" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy2" parent="enemies_and_pickups/area1_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(1354, -86)
+
+[node name="mouse_enemy3" parent="enemies_and_pickups/area1_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(2609, 432)
 
-[node name="mouse_enemy4" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy4" parent="enemies_and_pickups/area1_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(3001, 615)
 
-[node name="mouse_enemy5" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy5" parent="enemies_and_pickups/area1_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(3567, 629)
 
-[node name="area1_pickups" type="Node2D" parent="."]
+[node name="area1_pickups" type="Node2D" parent="enemies_and_pickups"]
 
-[node name="peppermint_candy" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(64, -1)
 
-[node name="peppermint_candy2" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy2" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(272, -45)
 
-[node name="peppermint_candy3" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(499, -65)
+[node name="peppermint_candy22" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(355, -106)
 
-[node name="peppermint_candy20" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(611, -36)
+[node name="peppermint_candy3" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(452, -129)
 
-[node name="peppermint_candy21" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(687, -34)
+[node name="peppermint_candy20" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(549, -35)
 
-[node name="peppermint_candy4" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(977, 2)
+[node name="peppermint_candy21" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(628, -135)
 
-[node name="peppermint_candy5" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy4" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(960, 10)
+
+[node name="peppermint_candy23" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(1072, -45)
+
+[node name="peppermint_candy24" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(1163, -104)
+
+[node name="peppermint_candy5" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(1556, -98)
 
-[node name="peppermint_candy6" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy6" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(1553, -4)
 
-[node name="peppermint_candy7" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy7" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(1553, 89)
 
-[node name="peppermint_candy8" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy25" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(2182, 394)
+
+[node name="peppermint_candy26" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(2102, 346)
+
+[node name="peppermint_candy27" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(2025, 303)
+
+[node name="peppermint_candy28" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(1943, 263)
+
+[node name="peppermint_candy8" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(2936, 292)
 
-[node name="peppermint_candy9" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy9" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3092, 338)
 
-[node name="peppermint_candy10" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy10" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(2264, 446)
 
-[node name="peppermint_candy11" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy11" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(2339, 428)
 
-[node name="peppermint_candy12" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy12" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3370, 222)
 
-[node name="peppermint_candy13" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy13" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3240, 254)
 
-[node name="peppermint_candy17" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy17" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3194, 604)
 
-[node name="peppermint_candy18" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy18" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3421, 603)
 
-[node name="peppermint_candy19" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy19" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(2790, 564)
 
-[node name="peppermint_candy14" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy14" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3574, 382)
 
-[node name="peppermint_candy15" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy15" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3672, 331)
 
-[node name="peppermint_candy16" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy16" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3772, 365)
 
-[node name="area2_pickups" type="Node2D" parent="."]
+[node name="area2_pickups" type="Node2D" parent="enemies_and_pickups"]
 
-[node name="peppermint_candy" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(4062, 527)
 
-[node name="peppermint_candy2" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy2" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(4304, 598)
 
-[node name="peppermint_candy3" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy3" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(4639, 585)
 
-[node name="peppermint_candy4" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy4" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(4829, 526)
 
-[node name="peppermint_candy26" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy26" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5168, 607)
 
-[node name="peppermint_candy27" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy27" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5394, 662)
 
-[node name="peppermint_candy28" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy28" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5995, 576)
 
-[node name="peppermint_candy29" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy29" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6062, 619)
 
-[node name="peppermint_candy30" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy30" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6161, 616)
 
-[node name="peppermint_candy31" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy31" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6249, 591)
 
-[node name="peppermint_candy32" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy32" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6401, 640)
 
-[node name="peppermint_candy5" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy5" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5061, 487)
 
-[node name="peppermint_candy6" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy6" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5070, 361)
 
-[node name="peppermint_candy7" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy7" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5249, 284)
 
-[node name="peppermint_candy8" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy8" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5377, 313)
 
-[node name="peppermint_candy9" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy9" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5516, 297)
 
-[node name="peppermint_candy10" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy10" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5649, 344)
 
-[node name="peppermint_candy11" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy11" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5786, 245)
 
-[node name="peppermint_candy12" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy12" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5893, 316)
 
-[node name="peppermint_candy13" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy13" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5834, 104)
 
-[node name="peppermint_candy14" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy14" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5789, 460)
 
-[node name="peppermint_candy15" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy15" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5883, 534)
 
-[node name="peppermint_candy16" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy16" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5783, 553)
 
-[node name="peppermint_candy17" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy17" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6381, 499)
 
-[node name="peppermint_candy19" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy19" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6678, 354)
 
-[node name="peppermint_candy20" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy20" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6986, 512)
 
-[node name="peppermint_candy21" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy21" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(7060, 609)
 
-[node name="peppermint_candy22" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy22" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6818, 304)
 
-[node name="peppermint_candy23" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy23" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6917, 161)
 
-[node name="peppermint_candy24" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy24" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6969, 305)
 
-[node name="peppermint_candy25" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy25" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6814, 465)
 
-[node name="peppermint_candy18" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy18" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6518, 434)
 
-[node name="peppermint_candy33" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+[node name="peppermint_candy33" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(7565, 660)
 
-[node name="peppermint_candy34" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7624, 690)
+[node name="peppermint_candy34" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8461, 903)
 
-[node name="peppermint_candy35" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7681, 721)
+[node name="peppermint_candy35" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7680, 725)
 
-[node name="peppermint_candy36" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7740, 753)
+[node name="peppermint_candy36" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8215, 908)
 
-[node name="peppermint_candy37" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7799, 783)
+[node name="peppermint_candy37" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7804, 795)
 
-[node name="peppermint_candy38" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7856, 814)
+[node name="peppermint_candy38" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8076, 907)
 
-[node name="peppermint_candy43" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8592, 916)
+[node name="peppermint_candy43" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8569, 933)
 
-[node name="peppermint_candy44" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8659, 949)
+[node name="peppermint_candy44" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(10128, 1109)
 
-[node name="peppermint_candy45" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8721, 980)
+[node name="peppermint_candy45" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8673, 981)
 
-[node name="peppermint_candy46" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8776, 1009)
+[node name="peppermint_candy46" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8765, 1033)
 
-[node name="peppermint_candy47" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8839, 1038)
+[node name="peppermint_candy47" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(9519, 1107)
 
-[node name="peppermint_candy48" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8910, 1073)
+[node name="peppermint_candy48" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8877, 1088)
 
-[node name="peppermint_candy39" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7928, 770)
+[node name="peppermint_candy49" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(9560, 923)
 
-[node name="peppermint_candy40" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8004, 751)
+[node name="peppermint_candy50" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(9964, 806)
 
-[node name="peppermint_candy41" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8050, 791)
+[node name="peppermint_candy39" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7914, 856)
 
-[node name="peppermint_candy42" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8087, 847)
+[node name="peppermint_candy40" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(9912, 998)
 
-[node name="area2_enemies" type="Node2D" parent="."]
+[node name="peppermint_candy41" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8342, 905)
 
-[node name="mouse_enemy" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+[node name="peppermint_candy42" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(9367, 876)
+
+[node name="area2_enemies" type="Node2D" parent="enemies_and_pickups"]
+
+[node name="mouse_enemy" parent="enemies_and_pickups/area2_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(4196, 676)
 
-[node name="mouse_enemy2" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy2" parent="enemies_and_pickups/area2_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(4499, 675)
 
-[node name="mouse_enemy3" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy3" parent="enemies_and_pickups/area2_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(4543, 602)
 
-[node name="mouse_enemy4" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy4" parent="enemies_and_pickups/area2_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(4756, 677)
 
-[node name="mouse_enemy5" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy5" parent="enemies_and_pickups/area2_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(5456, 673)
 
-[node name="mouse_enemy6" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy6" parent="enemies_and_pickups/area2_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(6228, 675)
 
-[node name="mouse_enemy7" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+[node name="mouse_enemy7" parent="enemies_and_pickups/area2_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(7192, 675)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
 position = Vector2(-94, -3)
 
-[node name="area1_fg" type="Node2D" parent="."]
+[node name="foreground" type="Node2D" parent="."]
 
-[node name="door" type="Sprite2D" parent="area1_fg"]
+[node name="area1_fg" type="Node2D" parent="foreground"]
+
+[node name="door" type="Sprite2D" parent="foreground/area1_fg"]
 visible = false
 position = Vector2(592, 0)
 texture = ExtResource("4_wq3dm")
 
-[node name="stairs" type="Node2D" parent="area1_fg"]
+[node name="stairs" type="Node2D" parent="foreground/area1_fg"]
 position = Vector2(1405, 120)
 
-[node name="top_post" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="top_post" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 texture = ExtResource("6_86t4m")
 
-[node name="rail0" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail0" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(35, 24)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail1" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail1" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(99, 56)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail2" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail2" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(163, 88)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail3" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail3" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(227, 120)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail4" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail4" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(291, 152)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail5" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail5" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(355, 184)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail6" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail6" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(419, 216)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail7" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail7" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(483, 248)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail8" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail8" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(547, 280)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail9" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail9" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(611, 312)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail10" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail10" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(675, 344)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail11" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail11" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(739, 376)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail12" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail12" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(803, 408)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail13" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail13" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(867, 440)
 texture = ExtResource("7_iaj3p")
 
-[node name="rail14" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="rail14" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(931, 472)
 texture = ExtResource("7_iaj3p")
 
-[node name="bottom_post" type="Sprite2D" parent="area1_fg/stairs"]
+[node name="bottom_post" type="Sprite2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(967, 499)
 scale = Vector2(1, 1.20001)
 texture = ExtResource("6_86t4m")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="area1_fg/stairs"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="foreground/area1_fg/stairs"]
 position = Vector2(389, 255)
 rotation = 0.453786
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_fg/stairs/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/area1_fg/stairs/StaticBody2D2"]
 position = Vector2(135.299, -11.9508)
 scale = Vector2(23.56, 1)
 shape = SubResource("RectangleShape2D_od31i")
 
-[node name="house_siding2" type="Sprite2D" parent="area1_fg"]
+[node name="house_siding2" type="Sprite2D" parent="foreground/area1_fg"]
 position = Vector2(3999, 292)
 texture = ExtResource("19_ht1fe")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="area1_fg/house_siding2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="foreground/area1_fg/house_siding2"]
 position = Vector2(19, 344)
 rotation = 0.959931
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_fg/house_siding2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/area1_fg/house_siding2/StaticBody2D"]
 position = Vector2(-47.5857, 2.82007)
 shape = SubResource("RectangleShape2D_5665x")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="area1_fg/house_siding2"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="foreground/area1_fg/house_siding2"]
 position = Vector2(63, 374)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area1_fg/house_siding2/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/area1_fg/house_siding2/StaticBody2D2"]
 position = Vector2(-0.5, -35)
 shape = SubResource("RectangleShape2D_fbq5i")
 
-[node name="stone1" parent="area1_fg" instance=ExtResource("1_0vkjw")]
+[node name="stone1" parent="foreground/area1_fg" instance=ExtResource("1_0vkjw")]
 position = Vector2(3931, 712)
 
-[node name="area2_fg" type="Node2D" parent="."]
+[node name="area2_fg" type="Node2D" parent="foreground"]
 
-[node name="ziplatches" type="Node2D" parent="area2_fg"]
+[node name="ziplatches" type="Node2D" parent="foreground/area2_fg"]
 
-[node name="latch_post" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(4665, 529)
 destination = NodePath("../latch_post2")
 
-[node name="latch_post2" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post2" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(4991, 529)
 destination = NodePath("../latch_post3")
 
-[node name="latch_post3" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post3" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(5116, 447)
 destination = NodePath("../latch_post4")
 
-[node name="latch_post4" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post4" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(5040, 286)
 destination = NodePath("../latch_post5")
 
-[node name="latch_post5" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post5" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(5832, 160)
 destination = NodePath("../latch_post6")
 
-[node name="latch_post6" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post6" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(5737, 331)
 destination = NodePath("../latch_post7")
 
-[node name="latch_post7" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post7" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(5909, 382)
 destination = NodePath("../latch_post8")
 
-[node name="latch_post8" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post8" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(5734, 506)
 destination = NodePath("../latch_post9")
 
-[node name="latch_post9" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post9" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(5933, 533)
 destination = NodePath("../latch_post10")
 
-[node name="latch_post10" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post10" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(5990, 576)
 rotation = 0.04495
 destination = NodePath("../latch_post11")
 
-[node name="latch_post11" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post11" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6060, 620)
 rotation = 0.04495
 destination = NodePath("../latch_post12")
 
-[node name="latch_post12" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post12" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6156, 614)
 rotation = 0.04495
 destination = NodePath("../latch_post13")
 
-[node name="latch_post13" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post13" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6250, 594)
 rotation = 0.04495
 destination = NodePath("../latch_post14")
 
-[node name="latch_post14" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post14" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6328, 545)
 rotation = 0.04495
 destination = NodePath("../latch_post15")
 
-[node name="latch_post15" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post15" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6442, 473)
 rotation = 0.04495
 destination = NodePath("../latch_post16")
 
-[node name="latch_post16" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post16" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6591, 402)
 rotation = 0.04495
 destination = NodePath("../latch_post17")
 
-[node name="latch_post17" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post17" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6814, 316)
 rotation = 0.04495
 destination = NodePath("../latch_post18")
 
-[node name="latch_post18" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post18" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6916, 155)
 rotation = 0.04495
 destination = NodePath("../latch_post19")
 
-[node name="latch_post19" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post19" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6970, 315)
 rotation = 0.04495
 destination = NodePath("../latch_post20")
 
-[node name="latch_post20" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+[node name="latch_post20" parent="foreground/area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(6812, 468)
 rotation = 0.04495
 destination = NodePath("../latch_post21")
 
-[node name="latch_post21" parent="area2_fg/ziplatches" instance=ExtResource("10_5auit")]
+[node name="latch_post21" parent="foreground/area2_fg/ziplatches" instance=ExtResource("10_5auit")]
 position = Vector2(6986, 514)
 rotation = 0.04495
 
-[node name="stone7" parent="area2_fg" instance=ExtResource("1_0vkjw")]
+[node name="stone7" parent="foreground/area2_fg" instance=ExtResource("1_0vkjw")]
 position = Vector2(4043, 702)
 rotation = 0.0982249
 scale = Vector2(0.6, 0.607)
 
-[node name="stone9" parent="area2_fg" instance=ExtResource("1_0vkjw")]
+[node name="stone9" parent="foreground/area2_fg" instance=ExtResource("1_0vkjw")]
 position = Vector2(5303, 701)
 rotation = -0.13176
 scale = Vector2(-1, 1)
+
+[node name="stone14" parent="foreground/area2_fg" instance=ExtResource("1_0vkjw")]
+position = Vector2(9677, 1153)
+scale = Vector2(1.31569, 1.31569)

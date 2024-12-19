@@ -23,7 +23,7 @@ texture = ExtResource("2_pcq8f")
 shape = SubResource("CapsuleShape2D_7mwuv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -35)
+offset = Vector2(0, -25)
 zoom = Vector2(3, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

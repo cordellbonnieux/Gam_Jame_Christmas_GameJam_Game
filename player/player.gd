@@ -63,11 +63,11 @@ func _physics_process(delta) -> void:
 					fsm.current_state.exit("falling")
 					
 	elif fsm.current_state.name == "hooking":
-		if abs((current_hook.global_position + Vector2(0, 32)).y - global_position.y) > 1 && abs(current_hook.global_position.x - global_position.x) > 1:
-			#BUG sometimes causes wierd movement
-			velocity = lerp(velocity, (current_hook.global_position + Vector2(0, 32) - global_position).normalized() * zip_speed, 1)
-		else:
-			velocity = Vector2.ZERO
+		#if abs((current_hook.global_position + Vector2(0, 32)).y - global_position.y) > 1 && abs(current_hook.global_position.x - global_position.x) > 1:
+		#	#BUG sometimes causes wierd movement
+		#	velocity = lerp(velocity, (current_hook.global_position + Vector2(0, 32) - global_position).normalized() * zip_speed, 1)
+		#else:
+		velocity = Vector2.ZERO
 	else:
 		velocity.y += gravity * delta
 		var dir = Input.get_axis("left", "right")
@@ -112,6 +112,8 @@ func _input(event: InputEvent) -> void:
 					current_hook = area
 					area.hook()
 					fsm.current_state.exit("hooking")
+					#test
+					global_position = area.global_position + Vector2(0,32)
 				return
 				
 	elif event.is_action_pressed("attack"):
