@@ -10,21 +10,39 @@ var friction: float = 0.1
 var acceleration: float = 0.25
 var current_hook: Area2D = null
 var current_zips: Array[Vector2] = []
+var invulnerable: bool = false
+#var incoming_damage_direction: Vector2i
 @onready var fsm: StateMachine = $StateMachine
 @onready var detection_area: Area2D = $detection_area
 @onready var attack_ray: RayCast2D =  $RayCast2D
 @onready var attack_cooldown_timer: Timer = $attack_cooldown_timer
-@onready var knock_back_timer: Timer = $knock_back_timer
+#@onready var knock_back_timer: Timer = $knock_back_timer
 @onready var invulnerability_timer: Timer = $invulnerability_timer
+@onready var ui: Dictionary = {
+	"sugar": $CanvasLayer/bottom_left/sugar_level,
+	"health": $CanvasLayer/top_left/Label,
+	"gifts": $CanvasLayer/top_left/Label2,
+	"time": $CanvasLayer/top_right/Label2
+}
+
+func _ready() -> void:
+	ui.sugar.value = sugar_level
+	ui.health.text = str(health)
+
+func _process(_delta: float) -> void:
+	var step: float = 0.03
+	if sugar_level > step:
+		sugar_level -= step
+		ui.sugar.value = sugar_level
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if fsm.current_state.name == "dead":
 		return
 		
-	if fsm.current_state.name == "knock-back":
-		velocity.x #TODO
-		velocity.y
+	#if fsm.current_state.name == "knock-back":
+	#	velocity = -zip_speed * incoming_damage_direction
+	#	#TODO add blinking effect
 		
 	elif Input.is_action_just_pressed("up") && fsm.current_state.name != "falling":
 		velocity.y = jump_speed
@@ -104,13 +122,19 @@ func _input(event: InputEvent) -> void:
 
 
 func damage(amount: int) -> void:
-	if fsm.current_state.name != "knock-back" && fsm.current_state.name != "invulnerable":
+	if !invulnerable:
+		#incoming_damage_direction = (dmg_abs_pos - global_position).normalized()
 		health -= amount
 		if health <= 0:
 			fsm.current_state.exit("dead")
+			ui.health.text = "You're Dead"
 		else:
-			fsm.current_state.exit("knock-back")
-			knock_back_timer.start()
+			#fsm.current_state.exit("knock-back")
+			#knock_back_timer.start()
+			ui.health.text = str(health)
+			invulnerability_timer.start()
+			invulnerable = true
+			modulate = Color(255,0,0,255)
 
 
 func zip(area: Area2D, zipping: bool = true) -> void:
@@ -121,12 +145,19 @@ func zip(area: Area2D, zipping: bool = true) -> void:
 	else:
 		fsm.current_state.exit("sliding")
 
+
 func add_sugar(amt: float) -> void:
 	if amt > 0:
 		sugar_level += amt
 		if sugar_level > 100:
 			sugar_level = 100
-		#TODO broadcast to ui
+		ui.sugar.value = sugar_level
 
-func knock_back_timer_finished() -> void:
-	fsm.current_state.exit("idle")
+
+#func knock_back_timer_finished() -> void:
+#	fsm.current_state.exit("idle")
+
+
+func _on_invulnerability_timer_timeout() -> void:
+	invulnerable = false
+	modulate = Color(255,255,255,255)

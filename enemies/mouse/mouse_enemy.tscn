@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr8rwhihce8q1"]
+[gd_scene load_steps=8 format=3 uid="uid://dr8rwhihce8q1"]
 
 [ext_resource type="Script" path="res://enemies/mouse/enemy_mouse.gd" id="1_inbm7"]
 [ext_resource type="Texture2D" uid="uid://c5sscus21q3gu" path="res://enemies/mouse/mouse_sprites.png" id="2_1i71f"]
@@ -28,6 +28,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww0kh"]
+size = Vector2(27, 18)
+
 [node name="mouse_enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_inbm7")
 
@@ -50,4 +53,12 @@ scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_6w14n")
 frame_progress = 0.757648
 
+[node name="hit_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ww0kh")
+debug_color = Color(1, 0, 0, 0.419608)
+
 [connection signal="timeout" from="attack_build_up" to="." method="_on_attack_build_up_timeout"]
+[connection signal="body_entered" from="hit_area" to="." method="_on_hit_area_body_entered"]

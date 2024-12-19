@@ -38,7 +38,7 @@ wait_time = 0.25
 one_shot = true
 
 [node name="invulnerability_timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 one_shot = true
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -62,9 +62,6 @@ script = ExtResource("4_07ssj")
 script = ExtResource("4_07ssj")
 
 [node name="falling" type="Node" parent="StateMachine"]
-script = ExtResource("4_07ssj")
-
-[node name="invulnerable" type="Node" parent="StateMachine"]
 script = ExtResource("4_07ssj")
 
 [node name="dead" type="Node" parent="StateMachine"]
@@ -139,3 +136,4 @@ text = "time"
 horizontal_alignment = 2
 
 [connection signal="timeout" from="knock_back_timer" to="." method="knock_back_timer_finished"]
+[connection signal="timeout" from="invulnerability_timer" to="." method="_on_invulnerability_timer_timeout"]
