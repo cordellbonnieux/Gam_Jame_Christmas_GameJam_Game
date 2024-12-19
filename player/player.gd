@@ -33,7 +33,7 @@ func _physics_process(delta):
 			current_hook = null
 		fsm.current_state.exit("falling")
 		
-	elif fsm.current_state.name == "zipping":
+	elif fsm.current_state.name == "zipping" || fsm.current_state.name == "sliding":
 		if abs(current_zips[0] - global_position).x > 2 && abs(current_zips[0] - global_position).y > 2:
 			velocity = lerp(velocity, (current_zips[0] - global_position).normalized() * zip_speed, 1)
 		else:
@@ -80,7 +80,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("latch"):
 		for area in detection_area.get_overlapping_areas():
 			if area.is_in_group("zip"):
-				if area.destination:
+				if area.destination && fsm.current_state.name != "zipping":
 					zip(area)
 					return
 			elif area.is_in_group("hook"):
@@ -113,10 +113,13 @@ func damage(amount: int) -> void:
 			knock_back_timer.start()
 
 
-func zip(area: Area2D) -> void:
+func zip(area: Area2D, zipping: bool = true) -> void:
 	current_zips = [area.global_position]
 	current_zips.append_array(area.get_destination_global_coords())
-	fsm.current_state.exit("zipping")
+	if zipping:
+		fsm.current_state.exit("zipping")
+	else:
+		fsm.current_state.exit("sliding")
 
 func add_sugar(amt: float) -> void:
 	if amt > 0:

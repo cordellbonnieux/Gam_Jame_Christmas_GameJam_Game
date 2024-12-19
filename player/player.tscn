@@ -73,4 +73,7 @@ script = ExtResource("4_07ssj")
 [node name="knock-back" type="Node" parent="StateMachine"]
 script = ExtResource("4_07ssj")
 
+[node name="sliding" type="Node" parent="StateMachine"]
+script = ExtResource("4_07ssj")
+
 [connection signal="timeout" from="knock_back_timer" to="." method="knock_back_timer_finished"]
