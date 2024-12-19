@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=36 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
 [ext_resource type="PackedScene" uid="uid://cgljdfv6woyh7" path="res://surfaces/fir_tree/fir_tree.tscn" id="1_k8xc5"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="10_5auit"]
 [ext_resource type="PackedScene" uid="uid://b4fp3kra56qr4" path="res://surfaces/xmas_tree/xmas_tree.tscn" id="10_8gr0d"]
 [ext_resource type="PackedScene" uid="uid://dr8rwhihce8q1" path="res://enemies/mouse/mouse_enemy.tscn" id="17_uyd7v"]
+[ext_resource type="PackedScene" uid="uid://dkfclo2yc0hg8" path="res://interactables/perppermint/peppermint_candy.tscn" id="18_m5lbo"]
 [ext_resource type="Texture2D" uid="uid://e04e1mwfb00k" path="res://tiles/foreground/blue_house_siding_right_corner_front.png" id="19_ht1fe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukmb7"]
@@ -422,6 +423,56 @@ position = Vector2(3001, 615)
 
 [node name="mouse_enemy5" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(3567, 629)
+
+[node name="area1_pickups" type="Node2D" parent="."]
+
+[node name="peppermint_candy" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(64, -1)
+
+[node name="peppermint_candy2" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(272, -45)
+
+[node name="peppermint_candy3" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(499, -65)
+
+[node name="peppermint_candy4" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(977, 2)
+
+[node name="peppermint_candy5" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(1556, -98)
+
+[node name="peppermint_candy6" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(1553, -4)
+
+[node name="peppermint_candy7" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(1553, 89)
+
+[node name="peppermint_candy8" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(2936, 292)
+
+[node name="peppermint_candy9" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(3092, 338)
+
+[node name="peppermint_candy10" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(2264, 446)
+
+[node name="peppermint_candy11" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(2339, 428)
+
+[node name="peppermint_candy12" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(3370, 222)
+
+[node name="peppermint_candy13" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(3240, 254)
+
+[node name="peppermint_candy14" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(3574, 382)
+
+[node name="peppermint_candy15" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(3672, 331)
+
+[node name="peppermint_candy16" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(3772, 365)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
 position = Vector2(-95, 0)

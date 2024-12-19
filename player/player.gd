@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var health: int = 3
-var sugar_level: int = 0
+var sugar_level: float = 0.0
 var speed: int = 100
 var jump_speed: int = -200
 var zip_speed: int = 400
@@ -118,6 +118,12 @@ func zip(area: Area2D) -> void:
 	current_zips.append_array(area.get_destination_global_coords())
 	fsm.current_state.exit("zipping")
 
+func add_sugar(amt: float) -> void:
+	if amt > 0:
+		sugar_level += amt
+		if sugar_level > 100:
+			sugar_level = 100
+		#TODO broadcast to ui
 
 func knock_back_timer_finished() -> void:
 	fsm.current_state.exit("idle")
