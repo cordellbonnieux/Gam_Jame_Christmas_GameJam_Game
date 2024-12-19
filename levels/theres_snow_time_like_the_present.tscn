@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=46 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
@@ -79,7 +79,13 @@ sources/2 = SubResource("TileSetAtlasSource_0qfci")
 size = Vector2(3504, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0x8v"]
-size = Vector2(463.446, 20.1243)
+size = Vector2(38, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4u8ru"]
+radius = 26.1725
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbla0"]
+size = Vector2(3097, 11)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lijra"]
 texture = ExtResource("1_wuagu")
@@ -526,19 +532,40 @@ position = Vector2(-41, 64)
 position = Vector2(1650, 0)
 shape = SubResource("RectangleShape2D_pwesy")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
-position = Vector2(3365, 68)
+[node name="slide_edge" parent="area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
+position = Vector2(3357, 61.0002)
 rotation = 0.523599
+scale = Vector2(5, 5)
+
+[node name="slide_edge2" parent="area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
+position = Vector2(3824, 311)
+scale = Vector2(5, 5)
+
+[node name="slide_edge3" parent="area2_bg/TileMapLayer" instance=ExtResource("14_pytdj")]
+position = Vector2(4340, 319)
+rotation = 0.453786
+scale = Vector2(4.5, 4.5)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
+position = Vector2(3813, 294)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D2"]
-position = Vector2(221.259, -0.0620117)
+position = Vector2(-8, 16.4999)
 shape = SubResource("RectangleShape2D_j0x8v")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
-position = Vector2(4055, 305)
+position = Vector2(4337, 311)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D3"]
+position = Vector2(-14, 19)
+shape = SubResource("CircleShape2D_4u8ru")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
-position = Vector2(4503, 415)
+position = Vector2(4940, 515)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D4"]
+position = Vector2(1349.5, 0.5)
+shape = SubResource("RectangleShape2D_jbla0")
 
 [node name="stone3" parent="area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(4370, 651)
@@ -563,9 +590,7 @@ position = Vector2(5159, 639)
 rotation = -0.0180547
 
 [node name="stone7" parent="area2_bg" instance=ExtResource("1_0vkjw")]
-position = Vector2(4963, 684)
-rotation = -0.140676
-scale = Vector2(0.7, 0.7)
+position = Vector2(9113, 1096)
 
 [node name="stone9" parent="area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(6374, 682)
@@ -981,6 +1006,54 @@ position = Vector2(6814, 465)
 [node name="peppermint_candy18" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6518, 434)
 
+[node name="peppermint_candy33" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7565, 660)
+
+[node name="peppermint_candy34" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7624, 690)
+
+[node name="peppermint_candy35" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7681, 721)
+
+[node name="peppermint_candy36" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7740, 753)
+
+[node name="peppermint_candy37" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7799, 783)
+
+[node name="peppermint_candy38" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7856, 814)
+
+[node name="peppermint_candy43" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8592, 916)
+
+[node name="peppermint_candy44" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8659, 949)
+
+[node name="peppermint_candy45" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8721, 980)
+
+[node name="peppermint_candy46" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8776, 1009)
+
+[node name="peppermint_candy47" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8839, 1038)
+
+[node name="peppermint_candy48" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8910, 1073)
+
+[node name="peppermint_candy39" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7928, 770)
+
+[node name="peppermint_candy40" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8004, 751)
+
+[node name="peppermint_candy41" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8050, 791)
+
+[node name="peppermint_candy42" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(8087, 847)
+
 [node name="area2_enemies" type="Node2D" parent="."]
 
 [node name="mouse_enemy" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
@@ -1005,7 +1078,7 @@ position = Vector2(6228, 675)
 position = Vector2(7192, 675)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(1430, -116)
+position = Vector2(-94, -3)
 
 [node name="area1_fg" type="Node2D" parent="."]
 
