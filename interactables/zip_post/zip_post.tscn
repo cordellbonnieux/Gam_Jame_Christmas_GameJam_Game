@@ -3,16 +3,17 @@
 [ext_resource type="Script" path="res://interactables/zip_post/zip_post.gd" id="1_egwvv"]
 [ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="2_8jqix"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jknco"]
-radius = 128.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_her3o"]
+size = Vector2(64, 64)
 
 [node name="zip_post" type="Area2D" groups=["zip"]]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_egwvv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_8jqix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_jknco")
+shape = SubResource("RectangleShape2D_her3o")
