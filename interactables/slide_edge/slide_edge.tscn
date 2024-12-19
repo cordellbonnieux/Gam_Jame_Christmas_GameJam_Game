@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnwnmo4oklsjr"]
+[gd_scene load_steps=6 format=3 uid="uid://dnwnmo4oklsjr"]
 
 [ext_resource type="Script" path="res://interactables/slide_edge/slide_edge.gd" id="1_bdy0u"]
 [ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="2_ys6my"]
@@ -9,6 +9,9 @@ b = Vector2(100, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7yt"]
 size = Vector2(100, 4)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7xcq"]
+size = Vector2(100, 8)
+
 [node name="slide_edge" type="Node2D"]
 script = ExtResource("1_bdy0u")
 
@@ -17,14 +20,23 @@ script = ExtResource("1_bdy0u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_5ymjo")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="slide_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(50, -4)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slide_area"]
+position = Vector2(50, -7)
 shape = SubResource("RectangleShape2D_mm7yt")
-debug_color = Color(0.988235, 0, 0, 0.419608)
+debug_color = Color(0.988235, 0, 1, 0.392157)
 
 [node name="zip_post" parent="." instance=ExtResource("2_ys6my")]
 position = Vector2(100, -6)
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="hide_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hide_area"]
+position = Vector2(50, 6)
+shape = SubResource("RectangleShape2D_k7xcq")
+debug_color = Color(1, 0, 0, 0.392157)
+
+[connection signal="body_entered" from="slide_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="hide_area" to="." method="_on_hide_area_body_entered"]
+[connection signal="body_exited" from="hide_area" to="." method="_on_hide_area_body_exited"]
