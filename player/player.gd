@@ -95,7 +95,7 @@ func _input(event: InputEvent) -> void:
 	if fsm.current_state.name == "dead":
 		return
 		
-	if event.is_action_pressed("latch"):
+	if event.is_action_pressed("cane"):
 		for area in detection_area.get_overlapping_areas():
 			if area.is_in_group("zip"):
 				if area.destination && fsm.current_state.name != "zipping":
@@ -115,12 +115,15 @@ func _input(event: InputEvent) -> void:
 					#test
 					global_position = area.global_position + Vector2(0,32)
 				return
-				
-	elif event.is_action_pressed("attack"):
-		# NOTE notice no attack state, this is intentional, don't add it!
 		if attack_cooldown_timer.is_stopped() && attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
 			attack_ray.get_collider().damage(1)
 			attack_cooldown_timer.start()
+				
+	#elif event.is_action_pressed("attack"):
+	#	# NOTE notice no attack state, this is intentional, don't add it!
+	#	if attack_cooldown_timer.is_stopped() && attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
+	#		attack_ray.get_collider().damage(1)
+	#		attack_cooldown_timer.start()
 
 
 func damage(amount: int) -> void:
