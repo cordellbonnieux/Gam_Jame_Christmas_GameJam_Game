@@ -72,13 +72,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2bk00")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b2b27")
 }],
-"loop": true,
+"loop": false,
 "name": &"attacking",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -151,7 +148,7 @@ script = ExtResource("1_kxvr3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8nj11")
-animation = &"running"
+animation = &"attacking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7mwuv")
@@ -161,7 +158,7 @@ offset = Vector2(0, -25)
 zoom = Vector2(3, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(48, 6)
+target_position = Vector2(42, 6)
 
 [node name="attack_cooldown_timer" type="Timer" parent="."]
 wait_time = 0.25
@@ -269,5 +266,12 @@ layout_mode = 2
 text = "time"
 horizontal_alignment = 2
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="knock_back_timer" to="." method="knock_back_timer_finished"]
 [connection signal="timeout" from="invulnerability_timer" to="." method="_on_invulnerability_timer_timeout"]
+[connection signal="state_entered" from="StateMachine/idle" to="." method="_on_idle_state_entered"]
+[connection signal="state_entered" from="StateMachine/running" to="." method="_on_running_state_entered"]
+[connection signal="state_entered" from="StateMachine/hooking" to="." method="_on_hooking_state_entered"]
+[connection signal="state_entered" from="StateMachine/zipping" to="." method="_on_zipping_state_entered"]
+[connection signal="state_entered" from="StateMachine/falling" to="." method="_on_falling_state_entered"]
+[connection signal="state_entered" from="StateMachine/sliding" to="." method="_on_sliding_state_entered"]

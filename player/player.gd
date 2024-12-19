@@ -12,6 +12,7 @@ var current_hook: Area2D = null
 var current_zips: Array[Vector2] = []
 var invulnerable: bool = false
 #var incoming_damage_direction: Vector2i
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var fsm: StateMachine = $StateMachine
 @onready var detection_area: Area2D = $detection_area
 @onready var attack_ray: RayCast2D =  $RayCast2D
@@ -76,6 +77,7 @@ func _physics_process(delta) -> void:
 			velocity.x = lerp(velocity.x, dir * (speed + sugar_level), acceleration)
 			if (dir < 0 && attack_ray.target_position.x > 0) || (dir > 0 && attack_ray.target_position.x < 0):
 				attack_ray.target_position.x *= -1
+				anim.scale.x *= -1
 			if is_on_floor():
 				if fsm.current_state.name != "running":
 					fsm.current_state.exit("running")
@@ -115,9 +117,11 @@ func _input(event: InputEvent) -> void:
 					#test
 					global_position = area.global_position + Vector2(0,32)
 				return
-		if attack_cooldown_timer.is_stopped() && attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
-			attack_ray.get_collider().damage(1)
+		if attack_cooldown_timer.is_stopped():
+			anim.play("attacking")
 			attack_cooldown_timer.start()
+			if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
+				attack_ray.get_collider().damage(1)
 				
 	#elif event.is_action_pressed("attack"):
 	#	# NOTE notice no attack state, this is intentional, don't add it!
@@ -166,3 +170,34 @@ func add_sugar(amt: float) -> void:
 func _on_invulnerability_timer_timeout() -> void:
 	invulnerable = false
 	modulate = Color(255,255,255,255)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if anim.animation == "attacking":
+		anim.play("idle")
+
+
+func _on_idle_state_entered() -> void:
+	if anim:
+		anim.play("idle")
+
+
+func _on_running_state_entered() -> void:
+	if anim.animation != "attacking":
+		anim.play("running")
+
+
+func _on_hooking_state_entered() -> void:
+	anim.play("hooking")
+
+
+func _on_zipping_state_entered() -> void:
+	anim.play("hooking")
+
+
+func _on_falling_state_entered() -> void:
+	anim.play("falling")
+
+
+func _on_sliding_state_entered() -> void:
+	anim.play("sliding")

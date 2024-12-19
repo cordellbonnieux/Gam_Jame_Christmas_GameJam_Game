@@ -29,7 +29,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww0kh"]
-size = Vector2(27, 18)
+size = Vector2(24, 15)
 
 [node name="mouse_enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_inbm7")
@@ -53,12 +53,17 @@ scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_6w14n")
 frame_progress = 0.757648
 
+[node name="death_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [node name="hit_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area"]
-position = Vector2(0.5, 0)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ww0kh")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [connection signal="timeout" from="attack_build_up" to="." method="_on_attack_build_up_timeout"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
 [connection signal="body_entered" from="hit_area" to="." method="_on_hit_area_body_entered"]
