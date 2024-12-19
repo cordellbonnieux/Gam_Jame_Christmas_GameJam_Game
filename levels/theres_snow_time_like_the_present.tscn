@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=41 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
 [ext_resource type="PackedScene" uid="uid://cgljdfv6woyh7" path="res://surfaces/fir_tree/fir_tree.tscn" id="1_k8xc5"]
@@ -12,9 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://jygrnwqrbs5j" path="res://surfaces/bedroom_dresser/dresser.tscn" id="4_nkocn"]
 [ext_resource type="Texture2D" uid="uid://y0a081ottvve" path="res://tiles/foreground/door_96x304.png" id="4_wq3dm"]
 [ext_resource type="Texture2D" uid="uid://bma0eif63pjk" path="res://tiles/foreground/blue_carpet_160x112.png" id="4_x4ygh"]
+[ext_resource type="Texture2D" uid="uid://rkqnqyrx1x88" path="res://tiles/background/icy_lake_tiles.png" id="5_a4sa1"]
 [ext_resource type="PackedScene" uid="uid://toafyyebqskq" path="res://surfaces/bed/bed.tscn" id="5_ro3tp"]
 [ext_resource type="PackedScene" uid="uid://d0n0n43uyw3eb" path="res://surfaces/picture_in_frame/picture.tscn" id="6_0p2ji"]
 [ext_resource type="Texture2D" uid="uid://csbfakp0ueqa8" path="res://tiles/foreground/stair_post.png" id="6_86t4m"]
+[ext_resource type="Texture2D" uid="uid://b04oef3cx26eh" path="res://tiles/background/snow_ground_ramp.png" id="6_u0uo0"]
 [ext_resource type="PackedScene" uid="uid://cebshm4lu50vl" path="res://interactables/hook/hook.tscn" id="7_fnp4g"]
 [ext_resource type="Texture2D" uid="uid://c7rexmxanap04" path="res://tiles/foreground/stair_railing.png" id="7_iaj3p"]
 [ext_resource type="Texture2D" uid="uid://ccjc23rql7rcu" path="res://tiles/foreground/blue_house_siding_right_corner_back.png" id="8_xttvp"]
@@ -31,12 +33,40 @@ texture_region_size = Vector2i(160, 112)
 1:0/0 = 0
 2:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5oqi8"]
+texture = ExtResource("5_a4sa1")
+texture_region_size = Vector2i(160, 112)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qfci"]
+texture = ExtResource("6_u0uo0")
+texture_region_size = Vector2i(160, 112)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_dijbh"]
 tile_size = Vector2i(160, 112)
 sources/0 = SubResource("TileSetAtlasSource_ukmb7")
+sources/1 = SubResource("TileSetAtlasSource_5oqi8")
+sources/2 = SubResource("TileSetAtlasSource_0qfci")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwesy"]
-size = Vector2(2223, 20)
+size = Vector2(3504, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0x8v"]
+size = Vector2(463.446, 20.1243)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lijra"]
 texture = ExtResource("1_wuagu")
@@ -77,6 +107,87 @@ size = Vector2(5, 168)
 [node name="TheresSnowTimeLikeThePresent" type="Node2D"]
 
 [node name="area2_bg" type="Node2D" parent="."]
+
+[node name="bg_forest" type="Node2D" parent="area2_bg"]
+
+[node name="fir_tree13" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(6245, 311)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree16" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4558, 221)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree18" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4915, 324)
+scale = Vector2(0.695, 0.695)
+
+[node name="fir_tree12" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5346, 155)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree20" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5914, 185)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree15" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4243, 295)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5266, 294)
+scale = Vector2(0.75, 0.75)
+
+[node name="fir_tree4" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5546, 329)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree7" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5810, 261)
+scale = Vector2(0.9, 0.9)
+
+[node name="fir_tree19" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5128, 341)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree8" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4412, 256)
+scale = Vector2(0.9, 0.9)
+
+[node name="fir_tree9" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4632, 321)
+scale = Vector2(0.6, 0.6)
+
+[node name="fir_tree10" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4807, 221)
+scale = Vector2(0.8, 0.8)
+
+[node name="fir_tree11" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5036, 298)
+scale = Vector2(0.7, 0.7)
+
+[node name="fir_tree6" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5663, 361)
+scale = Vector2(0.45, 0.45)
+
+[node name="fir_tree5" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(5433, 324)
+scale = Vector2(0.6, 0.6)
+
+[node name="fir_tree2" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(6045, 238)
+
+[node name="fir_tree3" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4727, 292)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree14" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4144, 216)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree17" parent="area2_bg/bg_forest" instance=ExtResource("1_k8xc5")]
+position = Vector2(4327, 348)
+scale = Vector2(0.5, 0.5)
 
 [node name="snowy_backdrop" type="Sprite2D" parent="area2_bg"]
 position = Vector2(4884, 530)
@@ -153,22 +264,29 @@ scale = Vector2(2, 2)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="area2_bg"]
 position = Vector2(4192, 632)
-tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAD+/wAAAAAAAAAAAAAAAAAAAAACAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAACAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAABAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAABAAAAAAAaAAAAAAACAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAABAAAAAAAdAAAAAAACAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAABAAAAAAAgAAAAAAACAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAABAAAAAAAjAAAAAAACAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAABAAAAAAAKAAAAAAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAABAAAAAAAXAAAAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAD+/wAAAAAAAAAAAAAAAAAAAAACAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAACAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAABAAAAAAAKAAAAAAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAANAAAAAQAAAAAAAAAOAAAAAQABAAAAAAAPAAAAAQACAAAAAAAQAAAAAQADAAAAAAARAAAAAQAEAAAAAAASAAAAAAABAAAAAAATAAAAAAACAAAAAAAUAAAAAgAAAAAAAAAVAAAAAgABAAAAAAAVAAEAAgABAAEAAAAWAAEAAgACAAEAAAAWAAAAAgACAAAAAAAWAAIAAgACAAIAAAAXAAEAAgADAAEAAAAXAAIAAgADAAIAAAAYAAIAAgAEAAIAAAAZAAIAAgAFAAIAAAAaAAIAAgAAAAAAAAAbAAIAAgABAAAAAAAbAAMAAgABAAEAAAAcAAIAAgACAAAAAAAcAAMAAgACAAEAAAAcAAQAAgACAAIAAAAdAAMAAgADAAEAAAAdAAQAAgADAAIAAAAeAAQAAgAEAAIAAAAfAAQAAgAFAAIAAAA=")
 tile_set = SubResource("TileSet_dijbh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
 position = Vector2(-41, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D"]
-position = Vector2(1009.5, 0)
+position = Vector2(1650, 0)
 shape = SubResource("RectangleShape2D_pwesy")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
-position = Vector2(3462, 64)
+position = Vector2(3365, 68)
+rotation = 0.523599
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D2"]
-position = Vector2(1009.5, 0)
-shape = SubResource("RectangleShape2D_pwesy")
+position = Vector2(221.259, -0.0620117)
+shape = SubResource("RectangleShape2D_j0x8v")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
+position = Vector2(4055, 305)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="area2_bg/TileMapLayer"]
+position = Vector2(4503, 415)
 
 [node name="stone3" parent="area2_bg" instance=ExtResource("1_0vkjw")]
 position = Vector2(4370, 651)
@@ -187,6 +305,25 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(4681, 650)
 rotation = 0.0859217
 scale = Vector2(0.7, 0.7)
+
+[node name="stone8" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(5159, 639)
+rotation = -0.0180547
+
+[node name="stone7" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(4963, 684)
+rotation = -0.140676
+scale = Vector2(0.7, 0.7)
+
+[node name="stone9" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(6374, 682)
+rotation = -0.304926
+scale = Vector2(0.7, 0.7)
+
+[node name="stone10" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(6990, 663)
+rotation = 0.0212521
+scale = Vector2(-0.7, 0.5)
 
 [node name="area1_bg" type="Node2D" parent="."]
 
@@ -435,6 +572,12 @@ position = Vector2(272, -45)
 [node name="peppermint_candy3" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(499, -65)
 
+[node name="peppermint_candy20" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(611, -36)
+
+[node name="peppermint_candy21" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(687, -34)
+
 [node name="peppermint_candy4" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(977, 2)
 
@@ -465,6 +608,15 @@ position = Vector2(3370, 222)
 [node name="peppermint_candy13" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3240, 254)
 
+[node name="peppermint_candy17" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(3194, 604)
+
+[node name="peppermint_candy18" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(3421, 603)
+
+[node name="peppermint_candy19" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(2790, 564)
+
 [node name="peppermint_candy14" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3574, 382)
 
@@ -473,6 +625,127 @@ position = Vector2(3672, 331)
 
 [node name="peppermint_candy16" parent="area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3772, 365)
+
+[node name="area2_pickups" type="Node2D" parent="."]
+
+[node name="peppermint_candy" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(4062, 527)
+
+[node name="peppermint_candy2" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(4304, 598)
+
+[node name="peppermint_candy3" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(4639, 585)
+
+[node name="peppermint_candy4" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(4829, 526)
+
+[node name="peppermint_candy26" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5168, 607)
+
+[node name="peppermint_candy27" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5394, 662)
+
+[node name="peppermint_candy28" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5995, 576)
+
+[node name="peppermint_candy29" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6062, 619)
+
+[node name="peppermint_candy30" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6161, 616)
+
+[node name="peppermint_candy31" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6249, 591)
+
+[node name="peppermint_candy32" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6401, 640)
+
+[node name="peppermint_candy5" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5061, 487)
+
+[node name="peppermint_candy6" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5070, 361)
+
+[node name="peppermint_candy7" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5249, 284)
+
+[node name="peppermint_candy8" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5377, 313)
+
+[node name="peppermint_candy9" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5516, 297)
+
+[node name="peppermint_candy10" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5649, 344)
+
+[node name="peppermint_candy11" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5786, 245)
+
+[node name="peppermint_candy12" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5893, 316)
+
+[node name="peppermint_candy13" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5834, 104)
+
+[node name="peppermint_candy14" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5789, 460)
+
+[node name="peppermint_candy15" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5883, 534)
+
+[node name="peppermint_candy16" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(5783, 553)
+
+[node name="peppermint_candy17" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6381, 499)
+
+[node name="peppermint_candy19" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6678, 354)
+
+[node name="peppermint_candy20" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6986, 512)
+
+[node name="peppermint_candy21" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(7060, 609)
+
+[node name="peppermint_candy22" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6818, 304)
+
+[node name="peppermint_candy23" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6917, 161)
+
+[node name="peppermint_candy24" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6969, 305)
+
+[node name="peppermint_candy25" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6814, 465)
+
+[node name="peppermint_candy18" parent="area2_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(6518, 434)
+
+[node name="area2_enemies" type="Node2D" parent="."]
+
+[node name="mouse_enemy" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(4196, 676)
+
+[node name="mouse_enemy2" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(4499, 675)
+
+[node name="mouse_enemy3" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(4543, 602)
+
+[node name="mouse_enemy4" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(4756, 677)
+
+[node name="mouse_enemy5" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(5456, 673)
+
+[node name="mouse_enemy6" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(6228, 675)
+
+[node name="mouse_enemy7" parent="area2_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(7192, 675)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
 position = Vector2(-95, 0)
@@ -697,3 +970,8 @@ rotation = 0.04495
 position = Vector2(4043, 702)
 rotation = 0.0982249
 scale = Vector2(0.6, 0.607)
+
+[node name="stone9" parent="area2_fg" instance=ExtResource("1_0vkjw")]
+position = Vector2(5303, 701)
+rotation = -0.13176
+scale = Vector2(-1, 1)
