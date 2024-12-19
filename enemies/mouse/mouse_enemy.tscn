@@ -1,24 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr8rwhihce8q1"]
+[gd_scene load_steps=7 format=3 uid="uid://dr8rwhihce8q1"]
 
 [ext_resource type="Script" path="res://enemies/mouse/enemy_mouse.gd" id="1_inbm7"]
-[ext_resource type="Texture2D" uid="uid://qbci78dtgajp" path="res://icon.svg" id="2_2dg0r"]
+[ext_resource type="Texture2D" uid="uid://c5sscus21q3gu" path="res://enemies/mouse/mouse_sprites.png" id="2_1i71f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhfb"]
-size = Vector2(121, 121)
+size = Vector2(22, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a7bc"]
+atlas = ExtResource("2_1i71f")
+region = Rect2(0, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iotme"]
+atlas = ExtResource("2_1i71f")
+region = Rect2(24, 0, 24, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6w14n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a7bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iotme")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="mouse_enemy" type="CharacterBody2D" groups=["enemy"]]
-position = Vector2(905, 20)
 script = ExtResource("1_inbm7")
 
 [node name="ray_forward" type="RayCast2D" parent="."]
 modulate = Color(0.971398, 0.253583, 0.365241, 1)
-target_position = Vector2(200, 0)
+target_position = Vector2(40, 0)
 
 [node name="ray_floor_checker" type="RayCast2D" parent="."]
-target_position = Vector2(300, 70)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_2dg0r")
+target_position = Vector2(32, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hkhfb")
@@ -26,5 +44,10 @@ shape = SubResource("RectangleShape2D_hkhfb")
 [node name="attack_build_up" type="Timer" parent="."]
 wait_time = 0.75
 one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_6w14n")
+frame_progress = 0.757648
 
 [connection signal="timeout" from="attack_build_up" to="." method="_on_attack_build_up_timeout"]

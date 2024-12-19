@@ -1,15 +1,16 @@
 extends CharacterBody2D
 # enemy mouse
 
-var health: int = 2
-var speed: int = 800
+var health: int = 1
+var speed: int = 50
 var friction: float = 0.1
 var direction: float = 1.0
-var gravity: int = 4000
+var gravity: int = 300
 var target: CharacterBody2D = null
 @onready var ray_forward: RayCast2D = $ray_forward
 @onready var ray_down_forward: RayCast2D = $ray_floor_checker
 @onready var attack_build_up_timer: Timer = $attack_build_up
+@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta):
 	if !attack_build_up_timer.is_stopped():
@@ -29,12 +30,15 @@ func _physics_process(delta):
 			direction *= -1
 			ray_down_forward.target_position.x *= -1
 			ray_forward.target_position.x *= -1
+			anim_sprite.scale.x *= -1
+			
 			
 	elif !ray_down_forward.get_collider():
 		# change dir
 		direction *= -1
 		ray_down_forward.target_position.x *= -1
 		ray_forward.target_position.x *= -1
+		anim_sprite.scale.x *= -1
 	
 	else:
 		velocity.x = lerp(velocity.x, direction * speed, friction)
@@ -43,6 +47,7 @@ func _physics_process(delta):
 	
 func damage(amount: int) -> void:
 	health -= amount
+	print("owed")
 	if health <= 0:
 		queue_free()
 

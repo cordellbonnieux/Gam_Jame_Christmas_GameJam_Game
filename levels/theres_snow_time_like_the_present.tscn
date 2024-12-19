@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=35 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
 [ext_resource type="PackedScene" uid="uid://cgljdfv6woyh7" path="res://surfaces/fir_tree/fir_tree.tscn" id="1_k8xc5"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ccjc23rql7rcu" path="res://tiles/foreground/blue_house_siding_right_corner_back.png" id="8_xttvp"]
 [ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="10_5auit"]
 [ext_resource type="PackedScene" uid="uid://b4fp3kra56qr4" path="res://surfaces/xmas_tree/xmas_tree.tscn" id="10_8gr0d"]
+[ext_resource type="PackedScene" uid="uid://dr8rwhihce8q1" path="res://enemies/mouse/mouse_enemy.tscn" id="17_uyd7v"]
 [ext_resource type="Texture2D" uid="uid://e04e1mwfb00k" path="res://tiles/foreground/blue_house_siding_right_corner_front.png" id="19_ht1fe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukmb7"]
@@ -95,13 +96,49 @@ texture = ExtResource("1_prxnj")
 [node name="trees" type="Node2D" parent="area2_bg"]
 
 [node name="fir_tree" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
-position = Vector2(5316, 425)
+position = Vector2(5049, 474)
+scale = Vector2(0.75, 0.75)
+
+[node name="fir_tree4" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(5329, 509)
+scale = Vector2(0.5, 0.5)
+
+[node name="fir_tree7" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(5593, 441)
+scale = Vector2(0.9, 0.9)
+
+[node name="fir_tree8" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(4195, 436)
+scale = Vector2(0.9, 0.9)
+
+[node name="fir_tree9" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(4415, 501)
+scale = Vector2(0.6, 0.6)
+
+[node name="fir_tree10" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(4590, 401)
+scale = Vector2(0.8, 0.8)
+
+[node name="fir_tree11" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(4819, 478)
+scale = Vector2(0.7, 0.7)
+
+[node name="fir_tree6" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(5446, 541)
+scale = Vector2(0.45, 0.45)
+
+[node name="fir_tree5" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(5216, 504)
+scale = Vector2(0.6, 0.6)
 
 [node name="fir_tree2" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
-position = Vector2(6034, 432)
+position = Vector2(5828, 418)
 
 [node name="fir_tree3" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
 position = Vector2(8054, 432)
+
+[node name="fir_tree12" parent="area2_bg/trees" instance=ExtResource("1_k8xc5")]
+position = Vector2(6903, 378)
 
 [node name="surfaces" type="Node2D" parent="area2_bg"]
 position = Vector2(-100, 3)
@@ -131,6 +168,24 @@ position = Vector2(3462, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area2_bg/TileMapLayer/StaticBody2D2"]
 position = Vector2(1009.5, 0)
 shape = SubResource("RectangleShape2D_pwesy")
+
+[node name="stone3" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(4370, 651)
+scale = Vector2(0.6, 0.607)
+
+[node name="stone4" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(4353, 719)
+rotation = 2.75593
+scale = Vector2(0.3, 0.3)
+
+[node name="stone5" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(4656, 719)
+scale = Vector2(0.5, 0.5)
+
+[node name="stone6" parent="area2_bg" instance=ExtResource("1_0vkjw")]
+position = Vector2(4681, 650)
+rotation = 0.0859217
+scale = Vector2(0.7, 0.7)
 
 [node name="area1_bg" type="Node2D" parent="."]
 
@@ -283,10 +338,10 @@ position = Vector2(3107, 693)
 position = Vector2(3213, 644)
 
 [node name="shelf19" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3046, 601)
+position = Vector2(3002, 601)
 
 [node name="shelf18" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3109, 601)
+position = Vector2(3065, 601)
 
 [node name="shelf20" parent="area1_bg/building/platforms" instance=ExtResource("3_kpjoh")]
 position = Vector2(3061, 488)
@@ -324,6 +379,9 @@ position = Vector2(2527, 460)
 [node name="picture2" parent="area1_bg/furniture" instance=ExtResource("6_0p2ji")]
 position = Vector2(1279, -61)
 
+[node name="picture3" parent="area1_bg/furniture" instance=ExtResource("6_0p2ji")]
+position = Vector2(3687, 431)
+
 [node name="hook3" parent="area1_bg/furniture" instance=ExtResource("7_fnp4g")]
 position = Vector2(2865, 360)
 
@@ -348,8 +406,25 @@ destination = NodePath("../zip3")
 [node name="zip3" parent="area1_bg/ziplights" instance=ExtResource("10_5auit")]
 position = Vector2(3619, 593)
 
+[node name="area1_enemies" type="Node2D" parent="."]
+
+[node name="mouse_enemy" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(457, 133)
+
+[node name="mouse_enemy2" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(1353, -73)
+
+[node name="mouse_enemy3" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(2609, 432)
+
+[node name="mouse_enemy4" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(3001, 615)
+
+[node name="mouse_enemy5" parent="area1_enemies" instance=ExtResource("17_uyd7v")]
+position = Vector2(3567, 629)
+
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(2583, 387)
+position = Vector2(-95, 0)
 
 [node name="area1_fg" type="Node2D" parent="."]
 
@@ -472,11 +547,102 @@ position = Vector2(3931, 712)
 
 [node name="ziplatches" type="Node2D" parent="area2_fg"]
 
-[node name="latch_post" parent="area2_fg/ziplatches" instance=ExtResource("10_5auit")]
+[node name="latch_post" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
 position = Vector2(4665, 529)
+destination = NodePath("../latch_post2")
 
-[node name="latch_post2" parent="area2_fg/ziplatches" instance=ExtResource("10_5auit")]
-position = Vector2(5322, 180)
+[node name="latch_post2" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(4991, 529)
+destination = NodePath("../latch_post3")
 
-[node name="latch_post3" parent="area2_fg/ziplatches" instance=ExtResource("10_5auit")]
-position = Vector2(6039, 199)
+[node name="latch_post3" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(5116, 447)
+destination = NodePath("../latch_post4")
+
+[node name="latch_post4" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(5040, 286)
+destination = NodePath("../latch_post5")
+
+[node name="latch_post5" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(5832, 160)
+destination = NodePath("../latch_post6")
+
+[node name="latch_post6" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(5737, 331)
+destination = NodePath("../latch_post7")
+
+[node name="latch_post7" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(5909, 382)
+destination = NodePath("../latch_post8")
+
+[node name="latch_post8" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(5734, 506)
+destination = NodePath("../latch_post9")
+
+[node name="latch_post9" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(5933, 533)
+destination = NodePath("../latch_post10")
+
+[node name="latch_post10" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(5990, 576)
+rotation = 0.04495
+destination = NodePath("../latch_post11")
+
+[node name="latch_post11" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6060, 620)
+rotation = 0.04495
+destination = NodePath("../latch_post12")
+
+[node name="latch_post12" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6156, 614)
+rotation = 0.04495
+destination = NodePath("../latch_post13")
+
+[node name="latch_post13" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6250, 594)
+rotation = 0.04495
+destination = NodePath("../latch_post14")
+
+[node name="latch_post14" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6328, 545)
+rotation = 0.04495
+destination = NodePath("../latch_post15")
+
+[node name="latch_post15" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6442, 473)
+rotation = 0.04495
+destination = NodePath("../latch_post16")
+
+[node name="latch_post16" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6591, 402)
+rotation = 0.04495
+destination = NodePath("../latch_post17")
+
+[node name="latch_post17" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6814, 316)
+rotation = 0.04495
+destination = NodePath("../latch_post18")
+
+[node name="latch_post18" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6916, 155)
+rotation = 0.04495
+destination = NodePath("../latch_post19")
+
+[node name="latch_post19" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6970, 315)
+rotation = 0.04495
+destination = NodePath("../latch_post20")
+
+[node name="latch_post20" parent="area2_fg/ziplatches" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
+position = Vector2(6812, 468)
+rotation = 0.04495
+destination = NodePath("../latch_post21")
+
+[node name="latch_post21" parent="area2_fg/ziplatches" instance=ExtResource("10_5auit")]
+position = Vector2(6986, 514)
+rotation = 0.04495
+
+[node name="stone7" parent="area2_fg" instance=ExtResource("1_0vkjw")]
+position = Vector2(4043, 702)
+rotation = 0.0982249
+scale = Vector2(0.6, 0.607)

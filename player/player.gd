@@ -34,7 +34,7 @@ func _physics_process(delta):
 		fsm.current_state.exit("falling")
 		
 	elif fsm.current_state.name == "zipping":
-		if abs(current_zips[0] - global_position).x > 1 && abs(current_zips[0] - global_position).y > 1:
+		if abs(current_zips[0] - global_position).x > 2 && abs(current_zips[0] - global_position).y > 2:
 			velocity = lerp(velocity, (current_zips[0] - global_position).normalized() * zip_speed, 1)
 		else:
 			current_zips.pop_front()
@@ -57,7 +57,7 @@ func _physics_process(delta):
 			#TODO add slipping effect here
 			velocity.x = lerp(velocity.x, dir * (speed + sugar_level), acceleration)
 			if (dir < 0 && attack_ray.target_position.x > 0) || (dir > 0 && attack_ray.target_position.x < 0):
-				attack_ray.target_position.x *= 1
+				attack_ray.target_position.x *= -1
 			if is_on_floor():
 				if fsm.current_state.name != "running":
 					fsm.current_state.exit("running")
