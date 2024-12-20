@@ -1398,42 +1398,42 @@ position = Vector2(4116.51, 366.623)
 rotation = 0.529531
 
 [node name="xmas_lights2" parent="foreground/area2_fg/ziplatches2/xmas_lights" instance=ExtResource("30_4svah")]
-position = Vector2(32.0156, 0.0568848)
+position = Vector2(32.3879, -0.104375)
 
 [node name="xmas_lights3" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2" instance=ExtResource("30_4svah")]
-position = Vector2(32.0156, 0.0571289)
+position = Vector2(33.3754, -0.261808)
 
 [node name="xmas_lights4" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3" instance=ExtResource("30_4svah")]
-position = Vector2(32.0151, 0.0568848)
+position = Vector2(32.388, -0.104271)
 
 [node name="xmas_lights5" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4" instance=ExtResource("30_4svah")]
-position = Vector2(32.0161, 0.0568848)
+position = Vector2(32.388, -0.104238)
 
 [node name="xmas_lights6" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5" instance=ExtResource("30_4svah")]
-position = Vector2(32.0151, 0.0568848)
+position = Vector2(32.388, -0.104271)
 
 [node name="xmas_lights2" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6" instance=ExtResource("30_4svah")]
-position = Vector2(32.0159, 0.0566173)
+position = Vector2(33.3758, -0.261838)
 
 [node name="xmas_lights2" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2" instance=ExtResource("30_4svah")]
-position = Vector2(32.0156, 0.0568848)
+position = Vector2(32.388, -0.104255)
 
 [node name="xmas_lights3" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2" instance=ExtResource("30_4svah")]
-position = Vector2(31.3922, -0.72504)
+position = Vector2(33.0199, -0.917252)
 rotation = -0.0419155
 
 [node name="xmas_lights4" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3" instance=ExtResource("30_4svah")]
-position = Vector2(31.3424, -1.62504)
+position = Vector2(33.0091, -1.84279)
 rotation = -0.120444
 
 [node name="xmas_lights5" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4" instance=ExtResource("30_4svah")]
-position = Vector2(32.0161, 0.0568848)
+position = Vector2(32.249, -0.163038)
 
 [node name="xmas_lights6" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5" instance=ExtResource("30_4svah")]
-position = Vector2(32.0151, 0.0568848)
+position = Vector2(32.9997, 0.136771)
 
 [node name="xmas_lights3" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6" instance=ExtResource("30_4svah")]
-position = Vector2(31.9042, -0.186797)
+position = Vector2(32.9718, -0.711796)
 rotation = -0.0498368
 scale = Vector2(1, 1)
 
@@ -1442,28 +1442,28 @@ position = Vector2(32.3096, 0.325318)
 rotation = 0.00498854
 
 [node name="xmas_lights4" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3" instance=ExtResource("30_4svah")]
-position = Vector2(31.9434, -0.765917)
+position = Vector2(32.8558, -1.97495)
 rotation = -0.0703519
 
 [node name="xmas_lights5" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4" instance=ExtResource("30_4svah")]
-position = Vector2(31.1717, -1.43633)
+position = Vector2(32.2488, -0.161569)
 rotation = -0.0810531
 
 [node name="xmas_lights6" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5" instance=ExtResource("30_4svah")]
-position = Vector2(30.6943, -2.619)
+position = Vector2(33.1512, -2.44997)
 rotation = -0.169207
 
 [node name="xmas_lights2" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6" instance=ExtResource("30_4svah")]
-position = Vector2(31.1078, -1.51521)
+position = Vector2(33.0313, -2.21729)
 rotation = -0.101618
 scale = Vector2(1, 1)
 
 [node name="xmas_lights2" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2" instance=ExtResource("30_4svah")]
-position = Vector2(32.0131, -0.393323)
+position = Vector2(33.1029, -1.09101)
 rotation = -0.052519
 
 [node name="xmas_lights3" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2" instance=ExtResource("30_4svah")]
-position = Vector2(32.0079, -0.712167)
+position = Vector2(32.7487, -0.717856)
 rotation = -0.0569085
 
 [node name="xmas_lights4" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3" instance=ExtResource("30_4svah")]
@@ -1474,27 +1474,27 @@ rotation = -0.0891004
 position = Vector2(32.0161, 0.0568848)
 
 [node name="xmas_lights6" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5" instance=ExtResource("30_4svah")]
-position = Vector2(32.0151, 0.0568848)
+position = Vector2(33.1547, 0.227086)
 
 [node name="xmas_lights2" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6" instance=ExtResource("30_4svah")]
-position = Vector2(32.0159, 0.0566173)
+position = Vector2(33.4201, -0.322895)
 
 [node name="xmas_lights2" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2" instance=ExtResource("30_4svah")]
-position = Vector2(32.0156, 0.0568848)
+position = Vector2(32.6361, -0.943729)
 
 [node name="xmas_lights3" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2" instance=ExtResource("30_4svah")]
-position = Vector2(31.3922, -0.72504)
+position = Vector2(32.636, -0.943764)
 rotation = -0.0419155
 
 [node name="xmas_lights4" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3" instance=ExtResource("30_4svah")]
-position = Vector2(32.419, -1.91341)
+position = Vector2(33.1959, -1.74291)
 rotation = -0.120444
 
 [node name="xmas_lights5" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4" instance=ExtResource("30_4svah")]
-position = Vector2(32.0161, 0.0568848)
+position = Vector2(33.9701, 0.172161)
 
 [node name="xmas_lights6" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5" instance=ExtResource("30_4svah")]
-position = Vector2(32.0151, 0.0568848)
+position = Vector2(33.838, -0.518085)
 
 [node name="xmas_lights3" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6" instance=ExtResource("30_4svah")]
 position = Vector2(32.9675, -0.535014)
@@ -1502,19 +1502,19 @@ rotation = -0.0498368
 scale = Vector2(1, 1)
 
 [node name="xmas_lights3" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3" instance=ExtResource("30_4svah")]
-position = Vector2(32.3096, 0.325318)
+position = Vector2(33.848, 0.364699)
 rotation = 0.00498854
 
 [node name="xmas_lights4" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3" instance=ExtResource("30_4svah")]
-position = Vector2(32.3483, -0.618096)
+position = Vector2(34.1868, -1.12167)
 rotation = -0.0703519
 
 [node name="xmas_lights5" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4" instance=ExtResource("30_4svah")]
-position = Vector2(33.2414, -1.73513)
+position = Vector2(34.6371, -1.50715)
 rotation = -0.0810531
 
 [node name="xmas_lights6" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5" instance=ExtResource("30_4svah")]
-position = Vector2(33.4369, -2.63985)
+position = Vector2(34.4694, -0.926936)
 rotation = -0.169207
 
 [node name="xmas_lights7" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6" instance=ExtResource("30_4svah")]
@@ -1522,8 +1522,8 @@ position = Vector2(32.4336, 8.77814)
 rotation = 0.471282
 
 [node name="xmas_lights8" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7" instance=ExtResource("30_4svah")]
-position = Vector2(32.8043, 3.72543)
-rotation = 0.240945
+position = Vector2(34.67, -2.84533)
+rotation = -0.200829
 
 [node name="xmas_lights9" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8" instance=ExtResource("30_4svah")]
 position = Vector2(32.376, -7.79663)
@@ -1533,16 +1533,17 @@ rotation = -0.522597
 position = Vector2(33.0911, -0.990519)
 
 [node name="xmas_lights11" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10" instance=ExtResource("30_4svah")]
-position = Vector2(32.3585, 0.592384)
+position = Vector2(33.6419, 7.78581)
+rotation = 0.5932
 scale = Vector2(1, 1)
 
 [node name="xmas_lights12" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11" instance=ExtResource("30_4svah")]
-position = Vector2(31.3761, 11.434)
-rotation = 0.65678
+position = Vector2(30.8852, 14.2514)
+rotation = 0.975667
 
 [node name="xmas_lights13" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12" instance=ExtResource("30_4svah")]
-position = Vector2(23.7904, 19.3653)
-rotation = 1.15433
+position = Vector2(19.8512, 22.8019)
+rotation = 1.25278
 scale = Vector2(1, 1)
 
 [node name="xmas_lights14" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13" instance=ExtResource("30_4svah")]
@@ -1550,55 +1551,55 @@ position = Vector2(32.6726, 7.90595)
 rotation = 0.465539
 
 [node name="xmas_lights15" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14" instance=ExtResource("30_4svah")]
-position = Vector2(27.2161, 16.8607)
-rotation = 1.04048
+position = Vector2(35.6961, 7.89659)
+rotation = 0.355224
 scale = Vector2(1, 1)
 
 [node name="xmas_lights16" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15" instance=ExtResource("30_4svah")]
-position = Vector2(24.9453, -18.6475)
+position = Vector2(29.4715, -19.0573)
 rotation = -0.951751
 scale = Vector2(1, 1)
 
 [node name="xmas_lights17" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16" instance=ExtResource("30_4svah")]
-position = Vector2(32.757, -0.0652428)
+position = Vector2(34.4857, -1.93421)
 
 [node name="xmas_lights18" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17" instance=ExtResource("30_4svah")]
-position = Vector2(32.8376, -5.16379)
-rotation = -0.326145
+position = Vector2(35.7556, -2.55609)
+rotation = -0.119669
 
 [node name="xmas_lights19" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18" instance=ExtResource("30_4svah")]
-position = Vector2(32.2423, 0.656621)
+position = Vector2(36.9681, 1.10665)
 
 [node name="xmas_lights20" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19" instance=ExtResource("30_4svah")]
-position = Vector2(32.7561, -0.201341)
+position = Vector2(34.4289, -0.414157)
 
 [node name="xmas_lights21" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20" instance=ExtResource("30_4svah")]
-position = Vector2(33.2698, -1.0593)
+position = Vector2(33.7193, 0.0591688)
 
 [node name="xmas_lights22" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21" instance=ExtResource("30_4svah")]
-position = Vector2(32.4171, 4.25793)
+position = Vector2(34.7117, 4.00118)
 rotation = 0.220018
 
 [node name="xmas_lights23" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21/xmas_lights22" instance=ExtResource("30_4svah")]
-position = Vector2(32.9005, 5.61774)
-rotation = 0.28129
+position = Vector2(34.59, 1.38529)
+rotation = 0.0665709
 scale = Vector2(1, 1)
 
 [node name="xmas_lights24" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21/xmas_lights22/xmas_lights23" instance=ExtResource("30_4svah")]
-position = Vector2(32.0148, 0.222841)
+position = Vector2(33.3764, 0.144082)
 scale = Vector2(1, 1)
 
 [node name="xmas_lights25" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21/xmas_lights22/xmas_lights23/xmas_lights24" instance=ExtResource("30_4svah")]
-position = Vector2(32.0148, 0.222841)
+position = Vector2(33.3764, 0.144082)
 scale = Vector2(1, 1)
 
 [node name="xmas_lights26" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21/xmas_lights22/xmas_lights23/xmas_lights24/xmas_lights25" instance=ExtResource("30_4svah")]
-position = Vector2(32.3204, -7.77132)
+position = Vector2(34.5047, -5.93731)
 rotation = -0.377442
 scale = Vector2(1, 1)
 
 [node name="xmas_lights27" parent="foreground/area2_fg/ziplatches2/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights2/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights3/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21/xmas_lights22/xmas_lights23/xmas_lights24/xmas_lights25/xmas_lights26" instance=ExtResource("30_4svah")]
-position = Vector2(31.78, -0.183595)
+position = Vector2(34.0153, -0.0964567)
 
 [node name="hooks" type="Node2D" parent="foreground/area2_fg"]
 
@@ -1838,19 +1839,19 @@ position = Vector2(5439, 574)
 position = Vector2(5867, 620)
 
 [node name="peppermint_candy17" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(6632, 361)
+position = Vector2(6779, 181)
 
 [node name="peppermint_candy20" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6666, 635)
 
 [node name="peppermint_candy21" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7069, 645)
+position = Vector2(7029, 662)
 
 [node name="peppermint_candy24" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(6952, 308)
+position = Vector2(6952, 339)
 
 [node name="peppermint_candy18" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(6864, 68)
+position = Vector2(6858, 34)
 
 [node name="peppermint_candy33" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(7581, 675)
