@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://cm1ln8my7l3ir"]
+
+[ext_resource type="Texture2D" uid="uid://f8p8q0nqnfus" path="res://enemies/dog/dog_sprites.png" id="1_10tye"]
+[ext_resource type="Script" path="res://classes/StateMachine.gd" id="1_54cbj"]
+[ext_resource type="Script" path="res://enemies/dog/boss_dog.gd" id="1_s4ilk"]
+[ext_resource type="Script" path="res://classes/State.gd" id="2_cc41d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvral"]
+atlas = ExtResource("1_10tye")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2evs"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attacking",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"charging",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dazed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvral")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"pre-charging",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueex3"]
+size = Vector2(94, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs8ec"]
+size = Vector2(94, 2)
+
+[node name="boss_dog" type="CharacterBody2D"]
+script = ExtResource("1_s4ilk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_q2evs")
+animation = &"moving"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_ueex3")
+
+[node name="swipe_dist" type="RayCast2D" parent="."]
+target_position = Vector2(64, 14)
+
+[node name="charge_dist" type="RayCast2D" parent="."]
+target_position = Vector2(160, 14)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -31)
+shape = SubResource("RectangleShape2D_qs8ec")
+debug_color = Color(0, 0.627451, 0, 0.419608)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_54cbj")
+
+[node name="sleeping" type="Node" parent="StateMachine"]
+script = ExtResource("2_cc41d")
+
+[node name="moving" type="Node" parent="StateMachine"]
+script = ExtResource("2_cc41d")
+
+[node name="pre_charging" type="Node" parent="StateMachine"]
+script = ExtResource("2_cc41d")
+
+[node name="charging" type="Node" parent="StateMachine"]
+script = ExtResource("2_cc41d")
+
+[node name="dazed" type="Node" parent="StateMachine"]
+script = ExtResource("2_cc41d")
+
+[node name="attacking" type="Node" parent="StateMachine"]
+script = ExtResource("2_cc41d")
+
+[node name="dead" type="Node" parent="StateMachine"]
+script = ExtResource("2_cc41d")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

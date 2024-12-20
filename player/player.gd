@@ -194,6 +194,8 @@ func _on_no_gravity_timer_timeout() -> void:
 		death_motion_stop_timer.start()
 
 func _on_attack_cooldown_timer_timeout() -> void:
+	return
+	# not using below
 	#NOTE this block copied over from key press detection
 	if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
 		attack_ray.get_collider().damage()
