@@ -839,8 +839,8 @@ position = Vector2(3687, 431)
 position = Vector2(2865, 360)
 
 [node name="xmas_tree" parent="background/area1_bg/furniture" instance=ExtResource("10_8gr0d")]
-modulate = Color(0.155261, 0.422404, 0.066043, 1)
-position = Vector2(3419, 384)
+position = Vector2(3419, 346)
+scale = Vector2(3, 3)
 
 [node name="platforms" type="Node2D" parent="background/area1_bg/furniture"]
 position = Vector2(-14, -152)
@@ -1127,8 +1127,16 @@ texture = ExtResource("24_odok4")
 position = Vector2(16, -125)
 shape = SubResource("RectangleShape2D_qljnh")
 
+[node name="furniture" type="Node2D" parent="background/area3_bg"]
+
+[node name="Bed" parent="background/area3_bg/furniture" instance=ExtResource("5_ro3tp")]
+position = Vector2(280, 78)
+
+[node name="dresser" parent="background/area3_bg/furniture" instance=ExtResource("4_nkocn")]
+position = Vector2(439, 100)
+
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(5867, 604)
+position = Vector2(3084, 447)
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -1676,7 +1684,7 @@ position = Vector2(-78, 276)
 texture = ExtResource("7_iaj3p")
 
 [node name="slide_edge" parent="foreground/area3_fg/rails" instance=ExtResource("14_pytdj")]
-position = Vector2(-638, -57)
+position = Vector2(-635, -62)
 rotation = 0.461893
 scale = Vector2(6.6, 1)
 
