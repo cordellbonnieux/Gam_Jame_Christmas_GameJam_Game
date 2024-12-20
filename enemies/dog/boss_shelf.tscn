@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dbvkyx0taurks"]
+
+[node name="boss_shelf" type="StaticBody2D" groups=["boss_shelf"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

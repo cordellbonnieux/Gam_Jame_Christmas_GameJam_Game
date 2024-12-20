@@ -63,11 +63,11 @@ animation = &"moving"
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_ueex3")
 
-[node name="swipe_dist" type="RayCast2D" parent="."]
-target_position = Vector2(64, 14)
+[node name="close_ray" type="RayCast2D" parent="."]
+target_position = Vector2(64, 0)
 
-[node name="charge_dist" type="RayCast2D" parent="."]
-target_position = Vector2(160, 14)
+[node name="far_ray" type="RayCast2D" parent="."]
+target_position = Vector2(128, 14)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -85,7 +85,7 @@ script = ExtResource("2_cc41d")
 [node name="moving" type="Node" parent="StateMachine"]
 script = ExtResource("2_cc41d")
 
-[node name="pre_charging" type="Node" parent="StateMachine"]
+[node name="pre-charging" type="Node" parent="StateMachine"]
 script = ExtResource("2_cc41d")
 
 [node name="charging" type="Node" parent="StateMachine"]
@@ -100,4 +100,5 @@ script = ExtResource("2_cc41d")
 [node name="dead" type="Node" parent="StateMachine"]
 script = ExtResource("2_cc41d")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
