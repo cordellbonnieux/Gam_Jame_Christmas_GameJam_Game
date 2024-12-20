@@ -1,4 +1,5 @@
 extends CharacterBody2D
+var dropable_gift: PackedScene = preload("res://interactables/dropped_gift/dropped_gift.tscn")
 
 var health: int = 3
 var sugar_level: float = 0.0
@@ -132,6 +133,16 @@ func _input(event: InputEvent) -> void:
 				attack_ray.get_collider().damage()
 
 
+func spill_gifts() -> void:
+	var parent: Node2D = get_parent()
+	for gift in gifts:
+		var gift_to_drop: RigidBody2D = dropable_gift.instantiate()
+		gift_to_drop.global_position = global_position + Vector2(0, -32)
+		parent.call_deferred("add_child", gift_to_drop)
+	gifts = 0
+	ui.gifts.text = str(0)
+
+
 func damage() -> void:
 	if !invulnerable:
 		if gifts <= 0:
@@ -143,7 +154,8 @@ func damage() -> void:
 			invulnerability_timer.start()
 			invulnerable = true
 			modulate = Color(255,0,0,255)
-			#TODO spill gifts
+			# TODO damage flash
+			spill_gifts()
 
 
 func zip(area: Area2D, zipping: bool = true) -> void:
@@ -184,6 +196,11 @@ func _on_no_gravity_timer_timeout() -> void:
 		death_motion_stop_timer.start()
 
 func _on_attack_cooldown_timer_timeout() -> void:
+	#NOTE this block copied over from key press detection
+	if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
+		attack_ray.get_collider().damage()
+	#NOTE the player technically attacks twice, to allow for a hit on less accurate attacks
+		
 	if fsm.current_state.name == "idle":
 		anim.play("idle")
 	elif fsm.current_state.name == "running":

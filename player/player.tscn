@@ -160,7 +160,7 @@ offset = Vector2(0, -25)
 zoom = Vector2(3, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(48, 6)
+target_position = Vector2(54, 6)
 
 [node name="death_motion_stop_timer" type="Timer" parent="."]
 wait_time = 0.2

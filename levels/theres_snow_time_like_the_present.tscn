@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=62 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
@@ -34,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://c87wj1ewbie6l" path="res://tiles/foreground/house_siding_front.png" id="30_rmp5f"]
 [ext_resource type="Texture2D" uid="uid://ci3poibth5h7u" path="res://tiles/foreground/vent_cover.png" id="31_w8atx"]
 [ext_resource type="PackedScene" uid="uid://da1kx41dwysoa" path="res://interactables/gift/gift.tscn" id="32_d7cew"]
-[ext_resource type="PackedScene" uid="uid://djbbmjn02kvbv" path="res://interactables/dropped_gift/dropped_gift.tscn" id="35_7y5q5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u53dj"]
 texture = ExtResource("1_0hgsg")
@@ -128,7 +127,7 @@ tile_size = Vector2i(96, 256)
 sources/0 = SubResource("TileSetAtlasSource_f34qo")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvtc6"]
-size = Vector2(95, 544)
+size = Vector2(77, 545)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipuco"]
 texture = ExtResource("4_x4ygh")
@@ -958,10 +957,6 @@ position = Vector2(-151, 223)
 [node name="left_wall" type="StaticBody2D" parent="background/area3_bg/walls"]
 position = Vector2(71, 29)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/walls/left_wall"]
-position = Vector2(-37.5, 36)
-shape = SubResource("RectangleShape2D_tvtc6")
-
 [node name="Sprite2D2" type="Sprite2D" parent="background/area3_bg/walls/left_wall"]
 position = Vector2(0, 91)
 texture = ExtResource("12_tykq4")
@@ -973,6 +968,10 @@ texture = ExtResource("12_tykq4")
 [node name="Sprite2D3" type="Sprite2D" parent="background/area3_bg/walls/left_wall"]
 position = Vector2(0, -292)
 texture = ExtResource("22_xo31m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/walls/left_wall"]
+position = Vector2(-46.5, 35.5)
+shape = SubResource("RectangleShape2D_tvtc6")
 
 [node name="ground" type="TileMapLayer" parent="background/area3_bg"]
 tile_map_data = PackedByteArray("AAD//wQAAQAAAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAJAAQAAQABAAAAAAAKAAQAAQABAAAAAAD//wEAAQAAAAAAAAAAAAEAAQABAAAAAAABAAEAAQABAAAAAAACAAEAAQABAAAAAAADAAEAAQABAAAAAAAEAAEAAQACAAAAAAALAAQAAQABAAAAAAAMAAQAAQABAAAAAAANAAQAAQABAAAAAAAOAAQAAQABAAAAAAAPAAQAAQABAAAAAAA=")
@@ -1107,7 +1106,7 @@ position = Vector2(1697, 207)
 scale = Vector2(3, 3)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(12633, 1060)
+position = Vector2(12743, 583)
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -2106,7 +2105,7 @@ position = Vector2(5279, 376)
 position = Vector2(6861, 33)
 
 [node name="gift3" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("32_d7cew")]
-position = Vector2(9923, 777)
+position = Vector2(10108, 846)
 
 [node name="area2_enemies" type="Node2D" parent="enemies_and_pickups"]
 
@@ -2146,9 +2145,6 @@ position = Vector2(-770, -160)
 [node name="gift2" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("32_d7cew")]
 position = Vector2(1008, 111)
 
-[node name="gift4" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("32_d7cew")]
-position = Vector2(1153, -172)
-
 [node name="gift3" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("32_d7cew")]
 position = Vector2(460, -129)
 
@@ -2170,6 +2166,9 @@ position = Vector2(-290, 111)
 [node name="peppermint_candy2" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(762, 196)
 
+[node name="peppermint_candy8" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(1158, -176)
+
 [node name="peppermint_candy3" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(593, -105)
 
@@ -2190,6 +2189,3 @@ position = Vector2(463, 289)
 
 [node name="mouse_enemy5" parent="enemies_and_pickups/area3_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(912, 289)
-
-[node name="DroppedGift" parent="." instance=ExtResource("35_7y5q5")]
-position = Vector2(12510, 1099)
