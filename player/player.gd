@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var health: int = 3
 var sugar_level: float = 0.0
+var gifts: int = 0
 var speed: int = 100
 var jump_speed: int = -200
 var zip_speed: int = 400
@@ -28,6 +29,7 @@ var invulnerable: bool = false
 func _ready() -> void:
 	ui.sugar.value = sugar_level
 	ui.health.text = str(health)
+	ui.gifts.text = str(gifts)
 
 func _process(_delta: float) -> void:
 	var step: float = 0.03
@@ -149,6 +151,10 @@ func add_sugar(amt: float) -> void:
 		if sugar_level > 100:
 			sugar_level = 100
 		ui.sugar.value = sugar_level
+
+func add_gifts(amt: int) -> void:
+	gifts += amt
+	ui.gifts.text = str(gifts)
 
 
 func _on_invulnerability_timer_timeout() -> void:

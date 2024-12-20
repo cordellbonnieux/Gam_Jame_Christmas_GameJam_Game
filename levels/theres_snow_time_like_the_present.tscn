@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=62 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
@@ -31,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://bt3c0kx5mfxri" path="res://tiles/background/right_door_wall_corner.png" id="23_c0i7r"]
 [ext_resource type="Texture2D" uid="uid://c0kfpo7v070ot" path="res://tiles/background/wall_vent_right_corner.png" id="24_odok4"]
 [ext_resource type="PackedScene" uid="uid://dxao2o4dvsi" path="res://interactables/xmas_lights/xmas_lights.tscn" id="30_4svah"]
+[ext_resource type="Texture2D" uid="uid://c87wj1ewbie6l" path="res://tiles/foreground/house_siding_front.png" id="30_rmp5f"]
+[ext_resource type="Texture2D" uid="uid://ci3poibth5h7u" path="res://tiles/foreground/vent_cover.png" id="31_w8atx"]
+[ext_resource type="PackedScene" uid="uid://da1kx41dwysoa" path="res://interactables/gift/gift.tscn" id="32_d7cew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u53dj"]
 texture = ExtResource("1_0hgsg")
@@ -138,13 +141,13 @@ tile_size = Vector2i(160, 112)
 sources/1 = SubResource("TileSetAtlasSource_ipuco")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbj6n"]
-size = Vector2(776, 11)
+size = Vector2(659, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xtxq"]
 size = Vector2(1360, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuotx"]
-size = Vector2(65, 99)
+size = Vector2(9.63629, 768.819)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qljnh"]
 size = Vector2(128, 620)
@@ -592,12 +595,12 @@ position = Vector2(10460, 663)
 scale = Vector2(0.8, 0.8)
 
 [node name="stone11" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(9326, 1067)
-rotation = -0.185411
+position = Vector2(9328, 1082)
+rotation = -0.229506
 scale = Vector2(1.68, 1)
 
 [node name="stone15" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(10005, 1043)
+position = Vector2(9854, 1101)
 
 [node name="stone9" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
 position = Vector2(6374, 682)
@@ -659,13 +662,6 @@ position = Vector2(4940, 515)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/area2_bg/snowy_path/StaticBody2D4"]
 position = Vector2(1330, -3)
 shape = SubResource("RectangleShape2D_jbla0")
-
-[node name="stone7" parent="background/area2_bg/snowy_path" instance=ExtResource("1_0vkjw")]
-position = Vector2(4933, 464)
-
-[node name="stone20" parent="background/area2_bg/snowy_path" instance=ExtResource("1_0vkjw")]
-position = Vector2(5488, 514)
-scale = Vector2(1.31569, 1.31569)
 
 [node name="stone17" parent="background/area2_bg/snowy_path" instance=ExtResource("1_0vkjw")]
 position = Vector2(4238, 256)
@@ -985,7 +981,7 @@ tile_set = SubResource("TileSet_m3kca")
 position = Vector2(-61, 157)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/ground/top_floor"]
-position = Vector2(378, -5)
+position = Vector2(319.5, -5)
 shape = SubResource("RectangleShape2D_dbj6n")
 
 [node name="ground_floor" type="StaticBody2D" parent="background/area3_bg/ground"]
@@ -1041,66 +1037,11 @@ texture = ExtResource("4_gfho2")
 [node name="step_colliders" type="Node2D" parent="background/area3_bg/stairs"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(697, 168)
+position = Vector2(820, 327)
+rotation = -1.10439
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D"]
-position = Vector2(-24.5, 39)
-shape = SubResource("RectangleShape2D_uuotx")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(759, 202)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D2"]
-position = Vector2(-24.5, 39)
-shape = SubResource("RectangleShape2D_uuotx")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(821, 236)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D3"]
-position = Vector2(-24.5, 39)
-shape = SubResource("RectangleShape2D_uuotx")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(883, 270)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D4"]
-position = Vector2(-24.5, 39)
-shape = SubResource("RectangleShape2D_uuotx")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(945, 304)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D5"]
-position = Vector2(-24.5, 39)
-shape = SubResource("RectangleShape2D_uuotx")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(1007, 338)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D6"]
-position = Vector2(-24.5, 39)
-shape = SubResource("RectangleShape2D_uuotx")
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(1069, 372)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D7"]
-position = Vector2(-24.5, 39)
-shape = SubResource("RectangleShape2D_uuotx")
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(1131, 406)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D8"]
-position = Vector2(-24.5, 39)
-shape = SubResource("RectangleShape2D_uuotx")
-
-[node name="StaticBody2D9" type="StaticBody2D" parent="background/area3_bg/stairs/step_colliders"]
-position = Vector2(1193, 440)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/stairs/step_colliders/StaticBody2D9"]
-position = Vector2(-24.5, 39)
+position = Vector2(51.6279, 96.25)
 shape = SubResource("RectangleShape2D_uuotx")
 
 [node name="windows" type="Node2D" parent="background/area3_bg"]
@@ -1111,20 +1052,14 @@ position = Vector2(336, -21)
 [node name="window3" parent="background/area3_bg/windows" instance=ExtResource("2_x41i6")]
 position = Vector2(528, -21)
 
-[node name="window4" parent="background/area3_bg/windows" instance=ExtResource("2_x41i6")]
-position = Vector2(1969, 188)
-
-[node name="window5" parent="background/area3_bg/windows" instance=ExtResource("2_x41i6")]
-position = Vector2(2255, 118)
-
 [node name="window6" parent="background/area3_bg/windows" instance=ExtResource("2_x41i6")]
-position = Vector2(2065, -72)
+position = Vector2(2162, -60)
 
 [node name="window7" parent="background/area3_bg/windows" instance=ExtResource("2_x41i6")]
-position = Vector2(2352, -142)
+position = Vector2(2306, 136)
 
 [node name="window8" parent="background/area3_bg/windows" instance=ExtResource("2_x41i6")]
-position = Vector2(1679, 379)
+position = Vector2(1102, 177)
 
 [node name="right_corner_vent_walls" type="StaticBody2D" parent="background/area3_bg"]
 position = Vector2(2480, 344)
@@ -1149,13 +1084,29 @@ shape = SubResource("RectangleShape2D_qljnh")
 [node name="furniture" type="Node2D" parent="background/area3_bg"]
 
 [node name="Bed" parent="background/area3_bg/furniture" instance=ExtResource("5_ro3tp")]
-position = Vector2(280, 78)
+position = Vector2(48, 72)
 
 [node name="dresser" parent="background/area3_bg/furniture" instance=ExtResource("4_nkocn")]
-position = Vector2(439, 100)
+position = Vector2(235, 100)
+
+[node name="picture" parent="background/area3_bg/furniture" instance=ExtResource("6_0p2ji")]
+position = Vector2(1999, 276)
+
+[node name="shelves" type="Node2D" parent="background/area3_bg"]
+position = Vector2(1420, 84)
+
+[node name="shelf" parent="background/area3_bg/shelves" instance=ExtResource("3_kpjoh")]
+position = Vector2(-72, 239)
+
+[node name="shelf2" parent="background/area3_bg/shelves" instance=ExtResource("3_kpjoh")]
+position = Vector2(640, 364)
+
+[node name="xmas_tree" parent="background/area3_bg" instance=ExtResource("10_8gr0d")]
+position = Vector2(1697, 207)
+scale = Vector2(3, 3)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(-91, 0)
+position = Vector2(13032, 528)
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -1355,6 +1306,16 @@ position = Vector2(37.6425, -0.20507)
 
 [node name="xmas_lights23" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21/xmas_lights22" instance=ExtResource("30_4svah")]
 position = Vector2(36.9716, -1.45)
+
+[node name="siding2" type="Sprite2D" parent="foreground/area1_fg"]
+position = Vector2(-302.5, -222.4)
+scale = Vector2(3, 1.2)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding" type="Sprite2D" parent="foreground/area1_fg"]
+position = Vector2(-302.5, 62.6)
+scale = Vector2(3, 1.2)
+texture = ExtResource("30_rmp5f")
 
 [node name="area2_fg" type="Node2D" parent="foreground"]
 
@@ -1722,22 +1683,22 @@ position = Vector2(34.0153, -0.0964567)
 position = Vector2(9854, 837)
 
 [node name="hook6" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(9477, 999)
+position = Vector2(9472, 997)
 
 [node name="hook7" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(9574, 899)
+position = Vector2(9581, 892)
 
 [node name="hook3" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(10009, 828)
+position = Vector2(9988, 830)
 
 [node name="hook4" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(10106, 907)
+position = Vector2(10034, 930)
 
 [node name="hook5" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(10168, 1054)
+position = Vector2(9914, 1011)
 
 [node name="hook2" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(10101, 736)
+position = Vector2(10108, 755)
 
 [node name="stones" type="Node2D" parent="foreground/area2_fg"]
 
@@ -1801,6 +1762,100 @@ position = Vector2(-635, -62)
 rotation = 0.461893
 scale = Vector2(6.6, 1)
 
+[node name="siding" type="Node2D" parent="foreground/area3_fg"]
+
+[node name="siding" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1420, 203)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding2" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1388, 203)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding3" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1356, 203)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding4" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1324, 203)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding5" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1292, 203)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding6" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1260, 203)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding7" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1228, 203)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding8" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1420, 288)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding9" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1388, 288)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding10" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1356, 288)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding11" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1324, 288)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding12" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1292, 288)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding13" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1260, 288)
+texture = ExtResource("30_rmp5f")
+
+[node name="siding14" type="Sprite2D" parent="foreground/area3_fg/siding"]
+position = Vector2(-1228, 288)
+texture = ExtResource("30_rmp5f")
+
+[node name="stones" type="Node2D" parent="foreground/area3_fg"]
+
+[node name="stone20" parent="foreground/area3_fg/stones" instance=ExtResource("1_0vkjw")]
+position = Vector2(-2177, 352)
+scale = Vector2(1.31569, 1.31569)
+
+[node name="hooks" type="Node2D" parent="foreground/area3_fg"]
+
+[node name="hook" parent="foreground/area3_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(-848, -209)
+
+[node name="hook2" parent="foreground/area3_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(-52, 14)
+
+[node name="hook3" parent="foreground/area3_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(732, -159)
+
+[node name="hook8" parent="foreground/area3_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(777, -31)
+
+[node name="hook5" parent="foreground/area3_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(643, 43)
+
+[node name="hook7" parent="foreground/area3_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(207, 114)
+
+[node name="hook6" parent="foreground/area3_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(835, 171)
+
+[node name="hook4" parent="foreground/area3_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(1030, -201)
+
+[node name="vent_cover" type="Sprite2D" parent="foreground/area3_fg"]
+position = Vector2(1267, -241)
+texture = ExtResource("31_w8atx")
+
 [node name="enemies_and_pickups" type="Node2D" parent="."]
 
 [node name="area1_enemies" type="Node2D" parent="enemies_and_pickups"]
@@ -1824,9 +1879,6 @@ position = Vector2(3001, 615)
 position = Vector2(3567, 629)
 
 [node name="area1_pickups" type="Node2D" parent="enemies_and_pickups"]
-
-[node name="peppermint_candy" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(64, -1)
 
 [node name="peppermint_candy2" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(272, -45)
@@ -1897,6 +1949,18 @@ position = Vector2(3612, 301)
 [node name="peppermint_candy16" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(3908, 379)
 
+[node name="gift" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(62, 3)
+
+[node name="gift2" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(822, -184)
+
+[node name="gift3" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(3815, 318)
+
+[node name="gift4" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(2665, 319)
+
 [node name="area2_pickups" type="Node2D" parent="enemies_and_pickups"]
 
 [node name="peppermint_candy" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
@@ -1933,7 +1997,7 @@ position = Vector2(5450, 450)
 position = Vector2(5867, 620)
 
 [node name="peppermint_candy17" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(6779, 181)
+position = Vector2(6741, 248)
 
 [node name="peppermint_candy20" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6666, 635)
@@ -1943,9 +2007,6 @@ position = Vector2(7029, 662)
 
 [node name="peppermint_candy24" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(6952, 339)
-
-[node name="peppermint_candy18" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(6858, 34)
 
 [node name="peppermint_candy33" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(7581, 675)
@@ -1963,22 +2024,31 @@ position = Vector2(9772, 837)
 position = Vector2(8787, 1044)
 
 [node name="peppermint_candy47" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(10115, 801)
+position = Vector2(10029, 744)
 
 [node name="peppermint_candy49" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(9206, 1047)
+position = Vector2(9224, 1060)
 
 [node name="peppermint_candy50" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(10346, 652)
 
 [node name="peppermint_candy40" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(10096, 990)
+position = Vector2(9793, 1061)
 
 [node name="peppermint_candy41" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(8349, 832)
 
 [node name="peppermint_candy42" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(9502, 911)
+position = Vector2(9512, 918)
+
+[node name="gift" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(5279, 376)
+
+[node name="gift2" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(6861, 33)
+
+[node name="gift3" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(9923, 777)
 
 [node name="area2_enemies" type="Node2D" parent="enemies_and_pickups"]
 
@@ -2008,3 +2078,39 @@ position = Vector2(9212, 1122)
 
 [node name="mouse_enemy10" parent="enemies_and_pickups/area2_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(9883, 1121)
+
+[node name="area3_pickups" type="Node2D" parent="enemies_and_pickups"]
+position = Vector2(11879, 696)
+
+[node name="gift" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(-770, -160)
+
+[node name="gift2" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(1008, 111)
+
+[node name="gift4" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(1153, -172)
+
+[node name="gift3" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("32_d7cew")]
+position = Vector2(407, -92)
+
+[node name="peppermint_candy" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(48, 74)
+
+[node name="peppermint_candy4" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(50, 237)
+
+[node name="peppermint_candy5" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(-1063, -33)
+
+[node name="peppermint_candy6" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(-644, -18)
+
+[node name="peppermint_candy7" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(-290, 111)
+
+[node name="peppermint_candy2" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(762, 196)
+
+[node name="peppermint_candy3" parent="enemies_and_pickups/area3_pickups" instance=ExtResource("18_m5lbo")]
+position = Vector2(668, 40)
