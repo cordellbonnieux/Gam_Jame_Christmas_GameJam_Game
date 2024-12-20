@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://djbbmjn02kvbv"]
+
+[ext_resource type="PackedScene" uid="uid://da1kx41dwysoa" path="res://interactables/gift/gift.tscn" id="1_dljry"]
+[ext_resource type="Script" path="res://interactables/dropped_gift/dropped_gift.gd" id="1_fatom"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rjtup"]
+
+[node name="DroppedGift" type="RigidBody2D"]
+mass = 0.1
+linear_velocity = Vector2(0, -450)
+script = ExtResource("1_fatom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rjtup")
+
+[node name="gift" parent="." instance=ExtResource("1_dljry")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[connection signal="picked_up" from="gift" to="." method="_on_gift_picked_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

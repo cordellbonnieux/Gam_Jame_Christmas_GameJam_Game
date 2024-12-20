@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d1ux2mg40y56d"]
+[gd_scene load_steps=24 format=3 uid="uid://d1ux2mg40y56d"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_kxvr3"]
 [ext_resource type="Texture2D" uid="uid://toe65dj5ot43" path="res://player/player_sprite_sheet.png" id="2_tikow"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rkyfv76ac0nu" path="res://interactables/perppermint/candy.png" id="3_hou2k"]
 [ext_resource type="Script" path="res://classes/State.gd" id="4_07ssj"]
 [ext_resource type="Texture2D" uid="uid://cso33egjc5i3k" path="res://interactables/gift/gift.png" id="5_mkasl"]
+[ext_resource type="Texture2D" uid="uid://dt4gmr8eccml0" path="res://tiles/foreground/blue_carpet_step_64x49.png" id="7_udcoh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vsxbt"]
 atlas = ExtResource("2_tikow")
@@ -76,7 +77,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attacking",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -159,7 +160,7 @@ offset = Vector2(0, -25)
 zoom = Vector2(3, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(42, 6)
+target_position = Vector2(48, 6)
 
 [node name="death_motion_stop_timer" type="Timer" parent="."]
 wait_time = 0.2
@@ -259,6 +260,12 @@ layout_mode = 2
 text = "ESC - menu"
 horizontal_alignment = 2
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/top_right"]
+layout_mode = 2
+texture_under = ExtResource("5_mkasl")
+texture_over = ExtResource("3_hou2k")
+texture_progress = ExtResource("7_udcoh")
+
 [node name="bottom_left" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
@@ -284,6 +291,7 @@ texture = ExtResource("3_hou2k")
 [connection signal="timeout" from="death_motion_stop_timer" to="." method="_on_death_motion_stop_timer_timeout"]
 [connection signal="timeout" from="invulnerability_timer" to="." method="_on_invulnerability_timer_timeout"]
 [connection signal="timeout" from="no_gravity_timer" to="." method="_on_no_gravity_timer_timeout"]
+[connection signal="timeout" from="attack_cooldown_timer" to="." method="_on_attack_cooldown_timer_timeout"]
 [connection signal="state_entered" from="StateMachine/idle" to="." method="_on_idle_state_entered"]
 [connection signal="state_entered" from="StateMachine/running" to="." method="_on_running_state_entered"]
 [connection signal="state_entered" from="StateMachine/hooking" to="." method="_on_hooking_state_entered"]

@@ -38,7 +38,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func damage(amount: int) -> void:
+func damage(amount: int = 1) -> void:
 	if death_timer.is_stopped():
 		health -= amount
 		if health <= 0:
@@ -50,7 +50,7 @@ func damage(amount: int) -> void:
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.damage(1)
+		body.damage()
 
 
 func _on_death_timer_timeout() -> void:

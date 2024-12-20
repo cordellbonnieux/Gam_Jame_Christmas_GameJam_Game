@@ -25,7 +25,7 @@ var invulnerable: bool = false
 	"sugar": $CanvasLayer/bottom_left/sugar_level,
 	"health": null,
 	"gifts": $CanvasLayer/top_left/gifts,
-	"time": $CanvasLayer/top_right/Label2
+	"time": $CanvasLayer/top_middle/time
 }
 
 func _ready() -> void:
@@ -129,22 +129,21 @@ func _input(event: InputEvent) -> void:
 			anim.play("attacking")
 			attack_cooldown_timer.start()
 			if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
-				attack_ray.get_collider().damage(1)
+				attack_ray.get_collider().damage()
 
 
-func damage(amount: int) -> void:
+func damage() -> void:
 	if !invulnerable:
-		health -= amount
-		if health <= 0:
+		if gifts <= 0:
 			fsm.current_state.exit("dead")
 			no_gravity_timer.start()
 			anim.scale.y *= -1
-			#ui.health.text = "You're Dead"
 		else:
 			#ui.health.text = str(health)
 			invulnerability_timer.start()
 			invulnerable = true
 			modulate = Color(255,0,0,255)
+			#TODO spill gifts
 
 
 func zip(area: Area2D, zipping: bool = true) -> void:
@@ -184,6 +183,13 @@ func _on_no_gravity_timer_timeout() -> void:
 		#BUG dosn't look great
 		death_motion_stop_timer.start()
 
+func _on_attack_cooldown_timer_timeout() -> void:
+	if fsm.current_state.name == "idle":
+		anim.play("idle")
+	elif fsm.current_state.name == "running":
+		anim.play("running")
+	elif fsm.current_state.name == "falling":
+		anim.play("falling")
 
 func _on_death_motion_stop_timer_timeout() -> void:
 	anim.call_deferred("queue_free")
