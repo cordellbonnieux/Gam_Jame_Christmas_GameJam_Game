@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://d1ux2mg40y56d"]
+[gd_scene load_steps=23 format=3 uid="uid://d1ux2mg40y56d"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_kxvr3"]
 [ext_resource type="Texture2D" uid="uid://toe65dj5ot43" path="res://player/player_sprite_sheet.png" id="2_tikow"]
 [ext_resource type="Script" path="res://classes/StateMachine.gd" id="3_ewm8s"]
 [ext_resource type="Texture2D" uid="uid://rkyfv76ac0nu" path="res://interactables/perppermint/candy.png" id="3_hou2k"]
 [ext_resource type="Script" path="res://classes/State.gd" id="4_07ssj"]
+[ext_resource type="Texture2D" uid="uid://cso33egjc5i3k" path="res://interactables/gift/gift.png" id="5_mkasl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vsxbt"]
 atlas = ExtResource("2_tikow")
@@ -160,8 +161,8 @@ zoom = Vector2(3, 3)
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(42, 6)
 
-[node name="attack_cooldown_timer" type="Timer" parent="."]
-wait_time = 0.25
+[node name="death_motion_stop_timer" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
 
 [node name="invulnerability_timer" type="Timer" parent="."]
@@ -170,6 +171,9 @@ one_shot = true
 
 [node name="no_gravity_timer" type="Timer" parent="."]
 wait_time = 0.25
+one_shot = true
+
+[node name="attack_cooldown_timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -206,22 +210,54 @@ script = ExtResource("4_07ssj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="top_left" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 24.0
-offset_top = 16.0
-offset_right = 92.0
-offset_bottom = 664.0
+[node name="top_left" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 88.0
+offset_bottom = 648.0
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="CanvasLayer/top_left"]
-modulate = Color(0.999315, 5.87195e-06, 9.62615e-07, 1)
+[node name="gift_texture" type="TextureRect" parent="CanvasLayer/top_left"]
 layout_mode = 2
-text = "health"
+size_flags_vertical = 0
+texture = ExtResource("5_mkasl")
+stretch_mode = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer/top_left"]
+[node name="gifts" type="Label" parent="CanvasLayer/top_left"]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
+size_flags_vertical = 0
 text = "presents"
+
+[node name="top_middle" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_vertical = 0
+
+[node name="time" type="Label" parent="CanvasLayer/top_middle"]
+layout_mode = 2
+text = "time"
+horizontal_alignment = 2
+
+[node name="top_right" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 32.0
+offset_right = -33.0
+offset_bottom = 82.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/top_right"]
+layout_mode = 2
+text = "ESC - menu"
+horizontal_alignment = 2
 
 [node name="bottom_left" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 2
@@ -244,33 +280,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_hou2k")
 
-[node name="top_right" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -120.0
-offset_top = 32.0
-offset_right = -33.0
-offset_bottom = 82.0
-grow_horizontal = 0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="CanvasLayer/top_right"]
-layout_mode = 2
-text = "ESC - menu"
-horizontal_alignment = 2
-
-[node name="Label2" type="Label" parent="CanvasLayer/top_right"]
-layout_mode = 2
-text = "time"
-horizontal_alignment = 2
-
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="death_motion_stop_timer" to="." method="_on_death_motion_stop_timer_timeout"]
 [connection signal="timeout" from="invulnerability_timer" to="." method="_on_invulnerability_timer_timeout"]
+[connection signal="timeout" from="no_gravity_timer" to="." method="_on_no_gravity_timer_timeout"]
 [connection signal="state_entered" from="StateMachine/idle" to="." method="_on_idle_state_entered"]
 [connection signal="state_entered" from="StateMachine/running" to="." method="_on_running_state_entered"]
 [connection signal="state_entered" from="StateMachine/hooking" to="." method="_on_hooking_state_entered"]
 [connection signal="state_entered" from="StateMachine/zipping" to="." method="_on_zipping_state_entered"]
 [connection signal="state_entered" from="StateMachine/falling" to="." method="_on_falling_state_entered"]
+[connection signal="state_entered" from="StateMachine/dead" to="." method="_on_dead_state_entered"]
 [connection signal="state_entered" from="StateMachine/sliding" to="." method="_on_sliding_state_entered"]

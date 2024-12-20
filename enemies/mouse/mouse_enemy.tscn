@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c5sscus21q3gu" path="res://enemies/mouse/mouse_sprites.png" id="2_1i71f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhfb"]
-size = Vector2(22, 14)
+size = Vector2(18, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4a7bc"]
 atlas = ExtResource("2_1i71f")
@@ -42,6 +42,7 @@ target_position = Vector2(40, 0)
 target_position = Vector2(32, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_hkhfb")
 
 [node name="attack_build_up" type="Timer" parent="."]

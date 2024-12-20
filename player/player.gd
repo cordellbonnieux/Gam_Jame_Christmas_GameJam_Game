@@ -19,16 +19,18 @@ var invulnerable: bool = false
 @onready var attack_cooldown_timer: Timer = $attack_cooldown_timer
 @onready var invulnerability_timer: Timer = $invulnerability_timer
 @onready var no_gravity_timer: Timer = $no_gravity_timer
+@onready var death_motion_stop_timer: Timer = $death_motion_stop_timer
+@onready var collider: CollisionShape2D = $CollisionShape2D
 @onready var ui: Dictionary = {
 	"sugar": $CanvasLayer/bottom_left/sugar_level,
-	"health": $CanvasLayer/top_left/Label,
-	"gifts": $CanvasLayer/top_left/Label2,
+	"health": null,
+	"gifts": $CanvasLayer/top_left/gifts,
 	"time": $CanvasLayer/top_right/Label2
 }
 
 func _ready() -> void:
 	ui.sugar.value = sugar_level
-	ui.health.text = str(health)
+	#ui.health.text = str(health)
 	ui.gifts.text = str(gifts)
 
 func _process(_delta: float) -> void:
@@ -40,7 +42,14 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta) -> void:
 	if fsm.current_state.name == "dead":
-		return
+		#TODO this block is work in progress
+		if no_gravity_timer.is_stopped():
+			velocity.y += gravity * delta
+		else:
+			if death_motion_stop_timer.is_stopped():
+				velocity = Vector2.ZERO
+			else:
+				velocity.y = jump_speed
 		
 		
 	elif Input.is_action_just_pressed("up") && fsm.current_state.name != "falling":
@@ -128,9 +137,11 @@ func damage(amount: int) -> void:
 		health -= amount
 		if health <= 0:
 			fsm.current_state.exit("dead")
-			ui.health.text = "You're Dead"
+			no_gravity_timer.start()
+			anim.scale.y *= -1
+			#ui.health.text = "You're Dead"
 		else:
-			ui.health.text = str(health)
+			#ui.health.text = str(health)
 			invulnerability_timer.start()
 			invulnerable = true
 			modulate = Color(255,0,0,255)
@@ -152,6 +163,7 @@ func add_sugar(amt: float) -> void:
 			sugar_level = 100
 		ui.sugar.value = sugar_level
 
+
 func add_gifts(amt: int) -> void:
 	gifts += amt
 	ui.gifts.text = str(gifts)
@@ -165,6 +177,16 @@ func _on_invulnerability_timer_timeout() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.animation == "attacking":
 		anim.play("idle")
+
+
+func _on_no_gravity_timer_timeout() -> void:
+	if fsm.current_state.name == "dead":
+		#BUG dosn't look great
+		death_motion_stop_timer.start()
+
+
+func _on_death_motion_stop_timer_timeout() -> void:
+	anim.call_deferred("queue_free")
 
 
 func _on_idle_state_entered() -> void:
@@ -191,3 +213,7 @@ func _on_falling_state_entered() -> void:
 
 func _on_sliding_state_entered() -> void:
 	anim.play("sliding")
+
+
+func _on_dead_state_entered() -> void:
+	collider.set_deferred("disabled", true)
