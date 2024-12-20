@@ -164,10 +164,6 @@ target_position = Vector2(42, 6)
 wait_time = 0.25
 one_shot = true
 
-[node name="knock_back_timer" type="Timer" parent="."]
-wait_time = 0.25
-one_shot = true
-
 [node name="invulnerability_timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
@@ -271,7 +267,6 @@ text = "time"
 horizontal_alignment = 2
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="knock_back_timer" to="." method="knock_back_timer_finished"]
 [connection signal="timeout" from="invulnerability_timer" to="." method="_on_invulnerability_timer_timeout"]
 [connection signal="state_entered" from="StateMachine/idle" to="." method="_on_idle_state_entered"]
 [connection signal="state_entered" from="StateMachine/running" to="." method="_on_running_state_entered"]

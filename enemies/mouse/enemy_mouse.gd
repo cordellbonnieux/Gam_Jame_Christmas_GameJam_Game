@@ -14,7 +14,7 @@ var target: CharacterBody2D = null
 @onready var death_timer: Timer = $death_timer
 @onready var collider: CollisionShape2D = $CollisionShape2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !death_timer.is_stopped():
 		modulate.a -= 0.02
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=59 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cebshm4lu50vl" path="res://interactables/hook/hook.tscn" id="7_fnp4g"]
 [ext_resource type="Texture2D" uid="uid://c7rexmxanap04" path="res://tiles/foreground/stair_railing.png" id="7_iaj3p"]
 [ext_resource type="Texture2D" uid="uid://ccjc23rql7rcu" path="res://tiles/foreground/blue_house_siding_right_corner_back.png" id="8_xttvp"]
-[ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="10_5auit"]
 [ext_resource type="PackedScene" uid="uid://b4fp3kra56qr4" path="res://surfaces/xmas_tree/xmas_tree.tscn" id="10_8gr0d"]
 [ext_resource type="Texture2D" uid="uid://b5onwckk6r7bi" path="res://tiles/background/wall_left_corner.png" id="12_tykq4"]
 [ext_resource type="PackedScene" uid="uid://dnwnmo4oklsjr" path="res://interactables/slide_edge/slide_edge.tscn" id="14_pytdj"]
@@ -576,20 +575,12 @@ position = Vector2(4656, 719)
 scale = Vector2(0.5, 0.5)
 
 [node name="stone8" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(5159, 639)
+position = Vector2(5319, 650)
 rotation = -0.0180547
 
-[node name="stone7" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(9113, 1096)
-
-[node name="stone12" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(9535, 987)
-
-[node name="stone13" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(10152, 721)
-
 [node name="stone14" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(9680, 926)
+position = Vector2(9710, 916)
+rotation = -0.262282
 
 [node name="stone16" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
 position = Vector2(10311, 694)
@@ -601,7 +592,8 @@ position = Vector2(10460, 663)
 scale = Vector2(0.8, 0.8)
 
 [node name="stone11" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(9349, 1046)
+position = Vector2(9326, 1067)
+rotation = -0.185411
 scale = Vector2(1.68, 1)
 
 [node name="stone15" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
@@ -616,13 +608,6 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(6990, 663)
 rotation = -3.12034
 scale = Vector2(0.7, -0.5)
-
-[node name="stone20" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(9677, 1153)
-scale = Vector2(1.31569, 1.31569)
-
-[node name="stone1" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(4296, 632)
 
 [node name="stone2" parent="background/area2_bg/surfaces/stones" instance=ExtResource("1_0vkjw")]
 position = Vector2(4572, 627)
@@ -675,14 +660,39 @@ position = Vector2(4940, 515)
 position = Vector2(1330, -3)
 shape = SubResource("RectangleShape2D_jbla0")
 
+[node name="stone7" parent="background/area2_bg/snowy_path" instance=ExtResource("1_0vkjw")]
+position = Vector2(4933, 464)
+
+[node name="stone20" parent="background/area2_bg/snowy_path" instance=ExtResource("1_0vkjw")]
+position = Vector2(5488, 514)
+scale = Vector2(1.31569, 1.31569)
+
 [node name="stone17" parent="background/area2_bg/snowy_path" instance=ExtResource("1_0vkjw")]
-position = Vector2(4079, 258)
+position = Vector2(4238, 256)
+
+[node name="hooks" type="Node2D" parent="background/area2_bg"]
+position = Vector2(7301, 540)
+
+[node name="hook" parent="background/area2_bg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(-1971, -91)
+
+[node name="hook3" parent="background/area2_bg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(-1856, 27)
+
+[node name="hook4" parent="background/area2_bg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(-1704, -19)
+
+[node name="hook2" parent="background/area2_bg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(956, 322)
 
 [node name="more stones" type="Node2D" parent="background/area2_bg"]
 
 [node name="stone6" parent="background/area2_bg/more stones" instance=ExtResource("1_0vkjw")]
 position = Vector2(4751, 652)
 scale = Vector2(0.7, 0.7)
+
+[node name="stone1" parent="background/area2_bg/more stones" instance=ExtResource("1_0vkjw")]
+position = Vector2(4335, 645)
 
 [node name="area1_bg" type="Node2D" parent="background"]
 
@@ -697,7 +707,7 @@ position = Vector2(0, 80)
 
 [node name="background_tiles" type="TileMapLayer" parent="background/area1_bg/building"]
 position = Vector2(-124, -232)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAYAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP//AAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAARAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAfAAIAAAAAAAAAAAAgAAIAAAAAAAAAAAAhAAIAAAAAAAAAAAAiAAIAAAAAAAAAAAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAAnAAEAAAAAAAAAAAAmAAEAAAAAAAAAAAAlAAEAAAAAAAAAAAAkAAEAAAAAAAAAAAAjAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAoAAEAAAAAAAAAAAAoAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAdAP//AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAiAP//AAAAAAAAAAAjAP//AAAAAAAAAAAkAP//AAAAAAAAAAAlAP//AAAAAAAAAAAmAP//AAAAAAAAAAAnAP//AAAAAAAAAAAoAP//AAAAAAAAAAApAAIAAAAAAAAAAAAqAAIAAAAAAAAAAAAqAP//AAAAAAAAAAApAP//AAAAAAAAAAApAAAAAAAAAAAAAAApAAEAAAAAAAAAAAAqAAEAAAAAAAAAAAAqAAAAAAAAAAAAAAArAAIAAAAAAAAAAAArAAEAAAAAAAAAAAArAAAAAAAAAAAAAAArAP//AAAAAAAAAAAWAAIAAAAAAAAAAAAQAAEAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAYAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAAAAAAAAAAbAAIAAAAAAAAAAAAcAAIAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP//AAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAARAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAgAAIAAAAAAAAAAAAhAAIAAAAAAAAAAAAiAAIAAAAAAAAAAAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAAnAAEAAAAAAAAAAAAmAAEAAAAAAAAAAAAlAAEAAAAAAAAAAAAkAAEAAAAAAAAAAAAjAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAoAAEAAAAAAAAAAAAoAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAdAP//AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAiAP//AAAAAAAAAAAjAP//AAAAAAAAAAAkAP//AAAAAAAAAAAlAP//AAAAAAAAAAAmAP//AAAAAAAAAAAnAP//AAAAAAAAAAAoAP//AAAAAAAAAAApAAIAAAAAAAAAAAAqAAIAAAAAAAAAAAAqAP//AAAAAAAAAAApAP//AAAAAAAAAAApAAAAAAAAAAAAAAApAAEAAAAAAAAAAAAqAAEAAAAAAAAAAAAqAAAAAAAAAAAAAAArAAIAAAAAAAAAAAArAAEAAAAAAAAAAAArAAAAAAAAAAAAAAArAP//AAAAAAAAAAAWAAIAAAAAAAAAAAAQAAEAAAAAAAAAAAAfAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_bvy7f")
 
 [node name="staircase_steps" type="Node2D" parent="background/area1_bg/building"]
@@ -820,26 +830,38 @@ scale = Vector2(1.5, 1.25)
 position = Vector2(419, 65)
 
 [node name="picture" parent="background/area1_bg/furniture" instance=ExtResource("6_0p2ji")]
-position = Vector2(566, -98)
+position = Vector2(743, -22)
 rotation = -0.0589802
 
 [node name="hook2" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
-position = Vector2(470, -97)
+position = Vector2(475, -82)
+
+[node name="hook4" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+position = Vector2(623, -165)
+
+[node name="hook6" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+position = Vector2(796, -234)
+
+[node name="hook5" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+position = Vector2(935, 49)
+
+[node name="hook7" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
+position = Vector2(1663, -96)
 
 [node name="hook" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
-position = Vector2(2527, 460)
+position = Vector2(2385, 348)
 
 [node name="picture2" parent="background/area1_bg/furniture" instance=ExtResource("6_0p2ji")]
-position = Vector2(1279, -61)
+position = Vector2(1296, -35)
 
 [node name="picture3" parent="background/area1_bg/furniture" instance=ExtResource("6_0p2ji")]
-position = Vector2(3687, 431)
+position = Vector2(3582, 553)
 
 [node name="hook3" parent="background/area1_bg/furniture" instance=ExtResource("7_fnp4g")]
-position = Vector2(2865, 360)
+position = Vector2(2921, 284)
 
 [node name="xmas_tree" parent="background/area1_bg/furniture" instance=ExtResource("10_8gr0d")]
-position = Vector2(3419, 346)
+position = Vector2(3419, 362)
 scale = Vector2(3, 3)
 
 [node name="platforms" type="Node2D" parent="background/area1_bg/furniture"]
@@ -849,13 +871,10 @@ position = Vector2(-14, -152)
 position = Vector2(48, 118)
 
 [node name="shelf2" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(678, 149)
-
-[node name="shelf3" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(754, 54)
+position = Vector2(649, 157)
 
 [node name="shelf4" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(834, 179)
+position = Vector2(735, 198)
 
 [node name="shelf8" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
 position = Vector2(1410, 81)
@@ -867,13 +886,13 @@ position = Vector2(1474, 81)
 position = Vector2(1538, 81)
 
 [node name="shelf5" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(967, 242)
+position = Vector2(820, 245)
 
 [node name="shelf6" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
 position = Vector2(1086, 198)
 
 [node name="shelf7" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(1200, 144)
+position = Vector2(1223, 143)
 
 [node name="shelf9" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
 position = Vector2(2669, 597)
@@ -887,46 +906,46 @@ position = Vector2(2797, 597)
 [node name="shelf12" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
 position = Vector2(2920, 745)
 
-[node name="shelf13" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3043, 693)
-
-[node name="shelf14" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3107, 693)
-
-[node name="shelf17" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3213, 644)
-
-[node name="shelf19" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3002, 601)
-
-[node name="shelf18" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3065, 601)
-
 [node name="shelf20" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3061, 488)
+position = Vector2(2867, 542)
 
 [node name="shelf21" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3218, 536)
+position = Vector2(3697, 673)
 
-[node name="shelf22" parent="background/area1_bg/furniture/platforms" instance=ExtResource("3_kpjoh")]
-position = Vector2(3218, 536)
+[node name="platforms2" type="Node2D" parent="background/area1_bg/furniture"]
 
-[node name="ziplights" type="Node2D" parent="background/area1_bg"]
+[node name="picture3" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("6_0p2ji")]
+position = Vector2(3027, 451)
 
-[node name="zip0" parent="background/area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
-position = Vector2(3201, 434)
-destination = NodePath("../zip1")
+[node name="window" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("2_x41i6")]
+position = Vector2(2781, 287)
 
-[node name="zip1" parent="background/area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
-position = Vector2(3313, 149)
-destination = NodePath("../zip2")
+[node name="window3" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("2_x41i6")]
+position = Vector2(942, -218)
 
-[node name="zip2" parent="background/area1_bg/ziplights" node_paths=PackedStringArray("destination") instance=ExtResource("10_5auit")]
-position = Vector2(3393, 330)
-destination = NodePath("../zip3")
+[node name="window4" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("2_x41i6")]
+position = Vector2(3931, 293)
 
-[node name="zip3" parent="background/area1_bg/ziplights" instance=ExtResource("10_5auit")]
-position = Vector2(3619, 593)
+[node name="hook3" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("7_fnp4g")]
+position = Vector2(2907, 475)
+
+[node name="hook4" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("7_fnp4g")]
+position = Vector2(2588, 280)
+
+[node name="hook5" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("7_fnp4g")]
+position = Vector2(3174, 258)
+
+[node name="hook6" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("7_fnp4g")]
+position = Vector2(3132, 409)
+
+[node name="hook7" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("7_fnp4g")]
+position = Vector2(3734, 422)
+
+[node name="hook8" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("7_fnp4g")]
+position = Vector2(3638, 317)
+
+[node name="hook9" parent="background/area1_bg/furniture/platforms2" instance=ExtResource("7_fnp4g")]
+position = Vector2(3772, 243)
 
 [node name="area3_bg" type="Node2D" parent="background"]
 position = Vector2(10581, 645)
@@ -1136,7 +1155,7 @@ position = Vector2(280, 78)
 position = Vector2(439, 100)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(3084, 447)
+position = Vector2(-91, 0)
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -1248,6 +1267,94 @@ shape = SubResource("RectangleShape2D_fbq5i")
 
 [node name="stone1" parent="foreground/area1_fg" instance=ExtResource("1_0vkjw")]
 position = Vector2(3931, 712)
+
+[node name="rails" type="Node2D" parent="foreground/area1_fg"]
+
+[node name="xmas_lights" parent="foreground/area1_fg/rails" instance=ExtResource("30_4svah")]
+position = Vector2(3240, 228)
+rotation = -0.649918
+
+[node name="xmas_lights2" parent="foreground/area1_fg/rails/xmas_lights" instance=ExtResource("30_4svah")]
+position = Vector2(33.8531, -8.18285)
+rotation = -0.439939
+
+[node name="xmas_lights3" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2" instance=ExtResource("30_4svah")]
+position = Vector2(35.3478, 0.730562)
+
+[node name="xmas_lights4" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3" instance=ExtResource("30_4svah")]
+position = Vector2(36.7356, 3.39024)
+rotation = 0.349813
+
+[node name="xmas_lights5" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4" instance=ExtResource("30_4svah")]
+position = Vector2(18.6532, 21.0962)
+rotation = 2.03358
+
+[node name="xmas_lights6" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5" instance=ExtResource("30_4svah")]
+position = Vector2(38.8792, 5.86595)
+rotation = -0.0498483
+scale = Vector2(1, 1)
+
+[node name="xmas_lights7" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6" instance=ExtResource("30_4svah")]
+position = Vector2(37.6593, -5.17456)
+rotation = -0.297798
+
+[node name="xmas_lights8" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7" instance=ExtResource("30_4svah")]
+position = Vector2(36.297, -5.8758)
+rotation = -0.299318
+
+[node name="xmas_lights9" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8" instance=ExtResource("30_4svah")]
+position = Vector2(36.4466, 15.088)
+rotation = 0.93869
+
+[node name="xmas_lights10" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9" instance=ExtResource("30_4svah")]
+position = Vector2(37.1987, 13.4632)
+rotation = 0.713425
+
+[node name="xmas_lights11" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10" instance=ExtResource("30_4svah")]
+position = Vector2(43.8494, 1.10773)
+
+[node name="xmas_lights12" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11" instance=ExtResource("30_4svah")]
+position = Vector2(37.9581, 5.01825)
+rotation = 0.27377
+
+[node name="xmas_lights13" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12" instance=ExtResource("30_4svah")]
+position = Vector2(36.3526, 0.70093)
+
+[node name="xmas_lights14" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13" instance=ExtResource("30_4svah")]
+position = Vector2(34.9713, 1.0044)
+
+[node name="xmas_lights15" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14" instance=ExtResource("30_4svah")]
+position = Vector2(37.1949, 1.23983)
+
+[node name="xmas_lights16" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15" instance=ExtResource("30_4svah")]
+position = Vector2(36.7554, -7.35126)
+rotation = -0.535306
+
+[node name="xmas_lights17" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16" instance=ExtResource("30_4svah")]
+position = Vector2(32.6113, -13.0576)
+rotation = -0.860314
+
+[node name="xmas_lights18" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17" instance=ExtResource("30_4svah")]
+position = Vector2(36.5303, -9.72281)
+rotation = -0.594191
+
+[node name="xmas_lights19" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18" instance=ExtResource("30_4svah")]
+position = Vector2(36.6438, -6.18295)
+rotation = -0.425197
+
+[node name="xmas_lights20" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19" instance=ExtResource("30_4svah")]
+position = Vector2(36.1819, -1.69434)
+rotation = -0.240777
+
+[node name="xmas_lights21" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20" instance=ExtResource("30_4svah")]
+position = Vector2(37.4542, -3.89623)
+rotation = -0.207772
+
+[node name="xmas_lights22" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21" instance=ExtResource("30_4svah")]
+position = Vector2(37.6425, -0.20507)
+
+[node name="xmas_lights23" parent="foreground/area1_fg/rails/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17/xmas_lights18/xmas_lights19/xmas_lights20/xmas_lights21/xmas_lights22" instance=ExtResource("30_4svah")]
+position = Vector2(36.9716, -1.45)
 
 [node name="area2_fg" type="Node2D" parent="foreground"]
 
@@ -1612,24 +1719,30 @@ position = Vector2(34.0153, -0.0964567)
 [node name="hooks" type="Node2D" parent="foreground/area2_fg"]
 
 [node name="hook" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(9884, 830)
+position = Vector2(9854, 837)
+
+[node name="hook6" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(9477, 999)
+
+[node name="hook7" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
+position = Vector2(9574, 899)
 
 [node name="hook3" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(10036, 805)
+position = Vector2(10009, 828)
 
 [node name="hook4" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(10075, 922)
+position = Vector2(10106, 907)
 
 [node name="hook5" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(10240, 1033)
+position = Vector2(10168, 1054)
 
 [node name="hook2" parent="foreground/area2_fg/hooks" instance=ExtResource("7_fnp4g")]
-position = Vector2(10138, 706)
+position = Vector2(10101, 736)
 
 [node name="stones" type="Node2D" parent="foreground/area2_fg"]
 
 [node name="stone19" parent="foreground/area2_fg/stones" instance=ExtResource("1_0vkjw")]
-position = Vector2(5303, 701)
+position = Vector2(5165, 697)
 rotation = 3.00983
 scale = Vector2(1, -1)
 
@@ -1702,7 +1815,7 @@ position = Vector2(1004, 132)
 position = Vector2(1354, -86)
 
 [node name="mouse_enemy3" parent="enemies_and_pickups/area1_enemies" instance=ExtResource("17_uyd7v")]
-position = Vector2(2609, 432)
+position = Vector2(2602, 431)
 
 [node name="mouse_enemy4" parent="enemies_and_pickups/area1_enemies" instance=ExtResource("17_uyd7v")]
 position = Vector2(3001, 615)
@@ -1719,34 +1832,34 @@ position = Vector2(64, -1)
 position = Vector2(272, -45)
 
 [node name="peppermint_candy22" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(355, -106)
+position = Vector2(690, 61)
 
 [node name="peppermint_candy3" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(452, -129)
+position = Vector2(586, -229)
 
 [node name="peppermint_candy20" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(549, -35)
+position = Vector2(177, -1)
 
 [node name="peppermint_candy21" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(628, -135)
+position = Vector2(434, -148)
 
 [node name="peppermint_candy4" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(960, 10)
+position = Vector2(1007, -7)
 
 [node name="peppermint_candy23" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(1072, -45)
+position = Vector2(957, -157)
 
 [node name="peppermint_candy24" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(1163, -104)
+position = Vector2(1207, -104)
 
 [node name="peppermint_candy5" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(1556, -98)
+position = Vector2(1679, -103)
 
 [node name="peppermint_candy6" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(1617, 2)
+position = Vector2(1679, -22)
 
 [node name="peppermint_candy7" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(1650, 107)
+position = Vector2(1679, 57)
 
 [node name="peppermint_candy25" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(2116, 394)
@@ -1761,40 +1874,28 @@ position = Vector2(1842, 259)
 position = Vector2(1709, 194)
 
 [node name="peppermint_candy8" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(2936, 292)
-
-[node name="peppermint_candy9" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(3092, 338)
-
-[node name="peppermint_candy10" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(2265, 471)
+position = Vector2(2929, 216)
 
 [node name="peppermint_candy11" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(2413, 456)
+position = Vector2(2340, 228)
 
 [node name="peppermint_candy12" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(3370, 222)
-
-[node name="peppermint_candy13" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(3240, 254)
+position = Vector2(3165, 194)
 
 [node name="peppermint_candy17" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(3194, 604)
+position = Vector2(3359, 329)
 
 [node name="peppermint_candy18" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(3421, 603)
+position = Vector2(3498, 498)
 
 [node name="peppermint_candy19" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(2790, 564)
 
 [node name="peppermint_candy14" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(3574, 382)
-
-[node name="peppermint_candy15" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(3672, 331)
+position = Vector2(3612, 301)
 
 [node name="peppermint_candy16" parent="enemies_and_pickups/area1_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(3772, 365)
+position = Vector2(3908, 379)
 
 [node name="area2_pickups" type="Node2D" parent="enemies_and_pickups"]
 
@@ -1802,19 +1903,13 @@ position = Vector2(3772, 365)
 position = Vector2(4062, 527)
 
 [node name="peppermint_candy2" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(4304, 598)
+position = Vector2(4419, 592)
 
 [node name="peppermint_candy3" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(4639, 585)
-
-[node name="peppermint_candy4" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(4846, 542)
+position = Vector2(4754, 559)
 
 [node name="peppermint_candy26" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(5168, 607)
-
-[node name="peppermint_candy27" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(5440, 664)
+position = Vector2(5325, 610)
 
 [node name="peppermint_candy28" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5995, 576)
@@ -1828,20 +1923,11 @@ position = Vector2(6480, 498)
 [node name="peppermint_candy5" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5047, 457)
 
-[node name="peppermint_candy6" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(5258, 381)
-
 [node name="peppermint_candy7" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(5339, 369)
-
-[node name="peppermint_candy8" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(5403, 409)
+position = Vector2(5736, 471)
 
 [node name="peppermint_candy9" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(5429, 483)
-
-[node name="peppermint_candy10" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(5439, 574)
+position = Vector2(5450, 450)
 
 [node name="peppermint_candy15" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(5867, 620)
@@ -1864,12 +1950,6 @@ position = Vector2(6858, 34)
 [node name="peppermint_candy33" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(7581, 675)
 
-[node name="peppermint_candy35" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7679, 732)
-
-[node name="peppermint_candy36" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8236, 857)
-
 [node name="peppermint_candy37" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(7797, 800)
 
@@ -1877,37 +1957,28 @@ position = Vector2(7797, 800)
 position = Vector2(8573, 921)
 
 [node name="peppermint_candy44" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(9936, 802)
-
-[node name="peppermint_candy45" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8677, 981)
+position = Vector2(9772, 837)
 
 [node name="peppermint_candy46" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(8787, 1044)
 
 [node name="peppermint_candy47" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(9990, 751)
-
-[node name="peppermint_candy48" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8878, 1096)
+position = Vector2(10115, 801)
 
 [node name="peppermint_candy49" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(9112, 1055)
+position = Vector2(9206, 1047)
 
 [node name="peppermint_candy50" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
 position = Vector2(10346, 652)
 
-[node name="peppermint_candy39" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(7920, 871)
-
 [node name="peppermint_candy40" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(10008, 1010)
+position = Vector2(10096, 990)
 
 [node name="peppermint_candy41" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(8309, 857)
+position = Vector2(8349, 832)
 
 [node name="peppermint_candy42" parent="enemies_and_pickups/area2_pickups" instance=ExtResource("18_m5lbo")]
-position = Vector2(9541, 943)
+position = Vector2(9502, 911)
 
 [node name="area2_enemies" type="Node2D" parent="enemies_and_pickups"]
 

@@ -11,13 +11,11 @@ var acceleration: float = 0.25
 var current_hook: Area2D = null
 var current_zips: Array[Vector2] = []
 var invulnerable: bool = false
-#var incoming_damage_direction: Vector2i
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var fsm: StateMachine = $StateMachine
 @onready var detection_area: Area2D = $detection_area
 @onready var attack_ray: RayCast2D =  $RayCast2D
 @onready var attack_cooldown_timer: Timer = $attack_cooldown_timer
-#@onready var knock_back_timer: Timer = $knock_back_timer
 @onready var invulnerability_timer: Timer = $invulnerability_timer
 @onready var no_gravity_timer: Timer = $no_gravity_timer
 @onready var ui: Dictionary = {
@@ -42,17 +40,14 @@ func _physics_process(delta) -> void:
 	if fsm.current_state.name == "dead":
 		return
 		
-	#if fsm.current_state.name == "knock-back":
-	#	velocity = -zip_speed * incoming_damage_direction
-	#	#TODO add blinking effect
 		
 	elif Input.is_action_just_pressed("up") && fsm.current_state.name != "falling":
-		velocity.y = jump_speed
+		velocity.y = jump_speed + sugar_level
 		if fsm.current_state.name == "hooking":
 			current_hook.unhook()
 			current_hook = null
 			no_gravity_timer.start()
-			print("start it")
+
 		fsm.current_state.exit("falling")
 		
 	elif fsm.current_state.name == "zipping" || fsm.current_state.name == "sliding":
@@ -67,10 +62,6 @@ func _physics_process(delta) -> void:
 					fsm.current_state.exit("falling")
 					
 	elif fsm.current_state.name == "hooking":
-		#if abs((current_hook.global_position + Vector2(0, 32)).y - global_position.y) > 1 && abs(current_hook.global_position.x - global_position.x) > 1:
-		#	#BUG sometimes causes wierd movement
-		#	velocity = lerp(velocity, (current_hook.global_position + Vector2(0, 32) - global_position).normalized() * zip_speed, 1)
-		#else:
 		velocity = Vector2.ZERO
 	else:
 		if no_gravity_timer.is_stopped():
@@ -128,24 +119,15 @@ func _input(event: InputEvent) -> void:
 			attack_cooldown_timer.start()
 			if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
 				attack_ray.get_collider().damage(1)
-				
-	#elif event.is_action_pressed("attack"):
-	#	# NOTE notice no attack state, this is intentional, don't add it!
-	#	if attack_cooldown_timer.is_stopped() && attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
-	#		attack_ray.get_collider().damage(1)
-	#		attack_cooldown_timer.start()
 
 
 func damage(amount: int) -> void:
 	if !invulnerable:
-		#incoming_damage_direction = (dmg_abs_pos - global_position).normalized()
 		health -= amount
 		if health <= 0:
 			fsm.current_state.exit("dead")
 			ui.health.text = "You're Dead"
 		else:
-			#fsm.current_state.exit("knock-back")
-			#knock_back_timer.start()
 			ui.health.text = str(health)
 			invulnerability_timer.start()
 			invulnerable = true
@@ -167,10 +149,6 @@ func add_sugar(amt: float) -> void:
 		if sugar_level > 100:
 			sugar_level = 100
 		ui.sugar.value = sugar_level
-
-
-#func knock_back_timer_finished() -> void:
-#	fsm.current_state.exit("idle")
 
 
 func _on_invulnerability_timer_timeout() -> void:
