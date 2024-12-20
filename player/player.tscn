@@ -172,6 +172,10 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="no_gravity_timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [node name="detection_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxao2o4dvsi"]
+[gd_scene load_steps=9 format=3 uid="uid://dxao2o4dvsi"]
 
 [ext_resource type="Texture2D" uid="uid://dhhhln2iaix3m" path="res://tiles/foreground/xmas_lights.png" id="1_3j273"]
+[ext_resource type="Script" path="res://interactables/xmas_lights/xmas_lights.gd" id="1_fpx2k"]
 [ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="2_prvd7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v0j3e"]
@@ -40,6 +41,7 @@ animations = [{
 }]
 
 [node name="xmas_lights" type="Node2D"]
+script = ExtResource("1_fpx2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4t1gc")

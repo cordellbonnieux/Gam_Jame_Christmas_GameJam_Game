@@ -19,6 +19,7 @@ var invulnerable: bool = false
 @onready var attack_cooldown_timer: Timer = $attack_cooldown_timer
 #@onready var knock_back_timer: Timer = $knock_back_timer
 @onready var invulnerability_timer: Timer = $invulnerability_timer
+@onready var no_gravity_timer: Timer = $no_gravity_timer
 @onready var ui: Dictionary = {
 	"sugar": $CanvasLayer/bottom_left/sugar_level,
 	"health": $CanvasLayer/top_left/Label,
@@ -47,9 +48,11 @@ func _physics_process(delta) -> void:
 		
 	elif Input.is_action_just_pressed("up") && fsm.current_state.name != "falling":
 		velocity.y = jump_speed
-		if fsm.current_state.name == "hooked":
+		if fsm.current_state.name == "hooking":
 			current_hook.unhook()
 			current_hook = null
+			no_gravity_timer.start()
+			print("start it")
 		fsm.current_state.exit("falling")
 		
 	elif fsm.current_state.name == "zipping" || fsm.current_state.name == "sliding":
@@ -70,7 +73,10 @@ func _physics_process(delta) -> void:
 		#else:
 		velocity = Vector2.ZERO
 	else:
-		velocity.y += gravity * delta
+		if no_gravity_timer.is_stopped():
+			velocity.y += gravity * delta
+		else:
+			velocity.y = jump_speed
 		var dir = Input.get_axis("left", "right")
 		if dir != 0:
 			#TODO add slipping effect here
