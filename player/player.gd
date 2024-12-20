@@ -1,7 +1,6 @@
 extends CharacterBody2D
 var dropable_gift: PackedScene = preload("res://interactables/dropped_gift/dropped_gift.tscn")
 
-var health: int = 3
 var sugar_level: float = 0.0
 var gifts: int = 0
 var speed: int = 100
@@ -28,6 +27,7 @@ var invulnerable: bool = false
 	"gifts": $CanvasLayer/top_left/gifts,
 	"time": $CanvasLayer/top_middle/time
 }
+signal dead
 
 func _ready() -> void:
 	ui.sugar.value = sugar_level
@@ -149,12 +149,10 @@ func damage() -> void:
 			fsm.current_state.exit("dead")
 			no_gravity_timer.start()
 			anim.scale.y *= -1
+			dead.emit()
 		else:
-			#ui.health.text = str(health)
 			invulnerability_timer.start()
 			invulnerable = true
-			modulate = Color(255,0,0,255)
-			# TODO damage flash
 			spill_gifts()
 
 

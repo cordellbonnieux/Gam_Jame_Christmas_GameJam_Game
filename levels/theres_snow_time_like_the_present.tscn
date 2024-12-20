@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=71 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
@@ -27,8 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://dr8rwhihce8q1" path="res://enemies/mouse/mouse_enemy.tscn" id="17_uyd7v"]
 [ext_resource type="PackedScene" uid="uid://dkfclo2yc0hg8" path="res://interactables/perppermint/peppermint_candy.tscn" id="18_m5lbo"]
 [ext_resource type="Texture2D" uid="uid://e04e1mwfb00k" path="res://tiles/foreground/blue_house_siding_right_corner_front.png" id="19_ht1fe"]
+[ext_resource type="Texture2D" uid="uid://c7ybfh7vnal02" path="res://tiles/background/garage_wall.png" id="21_vf5vr"]
 [ext_resource type="Texture2D" uid="uid://cbvh8r4fm34o2" path="res://tiles/background/window_wall_left_corner.png" id="22_xo31m"]
 [ext_resource type="Texture2D" uid="uid://bt3c0kx5mfxri" path="res://tiles/background/right_door_wall_corner.png" id="23_c0i7r"]
+[ext_resource type="Texture2D" uid="uid://n00aa7imoyte" path="res://tiles/foreground/garage_floor.png" id="23_kdgf8"]
+[ext_resource type="Texture2D" uid="uid://bfvsqqwn0qy2m" path="res://tiles/background/ventalation_shaft.png" id="24_letws"]
 [ext_resource type="Texture2D" uid="uid://c0kfpo7v070ot" path="res://tiles/background/wall_vent_right_corner.png" id="24_odok4"]
 [ext_resource type="PackedScene" uid="uid://dxao2o4dvsi" path="res://interactables/xmas_lights/xmas_lights.tscn" id="30_4svah"]
 [ext_resource type="Texture2D" uid="uid://c87wj1ewbie6l" path="res://tiles/foreground/house_siding_front.png" id="30_rmp5f"]
@@ -122,12 +125,25 @@ texture = ExtResource("1_wuagu")
 texture_region_size = Vector2i(96, 256)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbrii"]
+texture = ExtResource("21_vf5vr")
+texture_region_size = Vector2i(96, 256)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_e7f6q"]
 tile_size = Vector2i(96, 256)
 sources/0 = SubResource("TileSetAtlasSource_f34qo")
+sources/1 = SubResource("TileSetAtlasSource_qbrii")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvtc6"]
 size = Vector2(77, 545)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s0bq1"]
+texture = ExtResource("23_kdgf8")
+texture_region_size = Vector2i(160, 112)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipuco"]
 texture = ExtResource("4_x4ygh")
@@ -139,18 +155,31 @@ texture_region_size = Vector2i(160, 112)
 [sub_resource type="TileSet" id="TileSet_m3kca"]
 tile_size = Vector2i(160, 112)
 sources/1 = SubResource("TileSetAtlasSource_ipuco")
+sources/0 = SubResource("TileSetAtlasSource_s0bq1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbj6n"]
 size = Vector2(659, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xtxq"]
-size = Vector2(1360, 39)
+size = Vector2(2937, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuotx"]
 size = Vector2(9.63629, 768.819)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qljnh"]
 size = Vector2(128, 620)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4pd4"]
+size = Vector2(35.0004, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acg3d"]
+size = Vector2(43, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evvgw"]
+size = Vector2(177, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv1ov"]
+size = Vector2(184.38, 20.1885)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_od31i"]
 size = Vector2(50.9957, 8)
@@ -948,7 +977,7 @@ position = Vector2(10581, 645)
 
 [node name="inner_walls" type="TileMapLayer" parent="background/area3_bg"]
 position = Vector2(0, 32)
-tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAAEAAAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAARAAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAASAP//AAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAZAP//AAAAAAAAAAAYAP//AAAAAAAAAAAXAP//AAAAAAAAAAAWAP//AAAAAAAAAAAVAP//AAAAAAAAAAAUAP//AAAAAAAAAAATAP//AAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAAEAAAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAARAAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAASAP//AAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAZAP//AQAAAAAAAAAYAP//AAAAAAAAAAAXAP//AAAAAAAAAAAWAP//AAAAAAAAAAAVAP//AAAAAAAAAAAUAP//AAAAAAAAAAATAP//AAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAEAAQAAAAAAAAAbAAEAAQAAAAAAAAAcAAEAAQAAAAAAAAAdAAEAAQAAAAAAAAAeAAEAAQAAAAAAAAAfAAEAAQAAAAAAAAAgAAEAAQAAAAAAAAAgAAAAAQAAAAAAAAAfAAAAAQAAAAAAAAAeAAAAAQAAAAAAAAAdAAAAAQAAAAAAAAAcAAAAAQAAAAAAAAAbAAAAAQAAAAAAAAAaAAAAAQAAAAAAAAAaAP//AQAAAAAAAAAbAP//AQAAAAAAAAAcAP//AQAAAAAAAAAdAP//AQAAAAAAAAAeAP//AQAAAAAAAAAfAP//AQAAAAAAAAAgAP//AQAAAAAAAAAhAP//AQAAAAAAAAAiAP//AQAAAAAAAAAiAAAAAQAAAAAAAAAhAAAAAQAAAAAAAAAiAAEAAQAAAAAAAAAjAAEAAQAAAAAAAAAhAAEAAQAAAAAAAAAkAAEAAQAAAAAAAAAlAAEAAQAAAAAAAAAmAAEAAQAAAAAAAAAnAAEAAQAAAAAAAAAnAAAAAQAAAAAAAAAmAAAAAQAAAAAAAAAmAP//AQAAAAAAAAAlAP//AQAAAAAAAAAkAP//AQAAAAAAAAAjAP//AQAAAAAAAAAjAAAAAQAAAAAAAAAkAAAAAQAAAAAAAAAlAAAAAQAAAAAAAAAnAP//AQAAAAAAAAAoAP//AQAAAAAAAAAoAAAAAQAAAAAAAAAoAAEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_e7f6q")
 
 [node name="walls" type="Node2D" parent="background/area3_bg"]
@@ -974,7 +1003,7 @@ position = Vector2(-46.5, 35.5)
 shape = SubResource("RectangleShape2D_tvtc6")
 
 [node name="ground" type="TileMapLayer" parent="background/area3_bg"]
-tile_map_data = PackedByteArray("AAD//wQAAQAAAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAJAAQAAQABAAAAAAAKAAQAAQABAAAAAAD//wEAAQAAAAAAAAAAAAEAAQABAAAAAAABAAEAAQABAAAAAAACAAEAAQABAAAAAAADAAEAAQABAAAAAAAEAAEAAQACAAAAAAALAAQAAQABAAAAAAAMAAQAAQABAAAAAAANAAQAAQABAAAAAAAOAAQAAQABAAAAAAAPAAQAAQABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wQAAQAAAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAJAAQAAQABAAAAAAAKAAQAAQABAAAAAAD//wEAAQAAAAAAAAAAAAEAAQABAAAAAAABAAEAAQABAAAAAAACAAEAAQABAAAAAAADAAEAAQABAAAAAAAEAAEAAQACAAAAAAALAAQAAQABAAAAAAAMAAQAAQABAAAAAAANAAQAAQABAAAAAAAOAAQAAQABAAAAAAAPAAQAAQABAAAAAAAQAAQAAAABAAAAAAARAAQAAAABAAAAAAASAAQAAAABAAAAAAATAAQAAAABAAAAAAAUAAQAAAABAAAAAAAVAAQAAAABAAAAAAAWAAQAAAABAAAAAAAXAAQAAAABAAAAAAAYAAQAAAACAAAAAAAQAP//AAACAAAAAAA=")
 tile_set = SubResource("TileSet_m3kca")
 
 [node name="top_floor" type="StaticBody2D" parent="background/area3_bg/ground"]
@@ -988,7 +1017,7 @@ shape = SubResource("RectangleShape2D_dbj6n")
 position = Vector2(1288, 500)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/area3_bg/ground/ground_floor"]
-position = Vector2(592, 9.5)
+position = Vector2(1380.5, 9.5)
 shape = SubResource("RectangleShape2D_1xtxq")
 
 [node name="stairs" type="Node2D" parent="background/area3_bg"]
@@ -1064,6 +1093,10 @@ position = Vector2(1102, 177)
 [node name="right_corner_vent_walls" type="StaticBody2D" parent="background/area3_bg"]
 position = Vector2(2480, 344)
 
+[node name="vent_shaft" type="Sprite2D" parent="background/area3_bg/right_corner_vent_walls"]
+position = Vector2(112, -462)
+texture = ExtResource("24_letws")
+
 [node name="Sprite2D2" type="Sprite2D" parent="background/area3_bg/right_corner_vent_walls"]
 position = Vector2(0, -267)
 scale = Vector2(-1, 1)
@@ -1104,6 +1137,42 @@ position = Vector2(640, 364)
 [node name="xmas_tree" parent="background/area3_bg" instance=ExtResource("10_8gr0d")]
 position = Vector2(1697, 207)
 scale = Vector2(3, 3)
+
+[node name="boss_room" type="Node2D" parent="background"]
+position = Vector2(13844, 743)
+
+[node name="building_sprites" type="Node2D" parent="background/boss_room"]
+
+[node name="building_colliders" type="Node2D" parent="background/boss_room"]
+
+[node name="entrance_floor" type="StaticBody2D" parent="background/boss_room/building_colliders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/boss_room/building_colliders/entrance_floor"]
+position = Vector2(-690.5, -167)
+shape = SubResource("RectangleShape2D_a4pd4")
+
+[node name="entrance_wall_right" type="StaticBody2D" parent="background/boss_room/building_colliders"]
+position = Vector2(-601, -212)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/boss_room/building_colliders/entrance_wall_right"]
+position = Vector2(20.5, 19.5)
+shape = SubResource("RectangleShape2D_acg3d")
+
+[node name="entrance_cielling" type="StaticBody2D" parent="background/boss_room/building_colliders"]
+position = Vector2(-641, -250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/boss_room/building_colliders/entrance_cielling"]
+position = Vector2(-6.5, 6.5)
+shape = SubResource("RectangleShape2D_evvgw")
+
+[node name="entrance_cielling_2" type="StaticBody2D" parent="background/boss_room/building_colliders"]
+position = Vector2(-754, -268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/boss_room/building_colliders/entrance_cielling_2"]
+position = Vector2(-59, -23)
+rotation = 0.470571
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_dv1ov")
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
 position = Vector2(12743, 583)
@@ -1699,6 +1768,10 @@ scale = Vector2(0.6, 0.607)
 [node name="area3_fg" type="Node2D" parent="foreground"]
 position = Vector2(11857, 794)
 
+[node name="vent_cover" type="Sprite2D" parent="foreground/area3_fg"]
+position = Vector2(1267, -241)
+texture = ExtResource("31_w8atx")
+
 [node name="rails" type="Node2D" parent="foreground/area3_fg"]
 
 [node name="post" type="Sprite2D" parent="foreground/area3_fg/rails"]
@@ -1908,10 +1981,6 @@ rotation = 0.523598
 
 [node name="xmas_lights18" parent="foreground/area3_fg/lights/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17" instance=ExtResource("30_4svah")]
 position = Vector2(32.5269, -3.29614e-05)
-
-[node name="vent_cover" type="Sprite2D" parent="foreground/area3_fg"]
-position = Vector2(1267, -241)
-texture = ExtResource("31_w8atx")
 
 [node name="enemies_and_pickups" type="Node2D" parent="."]
 
