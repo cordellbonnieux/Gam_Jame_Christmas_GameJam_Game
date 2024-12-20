@@ -1,27 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://cm1ln8my7l3ir"]
+[gd_scene load_steps=13 format=3 uid="uid://cm1ln8my7l3ir"]
 
 [ext_resource type="Texture2D" uid="uid://f8p8q0nqnfus" path="res://enemies/dog/dog_sprites.png" id="1_10tye"]
 [ext_resource type="Script" path="res://classes/StateMachine.gd" id="1_54cbj"]
 [ext_resource type="Script" path="res://enemies/dog/boss_dog.gd" id="1_s4ilk"]
 [ext_resource type="Script" path="res://classes/State.gd" id="2_cc41d"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcvoe"]
+atlas = ExtResource("1_10tye")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwnb1"]
+atlas = ExtResource("1_10tye")
+region = Rect2(0, 0, 96, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvral"]
+atlas = ExtResource("1_10tye")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6s84"]
+atlas = ExtResource("1_10tye")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pa3u"]
 atlas = ExtResource("1_10tye")
 region = Rect2(0, 0, 96, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q2evs"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"attacking",
-"speed": 5.0
-}, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcvoe")
+}],
 "loop": true,
 "name": &"charging",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwnb1")
+}],
 "loop": true,
 "name": &"dazed",
 "speed": 5.0
@@ -34,12 +51,18 @@ animations = [{
 "name": &"moving",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6s84")
+}],
+"loop": false,
 "name": &"pre-charging",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pa3u")
+}],
 "loop": true,
 "name": &"sleeping",
 "speed": 5.0
@@ -57,7 +80,8 @@ script = ExtResource("1_s4ilk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_q2evs")
-animation = &"moving"
+animation = &"pre-charging"
+autoplay = "sleeping"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -0.5)
@@ -94,11 +118,11 @@ script = ExtResource("2_cc41d")
 [node name="dazed" type="Node" parent="StateMachine"]
 script = ExtResource("2_cc41d")
 
-[node name="attacking" type="Node" parent="StateMachine"]
-script = ExtResource("2_cc41d")
-
 [node name="dead" type="Node" parent="StateMachine"]
 script = ExtResource("2_cc41d")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="state_entered" from="StateMachine/pre-charging" to="." method="_on_precharging_state_entered"]
+[connection signal="state_entered" from="StateMachine/charging" to="." method="_on_charging_state_entered"]
+[connection signal="state_entered" from="StateMachine/dazed" to="." method="_on_dazed_state_entered"]
