@@ -220,9 +220,9 @@ target_position = Vector2(-128, 8)
 wait_time = 3.0
 one_shot = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="top_dog" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_dog"]
 position = Vector2(0.5, -17)
 shape = SubResource("RectangleShape2D_qs8ec")
 debug_color = Color(0, 0.627451, 0, 0.419608)
@@ -253,7 +253,7 @@ script = ExtResource("2_cc41d")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="daze_timer" to="." method="_on_daze_timer_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="top_dog" to="." method="_on_area_2d_body_entered"]
 [connection signal="state_entered" from="StateMachine/moving" to="." method="_on_moving_state_entered"]
 [connection signal="state_entered" from="StateMachine/pre-charging" to="." method="_on_precharging_state_entered"]
 [connection signal="state_entered" from="StateMachine/charging" to="." method="_on_charging_state_entered"]

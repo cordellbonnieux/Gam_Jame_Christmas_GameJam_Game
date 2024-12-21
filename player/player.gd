@@ -39,18 +39,25 @@ func _process(_delta: float) -> void:
 	if sugar_level > step:
 		sugar_level -= step
 		ui.sugar.value = sugar_level
+		
+	if invulnerable:
+		if modulate.a == 1:
+			modulate.a = 0
+		else:
+			modulate.a = 1
 
 
 func _physics_process(delta) -> void:
 	if fsm.current_state.name == "dead":
+		return
 		#TODO this block is work in progress
-		if no_gravity_timer.is_stopped():
-			velocity.y += gravity * delta
-		else:
-			if death_motion_stop_timer.is_stopped():
-				velocity = Vector2.ZERO
-			else:
-				velocity.y = jump_speed
+		#if no_gravity_timer.is_stopped():
+		#	velocity.y += gravity * delta
+		#else:
+		#	if death_motion_stop_timer.is_stopped():
+		#		velocity = Vector2.ZERO
+		#	else:
+		#		velocity.y = jump_speed
 		
 		
 	elif Input.is_action_just_pressed("up") && fsm.current_state.name != "falling":
@@ -180,7 +187,7 @@ func add_gifts(amt: int) -> void:
 
 func _on_invulnerability_timer_timeout() -> void:
 	invulnerable = false
-	modulate = Color(255,255,255,255)
+	modulate.a = 1
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -193,23 +200,10 @@ func _on_no_gravity_timer_timeout() -> void:
 		#BUG dosn't look great
 		death_motion_stop_timer.start()
 
-func _on_attack_cooldown_timer_timeout() -> void:
-	return
-	# not using below
-	#NOTE this block copied over from key press detection
-	if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
-		attack_ray.get_collider().damage()
-	#NOTE the player technically attacks twice, to allow for a hit on less accurate attacks
-		
-	if fsm.current_state.name == "idle":
-		anim.play("idle")
-	elif fsm.current_state.name == "running":
-		anim.play("running")
-	elif fsm.current_state.name == "falling":
-		anim.play("falling")
-
 func _on_death_motion_stop_timer_timeout() -> void:
-	anim.call_deferred("queue_free")
+	#anim.call_deferred("queue_free")
+	anim.stop()
+	pass
 
 
 func _on_idle_state_entered() -> void:

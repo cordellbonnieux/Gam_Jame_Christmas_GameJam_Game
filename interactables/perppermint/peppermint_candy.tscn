@@ -3,6 +3,33 @@
 [ext_resource type="Script" path="res://interactables/perppermint/peppermint_candy.gd" id="1_cb5gu"]
 [ext_resource type="Texture2D" uid="uid://rkyfv76ac0nu" path="res://interactables/perppermint/candy.png" id="1_e2njp"]
 
+[sub_resource type="Animation" id="Animation_eajr4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_kp5wk"]
 resource_name = "spin"
 length = 2.0
@@ -32,33 +59,6 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, -4), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_eajr4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gvgc0"]
 _data = {
 "RESET": SubResource("Animation_eajr4"),
@@ -69,6 +69,7 @@ _data = {
 radius = 24.0
 
 [node name="peppermint_candy" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_cb5gu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
