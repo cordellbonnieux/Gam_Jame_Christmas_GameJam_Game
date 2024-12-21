@@ -1,7 +1,7 @@
 extends CharacterBody2D
 var dropable_gift: PackedScene = preload("res://interactables/dropped_gift/dropped_gift.tscn")
 
-var sugar_level: float = 0.0
+var sugar_level: float = 50.0
 var gifts: int = 0
 var speed: int = 100
 var jump_speed: int = -200
@@ -25,8 +25,7 @@ var time_now: int = 0
 @onready var collider: CollisionShape2D = $CollisionShape2D
 @onready var ui: Dictionary = {
 	"sugar": $CanvasLayer/bottom_left/sugar_level,
-	"health": null,
-	"gifts": $CanvasLayer/top_left/gifts,
+	"gifts": $CanvasLayer/top_left/hbox/panel/MarginContainer/HBoxContainer/gifts,
 	"time": $CanvasLayer/top_middle/time
 }
 signal dead
@@ -45,7 +44,7 @@ func _process(_delta: float) -> void:
 	else:
 		ui.time.text = str(floor(time_now/60)) + ":" + str(seconds)
 		
-	var step: float = 0.03
+	var step: float = 0.01
 	if sugar_level > step:
 		sugar_level -= step
 		ui.sugar.value = sugar_level
@@ -62,7 +61,7 @@ func _physics_process(delta) -> void:
 		return
 		
 	elif Input.is_action_just_pressed("up") && fsm.current_state.name != "falling":
-		velocity.y = jump_speed + sugar_level
+		velocity.y = jump_speed - floor(sugar_level/2)
 		if fsm.current_state.name == "hooking":
 			current_hook.unhook()
 			current_hook = null

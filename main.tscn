@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0gd8ulbcugng"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_5k84b"]
+[ext_resource type="PackedScene" uid="uid://du5njk6cl8jve" path="res://levels/theres_snow_time_like_the_present.tscn" id="1_xlmsl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_5k84b")
+
+[node name="main_menu" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="cut_scene" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TheresSnowTimeLikeThePresent" parent="." instance=ExtResource("1_xlmsl")]
+visible = false
