@@ -1,7 +1,14 @@
-[gd_scene format=3 uid="uid://dbvkyx0taurks"]
+[gd_scene load_steps=3 format=3 uid="uid://dbvkyx0taurks"]
 
-[node name="boss_shelf" type="StaticBody2D" groups=["boss_shelf"]]
+[ext_resource type="Texture2D" uid="uid://do2v3ade1i3wk" path="res://tiles/background/white_wall_with_trim_96x256.png" id="1_1khq8"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfnc0"]
+size = Vector2(96, 256)
+
+[node name="boss_shelf" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1khq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yfnc0")

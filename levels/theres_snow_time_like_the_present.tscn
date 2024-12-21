@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=73 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://n00aa7imoyte" path="res://tiles/foreground/garage_floor.png" id="23_kdgf8"]
 [ext_resource type="Texture2D" uid="uid://bfvsqqwn0qy2m" path="res://tiles/background/ventalation_shaft.png" id="24_letws"]
 [ext_resource type="Texture2D" uid="uid://c0kfpo7v070ot" path="res://tiles/background/wall_vent_right_corner.png" id="24_odok4"]
+[ext_resource type="PackedScene" uid="uid://dbvkyx0taurks" path="res://enemies/dog/boss_shelf.tscn" id="27_uhkwv"]
 [ext_resource type="PackedScene" uid="uid://dxao2o4dvsi" path="res://interactables/xmas_lights/xmas_lights.tscn" id="30_4svah"]
 [ext_resource type="Texture2D" uid="uid://c87wj1ewbie6l" path="res://tiles/foreground/house_siding_front.png" id="30_rmp5f"]
 [ext_resource type="Texture2D" uid="uid://ci3poibth5h7u" path="res://tiles/foreground/vent_cover.png" id="31_w8atx"]
@@ -1176,6 +1177,12 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dv1ov")
 
 [node name="shelves" type="Node2D" parent="background/boss_room"]
+
+[node name="boss_shelf" parent="background/boss_room/shelves" instance=ExtResource("27_uhkwv")]
+position = Vector2(-653, 260)
+
+[node name="boss_shelf2" parent="background/boss_room/shelves" instance=ExtResource("27_uhkwv")]
+position = Vector2(46, 260)
 
 [node name="hooks" type="Node2D" parent="background/boss_room"]
 
