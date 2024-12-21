@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmgphy0k3u0ym"]
+[gd_scene load_steps=8 format=3 uid="uid://dmgphy0k3u0ym"]
 
 [ext_resource type="Texture2D" uid="uid://dsem478d1a0qq" path="res://ui/menu_bg.png" id="1_2x11a"]
 [ext_resource type="Theme" uid="uid://bhklpnachmrm" path="res://ui/new_theme.tres" id="2_j6dlj"]
-[ext_resource type="Texture2D" uid="uid://df4bqhwi1gvl6" path="res://ui/info_pics/hooks.png" id="3_m3png"]
 [ext_resource type="Texture2D" uid="uid://rgrrpvq3rpmt" path="res://ui/shift-key.png" id="3_s1hth"]
-[ext_resource type="Texture2D" uid="uid://b60oe2mqg6t78" path="res://ui/info_pics/lights.png" id="4_28j4x"]
+[ext_resource type="Texture2D" uid="uid://xdokhrdskdbe" path="res://ui/tall_panel.png" id="4_pccn4"]
+[ext_resource type="Texture2D" uid="uid://0837pbs08ras" path="res://ui/info_pics/hook2.png" id="5_0smfi"]
 [ext_resource type="Texture2D" uid="uid://ctgrepso5l0n1" path="res://ui/info_pics/strike.png" id="5_3bv0i"]
+[ext_resource type="Texture2D" uid="uid://tr55j6l7ibn2" path="res://ui/info_pics/lights2.png" id="6_7v0y6"]
 
 [node name="info_container" type="VBoxContainer"]
 anchors_preset = 8
@@ -31,8 +32,8 @@ texture = ExtResource("1_2x11a")
 layout_mode = 0
 offset_right = 786.0
 offset_bottom = 864.0
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
 
 [node name="content" type="VBoxContainer" parent="bg/MarginContainer"]
 layout_mode = 2
@@ -82,68 +83,123 @@ theme = ExtResource("2_j6dlj")
 theme_override_font_sizes/normal_font_size = 32
 text = "to..."
 
-[node name="control_diagrams" type="HBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams"]
-custom_minimum_size = Vector2(722, 722)
+[node name="control_diagrams" type="GridContainer" parent="bg/MarginContainer/content/shift_control_diagrams"]
+layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 8
+columns = 3
 
-[node name="hook_info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
-custom_minimum_size = Vector2(0, 128)
+[node name="strike" type="MarginContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook_info"]
+[node name="strike" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike"]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("3_m3png")
-expand_mode = 3
+texture = ExtResource("4_pccn4")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook_info"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook_info/HBoxContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(256, 32)
-layout_mode = 2
-text = "Press SHIFT near wreaths to hook"
-scroll_active = false
-
-[node name="light_info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
+[node name="strike_info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike/strike"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -101.5
+offset_right = 82.5
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/light_info"]
-layout_mode = 2
-texture = ExtResource("4_28j4x")
-expand_mode = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/light_info"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/light_info/HBoxContainer"]
-custom_minimum_size = Vector2(200, 32)
-layout_mode = 2
-text = "some info about lights"
-scroll_active = false
-
-[node name="strike_info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 2
-
-[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike_info"]
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike/strike/strike_info"]
 layout_mode = 2
 texture = ExtResource("5_3bv0i")
 expand_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike_info"]
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike/strike/strike_info"]
+clip_contents = false
+custom_minimum_size = Vector2(112, 32)
 layout_mode = 2
-text = "strike enemies"
+theme = ExtResource("2_j6dlj")
+text = "Strike your foes"
+fit_content = true
+scroll_active = false
+
+[node name="zip" type="MarginContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
+layout_mode = 2
+
+[node name="img" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/zip"]
+layout_mode = 2
+texture = ExtResource("4_pccn4")
+
+[node name="info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/zip/img"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -101.5
+offset_right = 82.5
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/zip/img/info"]
+layout_mode = 2
+texture = ExtResource("6_7v0y6")
+expand_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/zip/img/info"]
+clip_contents = false
+custom_minimum_size = Vector2(112, 32)
+layout_mode = 2
+theme = ExtResource("2_j6dlj")
+text = "Zip on lights"
+fit_content = true
+scroll_active = false
+
+[node name="hook" type="MarginContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
+layout_mode = 2
+
+[node name="img" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook"]
+layout_mode = 2
+texture = ExtResource("4_pccn4")
+
+[node name="info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook/img"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -101.5
+offset_right = 82.5
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook/img/info"]
+layout_mode = 2
+texture = ExtResource("5_0smfi")
+expand_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook/img/info"]
+clip_contents = false
+custom_minimum_size = Vector2(112, 32)
+layout_mode = 2
+theme = ExtResource("2_j6dlj")
+text = "Zip on lights"
+fit_content = true
+scroll_active = false
 
 [node name="return" type="TextureButton" parent="bg/MarginContainer/content"]
 layout_mode = 2
