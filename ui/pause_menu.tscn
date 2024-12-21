@@ -1,0 +1,395 @@
+[gd_scene load_steps=16 format=3 uid="uid://dmgphy0k3u0ym"]
+
+[ext_resource type="Texture2D" uid="uid://dsem478d1a0qq" path="res://ui/menu_bg.png" id="1_wmpgw"]
+[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_wpuqe"]
+[ext_resource type="Theme" uid="uid://bhklpnachmrm" path="res://ui/new_theme.tres" id="2_qnmtc"]
+[ext_resource type="Texture2D" uid="uid://rgrrpvq3rpmt" path="res://ui/shift-key.png" id="3_x32yp"]
+[ext_resource type="Texture2D" uid="uid://xdokhrdskdbe" path="res://ui/tall_panel.png" id="4_tj7bp"]
+[ext_resource type="Texture2D" uid="uid://ctgrepso5l0n1" path="res://ui/info_pics/strike.png" id="5_l72r6"]
+[ext_resource type="Texture2D" uid="uid://tr55j6l7ibn2" path="res://ui/info_pics/lights2.png" id="6_7enu7"]
+[ext_resource type="Texture2D" uid="uid://0837pbs08ras" path="res://ui/info_pics/hook2.png" id="7_y8h0c"]
+[ext_resource type="Texture2D" uid="uid://ciscycygd851r" path="res://ui/move_panel.png" id="8_vvyvm"]
+[ext_resource type="Texture2D" uid="uid://dbp7peh43j05i" path="res://ui/info_pics/move_left.png" id="9_w6dpu"]
+[ext_resource type="Texture2D" uid="uid://biu8027b6exo2" path="res://ui/info_pics/a.png" id="10_62hhd"]
+[ext_resource type="Texture2D" uid="uid://cqo34nf0vp6q7" path="res://ui/info_pics/jump.png" id="11_l5na0"]
+[ext_resource type="Texture2D" uid="uid://dvy0d55gte4to" path="res://ui/info_pics/w.png" id="12_awf84"]
+[ext_resource type="Texture2D" uid="uid://5ds3ahqyokmv" path="res://ui/info_pics/move_right.png" id="13_7ucqb"]
+[ext_resource type="Texture2D" uid="uid://dle1423n7ov83" path="res://ui/info_pics/d.png" id="14_7jhhn"]
+
+[node name="pause_menu" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -272.0
+offset_right = 400.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_wpuqe")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_wmpgw")
+
+[node name="MarginContainer" type="MarginContainer" parent="bg"]
+layout_mode = 0
+offset_right = 786.0
+offset_bottom = 864.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+
+[node name="content" type="VBoxContainer" parent="bg/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="title" type="MarginContainer" parent="bg/MarginContainer/content"]
+custom_minimum_size = Vector2(198, 28)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_qnmtc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/title"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 48
+text = "Controls"
+fit_content = true
+scroll_active = false
+
+[node name="shift_control_diagrams" type="VBoxContainer" parent="bg/MarginContainer/content"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="shift" type="HBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams"]
+layout_mode = 2
+
+[node name="title" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/shift"]
+custom_minimum_size = Vector2(68, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_qnmtc")
+theme_override_font_sizes/normal_font_size = 32
+text = "Press"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/shift"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_x32yp")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/shift"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme = ExtResource("2_qnmtc")
+theme_override_font_sizes/normal_font_size = 32
+text = "to..."
+
+[node name="control_diagrams" type="GridContainer" parent="bg/MarginContainer/content/shift_control_diagrams"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 8
+columns = 3
+
+[node name="strike" type="MarginContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
+layout_mode = 2
+
+[node name="strike" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike"]
+layout_mode = 2
+texture = ExtResource("4_tj7bp")
+
+[node name="strike_info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike/strike"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -101.5
+offset_right = 82.5
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike/strike/strike_info"]
+layout_mode = 2
+texture = ExtResource("5_l72r6")
+expand_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/strike/strike/strike_info"]
+clip_contents = false
+custom_minimum_size = Vector2(112, 32)
+layout_mode = 2
+theme = ExtResource("2_qnmtc")
+text = "Strike your foes"
+fit_content = true
+scroll_active = false
+
+[node name="zip" type="MarginContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
+layout_mode = 2
+
+[node name="img" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/zip"]
+layout_mode = 2
+texture = ExtResource("4_tj7bp")
+
+[node name="info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/zip/img"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -101.5
+offset_right = 82.5
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/zip/img/info"]
+layout_mode = 2
+texture = ExtResource("6_7enu7")
+expand_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/zip/img/info"]
+clip_contents = false
+custom_minimum_size = Vector2(112, 32)
+layout_mode = 2
+theme = ExtResource("2_qnmtc")
+text = "Zip on lights"
+fit_content = true
+scroll_active = false
+
+[node name="hook" type="MarginContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams"]
+layout_mode = 2
+
+[node name="img" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook"]
+layout_mode = 2
+texture = ExtResource("4_tj7bp")
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook/img"]
+layout_mode = 2
+offset_left = 45.0
+offset_top = 23.0
+offset_right = 205.0
+offset_bottom = 202.0
+texture = ExtResource("7_y8h0c")
+expand_mode = 4
+
+[node name="info" type="VBoxContainer" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook/img"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 60.0
+offset_right = 98.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/shift_control_diagrams/control_diagrams/hook/img/info"]
+clip_contents = false
+custom_minimum_size = Vector2(112, 32)
+layout_mode = 2
+theme = ExtResource("2_qnmtc")
+text = "Hook on Wreaths"
+fit_content = true
+scroll_active = false
+
+[node name="movement_control_diagrams" type="VBoxContainer" parent="bg/MarginContainer/content"]
+layout_mode = 2
+theme = ExtResource("2_qnmtc")
+
+[node name="MarginContainer" type="MarginContainer" parent="bg/MarginContainer/content/movement_control_diagrams"]
+custom_minimum_size = Vector2(96, 32)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/movement_control_diagrams/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_qnmtc")
+text = "Movement"
+fit_content = true
+scroll_active = false
+
+[node name="GridContainer" type="GridContainer" parent="bg/MarginContainer/content/movement_control_diagrams"]
+layout_mode = 2
+columns = 3
+
+[node name="left" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_vvyvm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/left/VBoxContainer"]
+custom_minimum_size = Vector2(0, 89)
+layout_mode = 2
+texture = ExtResource("9_w6dpu")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/left/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/left/VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/left/VBoxContainer/MarginContainer/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(72, 32)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Press "
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/left/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_62hhd")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/left/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = " to move left"
+scroll_active = false
+
+[node name="jump" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_vvyvm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/jump"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/jump/VBoxContainer"]
+custom_minimum_size = Vector2(0, 89)
+layout_mode = 2
+texture = ExtResource("11_l5na0")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/jump/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/jump/VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/jump/VBoxContainer/MarginContainer/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(62, 32)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Press "
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/jump/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_awf84")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/jump/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(148, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "to move jump"
+scroll_active = false
+
+[node name="right" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_vvyvm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/right/VBoxContainer"]
+custom_minimum_size = Vector2(0, 89)
+layout_mode = 2
+texture = ExtResource("13_7ucqb")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/right/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/right/VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/right/VBoxContainer/MarginContainer/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(62, 32)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Press "
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/right/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("14_7jhhn")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer/right/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "to move right"
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bg/MarginContainer/content"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_qnmtc")
+theme_override_constants/separation = 64
+
+[node name="resume" type="Button" parent="bg/MarginContainer/content/HBoxContainer"]
+layout_mode = 2
+text = "resume game"
+
+[node name="quit" type="Button" parent="bg/MarginContainer/content/HBoxContainer"]
+layout_mode = 2
+text = "quit to menu"
+
+[connection signal="pressed" from="bg/MarginContainer/content/HBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="bg/MarginContainer/content/HBoxContainer/quit" to="." method="_on_quit_pressed"]
