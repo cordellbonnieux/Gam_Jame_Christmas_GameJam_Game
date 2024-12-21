@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmgphy0k3u0ym"]
+[gd_scene load_steps=10 format=3 uid="uid://dmgphy0k3u0ym"]
 
 [ext_resource type="Texture2D" uid="uid://dsem478d1a0qq" path="res://ui/menu_bg.png" id="1_2x11a"]
 [ext_resource type="Theme" uid="uid://bhklpnachmrm" path="res://ui/new_theme.tres" id="2_j6dlj"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://0837pbs08ras" path="res://ui/info_pics/hook2.png" id="5_0smfi"]
 [ext_resource type="Texture2D" uid="uid://ctgrepso5l0n1" path="res://ui/info_pics/strike.png" id="5_3bv0i"]
 [ext_resource type="Texture2D" uid="uid://tr55j6l7ibn2" path="res://ui/info_pics/lights2.png" id="6_7v0y6"]
+[ext_resource type="Texture2D" uid="uid://ciscycygd851r" path="res://ui/move_panel.png" id="8_pe5fs"]
+[ext_resource type="Texture2D" uid="uid://5ds3ahqyokmv" path="res://ui/info_pics/move_right.png" id="9_4d8xp"]
 
 [node name="info_container" type="VBoxContainer"]
 anchors_preset = 8
@@ -37,9 +39,10 @@ theme_override_constants/margin_top = 4
 
 [node name="content" type="VBoxContainer" parent="bg/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="title" type="MarginContainer" parent="bg/MarginContainer/content"]
-custom_minimum_size = Vector2(198, 32)
+custom_minimum_size = Vector2(198, 28)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -201,5 +204,37 @@ text = "Zip on lights"
 fit_content = true
 scroll_active = false
 
+[node name="movement_control_diagrams" type="VBoxContainer" parent="bg/MarginContainer/content"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="bg/MarginContainer/content/movement_control_diagrams"]
+custom_minimum_size = Vector2(96, 32)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/movement_control_diagrams/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_j6dlj")
+text = "Movement"
+fit_content = true
+scroll_active = false
+
+[node name="GridContainer" type="GridContainer" parent="bg/MarginContainer/content/movement_control_diagrams"]
+layout_mode = 2
+columns = 3
+
+[node name="left" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_pe5fs")
+
+[node name="right" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_pe5fs")
+
+[node name="jump" type="TextureRect" parent="bg/MarginContainer/content/movement_control_diagrams/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_pe5fs")
+
 [node name="return" type="TextureButton" parent="bg/MarginContainer/content"]
 layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("9_4d8xp")
