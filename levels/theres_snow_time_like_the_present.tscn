@@ -1181,7 +1181,6 @@ position = Vector2(-754, -268)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/boss_room/building_colliders/entrance_cielling_2"]
 position = Vector2(-59, -23)
 rotation = 0.470571
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dv1ov")
 
 [node name="shelves" type="Node2D" parent="background/boss_room"]

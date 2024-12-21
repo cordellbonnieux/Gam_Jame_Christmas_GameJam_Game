@@ -1,18 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0gd8ulbcugng"]
+[gd_scene load_steps=4 format=3 uid="uid://d0gd8ulbcugng"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5k84b"]
 [ext_resource type="PackedScene" uid="uid://du5njk6cl8jve" path="res://levels/theres_snow_time_like_the_present.tscn" id="1_xlmsl"]
+[ext_resource type="Texture2D" uid="uid://d03d2twt3bl8d" path="res://ui/gift_icon.png" id="2_4qisn"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5k84b")
 
 [node name="main_menu" type="CanvasLayer" parent="."]
 
-[node name="pause_menu" type="CanvasLayer" parent="."]
-visible = false
+[node name="main_menu" type="VBoxContainer" parent="main_menu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="TextureRect" parent="main_menu/main_menu"]
+layout_mode = 2
+texture = ExtResource("2_4qisn")
+
+[node name="start" type="Button" parent="main_menu/main_menu"]
+layout_mode = 2
+
+[node name="info" type="Button" parent="main_menu/main_menu"]
+layout_mode = 2
+
+[node name="exit" type="Button" parent="main_menu/main_menu"]
+layout_mode = 2
 
 [node name="cut_scene" type="CanvasLayer" parent="."]
 visible = false
 
 [node name="TheresSnowTimeLikeThePresent" parent="." instance=ExtResource("1_xlmsl")]
+visible = false
+
+[node name="pause_menu" type="CanvasLayer" parent="."]
 visible = false
