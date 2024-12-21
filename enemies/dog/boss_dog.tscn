@@ -188,12 +188,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueex3"]
-size = Vector2(94, 59)
+size = Vector2(65, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qs8ec"]
-size = Vector2(94, 2)
+size = Vector2(65, 10)
 
-[node name="boss_dog" type="CharacterBody2D"]
+[node name="boss_dog" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_s4ilk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -202,7 +202,7 @@ animation = &"moving"
 autoplay = "sleeping"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -0.5)
+position = Vector2(0.5, 8.5)
 shape = SubResource("RectangleShape2D_ueex3")
 
 [node name="close_ray" type="RayCast2D" parent="."]
@@ -223,7 +223,7 @@ one_shot = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, -31)
+position = Vector2(0.5, -17)
 shape = SubResource("RectangleShape2D_qs8ec")
 debug_color = Color(0, 0.627451, 0, 0.419608)
 
