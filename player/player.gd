@@ -7,12 +7,13 @@ var speed: int = 100
 var jump_speed: int = -200
 var zip_speed: int = 400
 var gravity: int = 300
-var time: float = 0.0
 var friction: float = 0.1
 var acceleration: float = 0.25
 var current_hook: Area2D = null
 var current_zips: Array[Vector2] = []
 var invulnerable: bool = false
+var time_start: int = 0
+var time_now: int = 0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var fsm: StateMachine = $StateMachine
 @onready var detection_area: Area2D = $detection_area
@@ -33,10 +34,17 @@ signal win(g:int, time_in_s: float)
 
 func _ready() -> void:
 	ui.sugar.value = sugar_level
-	#ui.health.text = str(health)
 	ui.gifts.text = str(gifts)
+	time_start = Time.get_ticks_msec()/1000
 
 func _process(_delta: float) -> void:
+	time_now = Time.get_ticks_msec()/1000 - time_start
+	var seconds: int = time_now % 60
+	if seconds < 10:
+		ui.time.text = str(floor(time_now/60)) + ":0" + str(seconds)
+	else:
+		ui.time.text = str(floor(time_now/60)) + ":" + str(seconds)
+		
 	var step: float = 0.03
 	if sugar_level > step:
 		sugar_level -= step
@@ -52,15 +60,6 @@ func _process(_delta: float) -> void:
 func _physics_process(delta) -> void:
 	if fsm.current_state.name == "dead":
 		return
-		#TODO this block is work in progress
-		#if no_gravity_timer.is_stopped():
-		#	velocity.y += gravity * delta
-		#else:
-		#	if death_motion_stop_timer.is_stopped():
-		#		velocity = Vector2.ZERO
-		#	else:
-		#		velocity.y = jump_speed
-		
 		
 	elif Input.is_action_just_pressed("up") && fsm.current_state.name != "falling":
 		velocity.y = jump_speed + sugar_level
@@ -188,7 +187,7 @@ func add_gifts(amt: int) -> void:
 
 
 func won() -> void:
-	win.emit(gifts, time)
+	win.emit(gifts, time_now)
 
 
 func _on_invulnerability_timer_timeout() -> void:
