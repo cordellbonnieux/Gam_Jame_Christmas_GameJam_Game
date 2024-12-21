@@ -15,6 +15,9 @@ var direction: float = 1.0
 signal dead
 
 func _process(delta: float) -> void:
+	if fsm.current_state.name == "dead":
+		return
+		
 	if fsm.current_state.name == "sleeping" && abs(target.global_position.x - global_position.x) <= 228:
 		wake_up()
 	
@@ -23,7 +26,10 @@ func _process(delta: float) -> void:
 		
 
 func _physics_process(delta: float) -> void:
-	if fsm.current_state.name == "seeking":
+	if fsm.current_state.name == "dead":
+		return
+		
+	elif fsm.current_state.name == "seeking":
 		if target.fsm.current_state.name == "hooking":
 			fsm.current_state.exit("moving")
 			
@@ -64,7 +70,7 @@ func _physics_process(delta: float) -> void:
 				velocity.x = lerp(velocity.x, -charge_speed, acceleration)
 			move_and_slide()
 		
-	elif fsm.current_state.name == "dazed" || fsm.current_state.name == "pre-charging" || fsm.current_state.name == "dead":
+	elif fsm.current_state.name == "dazed" || fsm.current_state.name == "pre-charging":
 		velocity = Vector2.ZERO
 
 
@@ -73,6 +79,7 @@ func flip_x() -> void:
 	far_ray.target_position.x *= -1
 	anim.scale.x *= -1
 	ass_ray.target_position.x *= -1
+
 
 func wake_up() -> void:
 	if fsm.current_state.name == "sleeping":
@@ -96,8 +103,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.animation == "pre-charging":
 		fsm.current_state.exit("charging")
 
+
 func _on_daze_timer_timeout() -> void:
-	fsm.current_state.exit("seeking")
+	if fsm.current_state.name != "dead":
+		fsm.current_state.exit("seeking")
 
 
 func _on_precharging_state_entered() -> void:
