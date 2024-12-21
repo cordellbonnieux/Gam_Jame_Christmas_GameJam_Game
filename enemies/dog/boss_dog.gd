@@ -13,9 +13,19 @@ var direction: float = 1.0
 @onready var ass_ray: RayCast2D = $ass_ray
 @onready var daze_timer: Timer = $daze_timer
 @onready var collider: CollisionShape2D = $CollisionShape2D
+@onready var top_collider: CollisionShape2D = $top_dog/CollisionShape2D
+@onready var hit_timer: Timer = $hit_timer
 signal dead
 
 func _process(_delta: float) -> void:
+	if fsm.current_state.name == "dead" || !hit_timer.is_stopped():
+		if modulate.a == 1:
+			modulate.a = 0.25
+		else:
+			modulate.a = 1
+	elif modulate.a != 1:
+		modulate.a = 1
+	
 	if fsm.current_state.name == "dead":
 		return
 		
@@ -96,6 +106,8 @@ func damage(_amount: int = 1) -> void:
 		health -= 1
 		if health <= 0:
 			fsm.current_state.exit("dead")
+		else:
+			hit_timer.start()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -128,6 +140,10 @@ func _on_dazed_state_entered() -> void:
 
 
 func _on_dead_state_entered() -> void:
+	if close_ray.target_position.x < 0:
+		flip_x()
+	target.won()
+	top_collider.set_deferred("disabled", true)
 	collider.set_deferred("disabled", true)
 	anim.play("charging")
 	dead.emit()

@@ -7,6 +7,7 @@ var speed: int = 100
 var jump_speed: int = -200
 var zip_speed: int = 400
 var gravity: int = 300
+var time: float = 0.0
 var friction: float = 0.1
 var acceleration: float = 0.25
 var current_hook: Area2D = null
@@ -28,6 +29,7 @@ var invulnerable: bool = false
 	"time": $CanvasLayer/top_middle/time
 }
 signal dead
+signal win(g:int, time_in_s: float)
 
 func _ready() -> void:
 	ui.sugar.value = sugar_level
@@ -42,7 +44,7 @@ func _process(_delta: float) -> void:
 		
 	if invulnerable:
 		if modulate.a == 1:
-			modulate.a = 0
+			modulate.a = 0.2
 		else:
 			modulate.a = 1
 
@@ -183,6 +185,10 @@ func add_sugar(amt: float) -> void:
 func add_gifts(amt: int) -> void:
 	gifts += amt
 	ui.gifts.text = str(gifts)
+
+
+func won() -> void:
+	win.emit(gifts, time)
 
 
 func _on_invulnerability_timer_timeout() -> void:
