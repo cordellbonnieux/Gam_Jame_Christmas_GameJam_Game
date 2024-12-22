@@ -196,3 +196,5 @@ texture_progress = ExtResource("8_6ps3l")
 [connection signal="state_entered" from="StateMachine/falling" to="." method="_on_falling_state_entered"]
 [connection signal="state_entered" from="StateMachine/dead" to="." method="_on_dead_state_entered"]
 [connection signal="state_entered" from="StateMachine/sliding" to="." method="_on_sliding_state_entered"]
+[connection signal="again" from="pause_screen" to="." method="_on_pause_screen_again"]
+[connection signal="main" from="pause_screen" to="." method="_on_pause_screen_main"]

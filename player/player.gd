@@ -14,6 +14,7 @@ var current_zips: Array[Vector2] = []
 var invulnerable: bool = false
 var time_start: int = 0
 var time_now: int = 0
+@onready var pause_screen: CanvasLayer = $pause_screen
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var fsm: StateMachine = $StateMachine
 @onready var detection_area: Area2D = $detection_area
@@ -28,8 +29,8 @@ var time_now: int = 0
 	"gifts": $CanvasLayer/top_left/hbox/panel/MarginContainer/HBoxContainer/gifts,
 	"time": $CanvasLayer/top_middle/time
 }
-signal dead
-signal win(g:int, time_in_s: float)
+signal main
+signal again
 
 func _ready() -> void:
 	ui.sugar.value = sugar_level
@@ -138,6 +139,8 @@ func _input(event: InputEvent) -> void:
 			attack_cooldown_timer.start()
 			if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
 				attack_ray.get_collider().damage()
+	#elif event.is_action_pressed("pause"):
+	#	pause_screen.pause()
 
 
 func spill_gifts() -> void:
@@ -156,7 +159,7 @@ func damage() -> void:
 			fsm.current_state.exit("dead")
 			no_gravity_timer.start()
 			anim.scale.y *= -1
-			dead.emit()
+			pause_screen.die(gifts, time_now)
 		else:
 			invulnerability_timer.start()
 			invulnerable = true
@@ -186,7 +189,7 @@ func add_gifts(amt: int) -> void:
 
 
 func won() -> void:
-	win.emit(gifts, time_now)
+	pause_screen.win(gifts, time_now)
 
 
 func _on_invulnerability_timer_timeout() -> void:
@@ -238,3 +241,11 @@ func _on_sliding_state_entered() -> void:
 
 func _on_dead_state_entered() -> void:
 	collider.set_deferred("disabled", true)
+
+
+func _on_pause_screen_again() -> void:
+	again.emit()
+
+
+func _on_pause_screen_main() -> void:
+	main.emit()
