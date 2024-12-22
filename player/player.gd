@@ -27,7 +27,7 @@ var time_now: int = 0
 @onready var ui: Dictionary = {
 	"sugar": $CanvasLayer/bottom_left/sugar_level,
 	"gifts": $CanvasLayer/top_left/hbox/panel/MarginContainer/HBoxContainer/gifts,
-	"time": $CanvasLayer/top_middle/time
+	"time": $CanvasLayer/top_middle/TextureRect/time
 }
 signal main
 signal again

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1ux2mg40y56d"]
+[gd_scene load_steps=15 format=3 uid="uid://d1ux2mg40y56d"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_kxvr3"]
 [ext_resource type="SpriteFrames" uid="uid://cv121m04t0apx" path="res://player/player.tres" id="2_u4j7e"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://d03d2twt3bl8d" path="res://ui/gift_icon.png" id="6_exmym"]
 [ext_resource type="Texture2D" uid="uid://bts3kxnvr0wjt" path="res://ui/candy_bar/under.png" id="6_gtd73"]
 [ext_resource type="Texture2D" uid="uid://c03vqcqijjcnl" path="res://ui/candy_bar/over.png" id="7_ihuhu"]
+[ext_resource type="Theme" uid="uid://bhklpnachmrm" path="res://ui/new_theme.tres" id="7_u1s3t"]
 [ext_resource type="Texture2D" uid="uid://hmn08vqvqu41" path="res://ui/candy_bar/progress.png" id="8_6ps3l"]
+[ext_resource type="Texture2D" uid="uid://cgagjv5aw0wea" path="res://ui/mid_tall.png" id="8_np3ee"]
 [ext_resource type="PackedScene" uid="uid://c6cboogmok6nv" path="res://ui/pause_screen.tscn" id="10_o3dct"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mwuv"]
@@ -142,26 +144,37 @@ offset_right = 18.0
 offset_bottom = 23.0
 grow_horizontal = 2
 size_flags_vertical = 0
+theme_override_constants/margin_top = 16
 
-[node name="time" type="Label" parent="CanvasLayer/top_middle"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/top_middle"]
 layout_mode = 2
+theme = ExtResource("7_u1s3t")
+texture = ExtResource("8_np3ee")
+
+[node name="time" type="Label" parent="CanvasLayer/top_middle/TextureRect"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 50.0
+offset_bottom = 29.0
 text = "time"
 horizontal_alignment = 2
 
-[node name="top_right" type="VBoxContainer" parent="CanvasLayer"]
+[node name="top_right" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -87.0
-offset_bottom = 23.0
+offset_bottom = 31.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme = ExtResource("7_u1s3t")
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
 
-[node name="Label" type="Label" parent="CanvasLayer/top_right"]
+[node name="Button" type="Button" parent="CanvasLayer/top_right"]
 layout_mode = 2
-text = "ESC - menu"
-horizontal_alignment = 2
+text = "menu"
 
 [node name="bottom_left" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 2
@@ -196,5 +209,6 @@ texture_progress = ExtResource("8_6ps3l")
 [connection signal="state_entered" from="StateMachine/falling" to="." method="_on_falling_state_entered"]
 [connection signal="state_entered" from="StateMachine/dead" to="." method="_on_dead_state_entered"]
 [connection signal="state_entered" from="StateMachine/sliding" to="." method="_on_sliding_state_entered"]
+[connection signal="pressed" from="CanvasLayer/top_right/Button" to="pause_screen" method="pause"]
 [connection signal="again" from="pause_screen" to="." method="_on_pause_screen_again"]
 [connection signal="main" from="pause_screen" to="." method="_on_pause_screen_main"]
