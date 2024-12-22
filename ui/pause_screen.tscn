@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6cboogmok6nv"]
+[gd_scene load_steps=6 format=3 uid="uid://c6cboogmok6nv"]
 
 [ext_resource type="Script" path="res://pause_screen.gd" id="1_cqm7p"]
 [ext_resource type="PackedScene" uid="uid://dmgphy0k3u0ym" path="res://ui/pause_menu.tscn" id="2_pak65"]
+[ext_resource type="PackedScene" uid="uid://bwfaej74s6vpk" path="res://ui/win_menu.tscn" id="3_e1qi7"]
 [ext_resource type="Script" path="res://classes/StateMachine.gd" id="3_kuejh"]
 [ext_resource type="Script" path="res://classes/State.gd" id="4_khy3c"]
 
@@ -12,7 +13,7 @@ script = ExtResource("1_cqm7p")
 [node name="pause_menu" parent="." instance=ExtResource("2_pak65")]
 visible = false
 
-[node name="win_menu" parent="." instance=ExtResource("2_pak65")]
+[node name="win_menu" parent="." instance=ExtResource("3_e1qi7")]
 visible = false
 
 [node name="die_menu" parent="." instance=ExtResource("2_pak65")]
@@ -28,7 +29,6 @@ script = ExtResource("4_khy3c")
 script = ExtResource("4_khy3c")
 
 [node name="die" type="Node" parent="StateMachine"]
-process_mode = 2
 script = ExtResource("4_khy3c")
 
 [node name="win" type="Node" parent="StateMachine"]
@@ -36,5 +36,8 @@ script = ExtResource("4_khy3c")
 
 [connection signal="quit" from="pause_menu" to="." method="quit"]
 [connection signal="resume" from="pause_menu" to="." method="pause"]
+[connection signal="main" from="win_menu" to="." method="quit"]
 [connection signal="state_entered" from="StateMachine/pause" to="." method="_on_pause_state_entered"]
 [connection signal="state_exited" from="StateMachine/pause" to="." method="_on_pause_state_exited"]
+[connection signal="state_entered" from="StateMachine/die" to="." method="_on_die_state_entered"]
+[connection signal="state_entered" from="StateMachine/win" to="." method="_on_win_state_entered"]
