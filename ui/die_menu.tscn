@@ -106,7 +106,7 @@ text = "quit to menu"
 
 [node name="again" type="Button" parent="bg/MarginContainer/content/HBoxContainer"]
 layout_mode = 2
-text = "Play Again"
+text = "play again"
 
 [connection signal="pressed" from="bg/MarginContainer/content/HBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="bg/MarginContainer/content/HBoxContainer/again" to="." method="_on_again_pressed"]

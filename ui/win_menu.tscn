@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dg66nmx3sj7vx" path="res://ui/win_die_bg.png" id="2_jrtes"]
 [ext_resource type="Theme" uid="uid://bhklpnachmrm" path="res://ui/new_theme.tres" id="3_kran2"]
 [ext_resource type="Texture2D" uid="uid://d03d2twt3bl8d" path="res://ui/gift_icon.png" id="4_pvws4"]
-[ext_resource type="Texture2D" uid="uid://ciscycygd851r" path="res://ui/move_panel.png" id="9_n560l"]
+[ext_resource type="Texture2D" uid="uid://xdokhrdskdbe" path="res://ui/tall_panel.png" id="5_xhnfi"]
 
 [node name="win_menu" type="VBoxContainer"]
 anchors_preset = 8
@@ -42,7 +42,6 @@ theme_override_constants/margin_bottom = 8
 [node name="content" type="VBoxContainer" parent="bg/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_kran2")
-theme_override_constants/separation = 48
 
 [node name="title" type="MarginContainer" parent="bg/MarginContainer/content"]
 custom_minimum_size = Vector2(282, 28)
@@ -61,7 +60,7 @@ scroll_active = false
 
 [node name="info" type="TextureRect" parent="bg/MarginContainer/content"]
 layout_mode = 2
-texture = ExtResource("9_n560l")
+texture = ExtResource("5_xhnfi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="bg/MarginContainer/content/info"]
 layout_mode = 0
@@ -127,6 +126,19 @@ custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 38
 text = "00"
+fit_content = true
+scroll_active = false
+
+[node name="thanks" type="MarginContainer" parent="bg/MarginContainer/content/info/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/MarginContainer/content/info/VBoxContainer/thanks"]
+custom_minimum_size = Vector2(96, 112)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[b]Thanks For Playing[/b][p]That's all I had time to make, I hope you had fun (and didn't come just for the zip-lines)![/p]"
 fit_content = true
 scroll_active = false
 
