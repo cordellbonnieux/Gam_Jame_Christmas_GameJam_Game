@@ -42,6 +42,7 @@ func damage(amount: int = 1) -> void:
 	if death_timer.is_stopped():
 		health -= amount
 		if health <= 0:
+			$AudioStreamPlayer2D.play()
 			attack_collider.disabled = true
 			collider.disabled = true
 			death_timer.start()

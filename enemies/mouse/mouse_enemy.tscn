@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dr8rwhihce8q1"]
+[gd_scene load_steps=9 format=3 uid="uid://dr8rwhihce8q1"]
 
 [ext_resource type="Script" path="res://enemies/mouse/enemy_mouse.gd" id="1_inbm7"]
 [ext_resource type="Texture2D" uid="uid://c5sscus21q3gu" path="res://enemies/mouse/mouse_sprites.png" id="2_1i71f"]
+[ext_resource type="AudioStream" uid="uid://bq0g0tajj3i0j" path="res://audio/mouse_sound.wav" id="3_ibehg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhfb"]
 size = Vector2(18, 11)
@@ -64,6 +65,9 @@ one_shot = true
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ww0kh")
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ibehg")
 
 [connection signal="timeout" from="attack_build_up" to="." method="_on_attack_build_up_timeout"]
 [connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]

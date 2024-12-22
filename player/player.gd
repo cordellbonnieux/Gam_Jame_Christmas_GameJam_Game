@@ -73,6 +73,8 @@ func _physics_process(delta) -> void:
 	elif fsm.current_state.name == "zipping" || fsm.current_state.name == "sliding":
 		if abs(current_zips[0] - global_position).x > 2 && abs(current_zips[0] - global_position).y > 2:
 			velocity = lerp(velocity, (current_zips[0] - global_position).normalized() * zip_speed, 1)
+			if !$grind.playing:
+				$grind.play()
 		else:
 			current_zips.pop_front()
 			if current_zips.size() <= 0:
@@ -96,6 +98,8 @@ func _physics_process(delta) -> void:
 				attack_ray.target_position.x *= -1
 				anim.scale.x *= -1
 			if is_on_floor():
+				if !$footsteps.playing:
+					$footsteps.play()
 				if fsm.current_state.name != "running":
 					fsm.current_state.exit("running")
 			elif fsm.current_state.name != "falling":
