@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0gd8ulbcugng"]
+[gd_scene load_steps=7 format=3 uid="uid://d0gd8ulbcugng"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5k84b"]
+[ext_resource type="PackedScene" uid="uid://bjw2xeqsdrf5c" path="res://efx/snow_effect_background.tscn" id="2_3o57i"]
 [ext_resource type="Theme" uid="uid://bhklpnachmrm" path="res://ui/new_theme.tres" id="2_rvxqu"]
 [ext_resource type="Texture2D" uid="uid://rgrrpvq3rpmt" path="res://ui/shift-key.png" id="3_50237"]
 [ext_resource type="Script" path="res://classes/StateMachine.gd" id="4_s3qfd"]
@@ -9,9 +10,9 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5k84b")
 
-[node name="background" type="Node2D" parent="."]
-
 [node name="main_menu" type="CanvasLayer" parent="."]
+
+[node name="snow_effect_background" parent="main_menu" instance=ExtResource("2_3o57i")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="main_menu"]
 anchors_preset = 8

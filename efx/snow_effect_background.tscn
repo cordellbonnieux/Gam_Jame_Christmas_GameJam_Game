@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjw2xeqsdrf5c"]
+
+[sub_resource type="Gradient" id="Gradient_i270d"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="snow_effect_background" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(576, 0)
+amount = 32
+lifetime = 3.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(1152, 0)
+spread = 90.0
+gravity = Vector2(0, 75)
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_i270d")

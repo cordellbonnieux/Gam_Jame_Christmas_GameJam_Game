@@ -1,8 +1,9 @@
-[gd_scene load_steps=75 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=76 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
 [ext_resource type="PackedScene" uid="uid://cgljdfv6woyh7" path="res://surfaces/fir_tree/fir_tree.tscn" id="1_k8xc5"]
+[ext_resource type="PackedScene" uid="uid://bjw2xeqsdrf5c" path="res://efx/snow_effect_background.tscn" id="1_m7lxa"]
 [ext_resource type="Texture2D" uid="uid://bfevm1k847eob" path="res://tiles/background/snowy_backdrop.png" id="1_prxnj"]
 [ext_resource type="Texture2D" uid="uid://3wr62ua6sd43" path="res://tiles/background/snow_ground.png" id="1_tejdp"]
 [ext_resource type="Texture2D" uid="uid://do2v3ade1i3wk" path="res://tiles/background/white_wall_with_trim_96x256.png" id="1_wuagu"]
@@ -199,6 +200,22 @@ size = Vector2(20, 764)
 [node name="TheresSnowTimeLikeThePresent" type="Node2D"]
 
 [node name="background" type="Node2D" parent="."]
+
+[node name="snow_effect_background" parent="background" instance=ExtResource("1_m7lxa")]
+position = Vector2(-643, -389)
+
+[node name="snow_effect_background2" parent="background" instance=ExtResource("1_m7lxa")]
+position = Vector2(4714, -177)
+
+[node name="snow_effect_background3" parent="background" instance=ExtResource("1_m7lxa")]
+position = Vector2(6813, -373)
+
+[node name="snow_effect_background4" parent="background" instance=ExtResource("1_m7lxa")]
+position = Vector2(8626, -186)
+
+[node name="snow_effect_background5" parent="background" instance=ExtResource("1_m7lxa")]
+position = Vector2(14845, 703)
+scale = Vector2(-1, 1)
 
 [node name="area2_bg" type="Node2D" parent="background"]
 
@@ -1201,7 +1218,7 @@ position = Vector2(-133, 256)
 position = Vector2(-446, 256)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(12894, 769)
+position = Vector2(-101, 3)
 
 [node name="foreground" type="Node2D" parent="."]
 
