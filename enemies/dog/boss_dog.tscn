@@ -1,10 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://cm1ln8my7l3ir"]
+[gd_scene load_steps=29 format=3 uid="uid://cm1ln8my7l3ir"]
 
 [ext_resource type="Texture2D" uid="uid://f8p8q0nqnfus" path="res://enemies/dog/dog_sprites.png" id="1_10tye"]
 [ext_resource type="Script" path="res://classes/StateMachine.gd" id="1_54cbj"]
 [ext_resource type="Script" path="res://enemies/dog/boss_dog.gd" id="1_s4ilk"]
 [ext_resource type="Script" path="res://classes/State.gd" id="2_cc41d"]
 [ext_resource type="Texture2D" uid="uid://b2p8w4atcelky" path="res://temp-char.png" id="3_yertr"]
+[ext_resource type="AudioStream" uid="uid://df2nr2t2qrigk" path="res://audio/wakeup_bark.wav" id="6_ndyi4"]
+[ext_resource type="AudioStream" uid="uid://chf1j03fwi3cm" path="res://audio/dog_growl.wav" id="7_wojby"]
+[ext_resource type="AudioStream" uid="uid://dfigp3qik2qty" path="res://audio/dog_hurt.wav" id="8_fmvbx"]
+[ext_resource type="AudioStream" uid="uid://doxgan7m0elug" path="res://audio/dog_breathing.wav" id="9_iu744"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53nbb"]
 atlas = ExtResource("1_10tye")
@@ -198,7 +202,7 @@ script = ExtResource("1_s4ilk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q2evs")
-animation = &"moving"
+animation = &"pre-charging"
 autoplay = "sleeping"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -254,6 +258,18 @@ script = ExtResource("2_cc41d")
 
 [node name="seeking" type="Node" parent="StateMachine"]
 script = ExtResource("2_cc41d")
+
+[node name="wakeup-bark" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ndyi4")
+
+[node name="chargebuildup-growl" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_wojby")
+
+[node name="dazed-wimper" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_fmvbx")
+
+[node name="walk-breathing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_iu744")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="daze_timer" to="." method="_on_daze_timer_timeout"]

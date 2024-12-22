@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 	if fsm.current_state.name == "dead":
 		return
 		
-	if fsm.current_state.name == "sleeping" && abs(target.global_position.x - global_position.x) <= 228:
+	if fsm.current_state.name == "sleeping" && abs(target.global_position.x - global_position.x) <= 160:
 		wake_up()
 	
 	if (velocity.x > 0 && far_ray.target_position.x < 0) || (velocity.x < 0 && far_ray.target_position.x > 0):

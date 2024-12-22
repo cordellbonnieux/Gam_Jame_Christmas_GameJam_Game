@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1ux2mg40y56d"]
+[gd_scene load_steps=21 format=3 uid="uid://d1ux2mg40y56d"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_kxvr3"]
 [ext_resource type="SpriteFrames" uid="uid://cv121m04t0apx" path="res://player/player.tres" id="2_u4j7e"]
@@ -14,6 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://c6cboogmok6nv" path="res://ui/pause_screen.tscn" id="10_o3dct"]
 [ext_resource type="AudioStream" uid="uid://decjepwhvqgdx" path="res://audio/steps.wav" id="13_lqihr"]
 [ext_resource type="AudioStream" uid="uid://05jc8g644twp" path="res://audio/grind.wav" id="14_uaf1h"]
+[ext_resource type="AudioStream" uid="uid://dme0xfq2x3rts" path="res://audio/gift_pickup.wav" id="15_4w7ts"]
+[ext_resource type="AudioStream" uid="uid://ch6heeul2fqx6" path="res://audio/cane.wav" id="16_823nt"]
+[ext_resource type="AudioStream" uid="uid://ni736r0thjti" path="res://audio/crunch.wav" id="17_4fpgw"]
+[ext_resource type="AudioStream" uid="uid://dae7ealhbld5u" path="res://audio/hook.wav" id="18_e55c7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mwuv"]
 radius = 8.0
@@ -205,6 +209,18 @@ stream = ExtResource("13_lqihr")
 [node name="grind" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_uaf1h")
 
+[node name="gift" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_4w7ts")
+
+[node name="cane" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_823nt")
+
+[node name="candy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_4fpgw")
+
+[node name="hook" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_e55c7")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="death_motion_stop_timer" to="." method="_on_death_motion_stop_timer_timeout"]
 [connection signal="timeout" from="invulnerability_timer" to="." method="_on_invulnerability_timer_timeout"]
@@ -213,6 +229,7 @@ stream = ExtResource("14_uaf1h")
 [connection signal="state_entered" from="StateMachine/idle" to="." method="_on_idle_state_entered"]
 [connection signal="state_entered" from="StateMachine/running" to="." method="_on_running_state_entered"]
 [connection signal="state_entered" from="StateMachine/hooking" to="." method="_on_hooking_state_entered"]
+[connection signal="state_exited" from="StateMachine/hooking" to="." method="_on_hooking_state_exited"]
 [connection signal="state_entered" from="StateMachine/zipping" to="." method="_on_zipping_state_entered"]
 [connection signal="state_entered" from="StateMachine/falling" to="." method="_on_falling_state_entered"]
 [connection signal="state_entered" from="StateMachine/dead" to="." method="_on_dead_state_entered"]

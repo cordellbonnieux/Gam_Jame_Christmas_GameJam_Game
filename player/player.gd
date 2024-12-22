@@ -139,6 +139,8 @@ func _input(event: InputEvent) -> void:
 					global_position = area.global_position + Vector2(0,32)
 				return
 		if attack_cooldown_timer.is_stopped():
+			if !$cane.playing:
+				$cane.play()
 			anim.play("attacking")
 			attack_cooldown_timer.start()
 			if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
@@ -181,6 +183,8 @@ func zip(area: Area2D, zipping: bool = true) -> void:
 
 func add_sugar(amt: float) -> void:
 	if amt > 0:
+		if !$candy.playing:
+			$candy.play()
 		sugar_level += amt
 		if sugar_level > 100:
 			sugar_level = 100
@@ -188,6 +192,8 @@ func add_sugar(amt: float) -> void:
 
 
 func add_gifts(amt: int) -> void:
+	if !$gift.playing:
+		$gift.play()
 	gifts += amt
 	ui.gifts.text = str(gifts)
 
@@ -229,6 +235,13 @@ func _on_running_state_entered() -> void:
 
 func _on_hooking_state_entered() -> void:
 	anim.play("hooking")
+	if !$hook.playing:
+		$hook.play()
+
+
+func _on_hooking_state_exited() -> void:
+	if !$hook.playing:
+		$hook.play()
 
 
 func _on_zipping_state_entered() -> void:

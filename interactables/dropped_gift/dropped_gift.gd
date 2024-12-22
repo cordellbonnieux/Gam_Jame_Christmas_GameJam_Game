@@ -3,9 +3,9 @@ extends RigidBody2D
 func _ready() -> void:
 	$gift/CollisionShape2D.set_deferred("disabled", true)
 	if randi() % 2:
-		apply_central_impulse(Vector2(100,0))
+		apply_central_impulse(Vector2(randi_range(80, 120),0))
 	else:
-		apply_central_impulse(Vector2(-100,0))
+		apply_central_impulse(Vector2(randi_range(-80, -120),0))
 
 
 func _physics_process(_delta: float) -> void:
