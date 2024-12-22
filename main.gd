@@ -20,10 +20,17 @@ func _input(event: InputEvent) -> void:
 			fsm.current_state.exit("game")
 
 func return_to_main() -> void:
+	clean_up_game()
 	fsm.current_state.exit("menu")
 
 func restart_game() -> void:
+	clean_up_game()
 	fsm.current_state.exit("game")
+
+func clean_up_game() -> void:
+	game.get_child(0).get_node("player").main.disconnect(return_to_main)
+	game.get_child(0).get_node("player").again.disconnect(restart_game)
+	game.remove_child(game.get_child(0))
 
 func _on_menu_state_entered() -> void:
 	if main_menu && !main_menu.visible:
@@ -54,6 +61,4 @@ func _on_game_state_entered() -> void:
 
 
 func _on_game_state_exited() -> void:
-	if game.visible:
-		game.visible = false
-	game.remove_child(game.get_child(0))
+	pass

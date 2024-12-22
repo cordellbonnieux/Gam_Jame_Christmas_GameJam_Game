@@ -24,7 +24,7 @@ func pause() -> void:
 func win(gifts: int, time_s: int) -> void:
 	win_menu.add_stats(gifts, calc_time_string(time_s))
 	fsm.current_state.exit("win")
-	
+
 
 func calc_time_string(s: int) -> String:
 	var seconds: int = s % 60
@@ -32,11 +32,16 @@ func calc_time_string(s: int) -> String:
 		return str(floor(s/60)) + ":0" + str(seconds)
 	else:
 		return str(floor(s/60)) + ":" + str(seconds)
-	
+
+
 func die(gifts: int, time_s: int) -> void:
-	fsm.current_state.exit("win")
-	print("gifts collected: ", gifts, " , time in s: ", time_s)
+	die_menu.add_time(calc_time_string(time_s))
+	fsm.current_state.exit("die")
 	get_tree().paused = true
+
+func restart_game() -> void:
+	again.emit()
+
 
 func quit() -> void:
 	pause()
