@@ -1,0 +1,263 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgnoswajw0es8"]
+
+[ext_resource type="Theme" uid="uid://bhklpnachmrm" path="res://ui/new_theme.tres" id="1_a37t1"]
+[ext_resource type="Script" path="res://ui/cut_scene.gd" id="1_mcq6p"]
+[ext_resource type="Texture2D" uid="uid://ug5woei8nhbh" path="res://art/cutscene/1.png" id="2_jkrkr"]
+[ext_resource type="Texture2D" uid="uid://rgrrpvq3rpmt" path="res://ui/shift-key.png" id="3_4jkwe"]
+[ext_resource type="Texture2D" uid="uid://diijq2lshoks4" path="res://art/cutscene/2.png" id="5_t7mft"]
+[ext_resource type="Texture2D" uid="uid://1mwdeejbjito" path="res://art/cutscene/3.png" id="6_q2d3w"]
+[ext_resource type="Texture2D" uid="uid://dofgho5p4fjc5" path="res://art/cutscene/4.png" id="7_vbdtw"]
+[ext_resource type="Texture2D" uid="uid://vgt01rp2yajq" path="res://art/cutscene/5.png" id="8_avqw1"]
+
+[node name="cut_scene" type="CanvasLayer"]
+script = ExtResource("1_mcq6p")
+
+[node name="frame_1" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_1"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Every Christmas morning, in any given town
+during the early hours, before the moon goes down"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_1"]
+layout_mode = 2
+texture = ExtResource("2_jkrkr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="frame_1"]
+layout_mode = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_1/HBoxContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "press "
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_1/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_4jkwe")
+expand_mode = 3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="frame_1/HBoxContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+text = "to continue"
+scroll_active = false
+
+[node name="frame_2" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_2"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "The gifts santa brought sit under the tree
+The Sugar Goblin then says, \"Why these must be for me!\""
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_2"]
+layout_mode = 2
+texture = ExtResource("5_t7mft")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="frame_2"]
+layout_mode = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_2/HBoxContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "press "
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_4jkwe")
+expand_mode = 3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="frame_2/HBoxContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+text = "to continue"
+scroll_active = false
+
+[node name="frame_3" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_3"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "While the children are nestled all snug in their beds
+The goblin comes out to dance on their heads"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_3"]
+layout_mode = 2
+texture = ExtResource("6_q2d3w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="frame_3"]
+layout_mode = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_3/HBoxContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "press "
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_4jkwe")
+expand_mode = 3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="frame_3/HBoxContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+text = "to continue"
+scroll_active = false
+
+[node name="frame_4" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_4"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "He eats all the candies, and eats all the sweets
+He zips down the lights & hooks on the wreaths"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_4"]
+layout_mode = 2
+texture = ExtResource("7_vbdtw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="frame_4"]
+layout_mode = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_4/HBoxContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "press "
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_4/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_4jkwe")
+expand_mode = 3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="frame_4/HBoxContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+text = "to continue"
+scroll_active = false
+
+[node name="frame_5" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_5"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "He moves so fast, there's no keeping track
+Then he's off with your toys in his red sack"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_5"]
+layout_mode = 2
+texture = ExtResource("8_avqw1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="frame_5"]
+layout_mode = 2
+theme = ExtResource("1_a37t1")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="frame_5/HBoxContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "press "
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="frame_5/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_4jkwe")
+expand_mode = 3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="frame_5/HBoxContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+text = "to continue"
+scroll_active = false

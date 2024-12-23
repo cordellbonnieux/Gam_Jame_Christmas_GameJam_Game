@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0gd8ulbcugng"]
+[gd_scene load_steps=16 format=3 uid="uid://d0gd8ulbcugng"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5k84b"]
 [ext_resource type="PackedScene" uid="uid://bjw2xeqsdrf5c" path="res://efx/snow_effect_background.tscn" id="2_3o57i"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://classes/StateMachine.gd" id="4_s3qfd"]
 [ext_resource type="Texture2D" uid="uid://cummrqltobfbq" path="res://game_logo.png" id="4_xvrpg"]
 [ext_resource type="Script" path="res://classes/State.gd" id="5_nqts2"]
+[ext_resource type="PackedScene" uid="uid://cgnoswajw0es8" path="res://ui/cut_scene.tscn" id="9_tokwk"]
 [ext_resource type="AudioStream" uid="uid://batsfxt8c6nny" path="res://audio/intro_song.wav" id="12_urf74"]
 
 [sub_resource type="Animation" id="Animation_5d4gh"]
@@ -157,40 +158,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Made by Cordell Bonnieux"
 
-[node name="cut_scene" type="CanvasLayer" parent="."]
+[node name="cut_scene" parent="." instance=ExtResource("9_tokwk")]
 visible = false
-
-[node name="HBoxContainer" type="HBoxContainer" parent="cut_scene"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_rvxqu")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="cut_scene/HBoxContainer"]
-custom_minimum_size = Vector2(64, 32)
-layout_mode = 2
-text = "press "
-scroll_active = false
-
-[node name="TextureRect" type="TextureRect" parent="cut_scene/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("3_50237")
-expand_mode = 3
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="cut_scene/HBoxContainer"]
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-text = "to continue"
-fit_content = true
-scroll_active = false
 
 [node name="game" type="Node2D" parent="."]
 visible = false

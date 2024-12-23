@@ -22,7 +22,8 @@ func _input(event: InputEvent) -> void:
 		if fsm.current_state.name == "menu":
 			fsm.current_state.exit("cutscene")
 		elif fsm.current_state.name == "cutscene":
-			fsm.current_state.exit("game")
+			if !$cut_scene.next_frame():
+				fsm.current_state.exit("game")
 
 func return_to_main() -> void:
 	clean_up_game()
