@@ -103,6 +103,7 @@ func _physics_process(delta) -> void:
 			velocity.x = lerp(velocity.x, dir * (speed + sugar_level), acceleration)
 			if (dir < 0 && attack_ray.target_position.x > 0) || (dir > 0 && attack_ray.target_position.x < 0):
 				attack_ray.target_position.x *= -1
+				$RayCast2D2.target_position.x *= -1
 				anim.scale.x *= -1
 			if is_on_floor():
 				if !$footsteps.playing:
@@ -152,6 +153,8 @@ func _input(event: InputEvent) -> void:
 			attack_cooldown_timer.start()
 			if attack_ray.get_collider() && attack_ray.get_collider().is_in_group("enemy"):
 				attack_ray.get_collider().damage()
+			elif $RayCast2D2.get_collider() && $RayCast2D2.get_collider().is_in_group("enemy"):
+				$RayCast2D2.get_collider().damage()
 	#elif event.is_action_pressed("pause"):
 	#	pause_screen.pause()
 

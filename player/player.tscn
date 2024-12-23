@@ -45,7 +45,10 @@ enabled = false
 zoom = Vector2(3, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(54, 6)
+target_position = Vector2(60, 12)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+target_position = Vector2(62, 0)
 
 [node name="death_motion_stop_timer" type="Timer" parent="."]
 wait_time = 0.2
@@ -183,7 +186,7 @@ theme_override_constants/margin_right = 16
 
 [node name="Button" type="Button" parent="CanvasLayer/top_right"]
 layout_mode = 2
-text = "menu"
+text = "controls"
 
 [node name="bottom_left" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 2
