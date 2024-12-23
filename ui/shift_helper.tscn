@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfeial5k3x75s"]
+
+[ext_resource type="Texture2D" uid="uid://dt0qnec320p26" path="res://ui/shift_anim.png" id="1_rpppm"]
+[ext_resource type="Script" path="res://ui/shift_helper.gd" id="2_h1418"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twryx"]
+atlas = ExtResource("1_rpppm")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysigi"]
+atlas = ExtResource("1_rpppm")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygvvw"]
+atlas = ExtResource("1_rpppm")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xfuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twryx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysigi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygvvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysigi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="shift_helper" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_6xfuf")
+script = ExtResource("2_h1418")

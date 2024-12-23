@@ -33,7 +33,7 @@ script = ExtResource("1_kxvr3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_u4j7e")
-animation = &"attacking"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7mwuv")

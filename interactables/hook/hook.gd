@@ -1,14 +1,20 @@
 extends Area2D
+@export var show_helper: bool = false
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ui_anim: AnimatedSprite2D = $AnimatedSprite2D2
 
 # TODO make the wreath fall to the floor if hooked too long!
 func _ready() -> void:
 	ui_anim.play("default")
+	if show_helper:
+		ui_anim.visible = true
+	else:
+		ui_anim.visible = false
 
 func hook() -> void:
 	anim.play("hook_on")
-	ui_anim.visible = false
+	if show_helper:
+		ui_anim.visible = false
 
 func unhook() -> void:
 	anim.play("hook_off")
@@ -19,4 +25,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_body_exited(_body: Node2D) -> void:
-	ui_anim.visible = true
+	if show_helper:
+		ui_anim.visible = true

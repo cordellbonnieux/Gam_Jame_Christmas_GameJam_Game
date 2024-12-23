@@ -45,7 +45,7 @@ func _process(_delta: float) -> void:
 	else:
 		ui.time.text = str(floor(time_now/60)) + ":" + str(seconds)
 		
-	var step: float = 0.01
+	var step: float = 0.02
 	if sugar_level > step:
 		sugar_level -= step
 		ui.sugar.value = sugar_level
@@ -78,7 +78,7 @@ func _physics_process(delta) -> void:
 		fsm.current_state.exit("falling")
 		
 	elif fsm.current_state.name == "zipping" || fsm.current_state.name == "sliding":
-		if abs(current_zips[0] - global_position).x > 2 && abs(current_zips[0] - global_position).y > 2:
+		if abs(current_zips[0] - global_position).x > 2.5 && abs(current_zips[0] - global_position).y > 2.5:
 			velocity = lerp(velocity, (current_zips[0] - global_position).normalized() * zip_speed, 1)
 			if !$grind.playing:
 				$grind.play()
@@ -219,7 +219,12 @@ func _on_invulnerability_timer_timeout() -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.animation == "attacking":
-		anim.play("idle")
+		var w: bool = fsm.current_state.name == "falling"
+		var x: bool = fsm.current_state.name == "idle"
+		var y: bool = fsm.current_state.name == "running"
+		var z: bool = fsm.current_state.name == "sliding"
+		if w || x || y || z:
+			anim.play(fsm.current_state.name)
 
 
 func _on_no_gravity_timer_timeout() -> void:
