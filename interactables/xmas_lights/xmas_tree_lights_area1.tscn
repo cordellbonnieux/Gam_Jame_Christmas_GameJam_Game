@@ -1,0 +1,262 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5ely8idnhcjl"]
+
+[ext_resource type="Texture2D" uid="uid://dhhhln2iaix3m" path="res://tiles/foreground/xmas_lights.png" id="1_osfmr"]
+[ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="2_1p2dt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0j3e"]
+atlas = ExtResource("1_osfmr")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn1a5"]
+atlas = ExtResource("1_osfmr")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wj8n"]
+atlas = ExtResource("1_osfmr")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opopf"]
+atlas = ExtResource("1_osfmr")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5to30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0j3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn1a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wj8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opopf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
+
+[node name="xmas_tree_lights" type="Node2D"]
+
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="sprites"]
+rotation = -0.668809
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(20, -23)
+rotation = 2.02331
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(34, -51)
+rotation = 2.05021
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(52, -77)
+rotation = 2.27374
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(72, -90)
+rotation = 3.13004
+scale = Vector2(0.61018, 0.61018)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(86, -75)
+rotation = 1.30355
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(94, -45)
+rotation = 1.30355
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(104, -17)
+rotation = 1.04138
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(124, 6)
+rotation = 0.648736
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(146, 28)
+rotation = 0.919012
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(153, 57)
+rotation = 1.73461
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(140, 85)
+rotation = 2.29123
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(119, 107)
+rotation = 2.34806
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(96, 128)
+rotation = 2.51007
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(71, 148)
+rotation = 2.45889
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(-2.00001, 209)
+rotation = 2.36867
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(-20, 234)
+rotation = 2.04836
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(-28, 263)
+rotation = 1.5898
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(-21, 291)
+rotation = 0.973198
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(3.00001, 310)
+rotation = 0.268084
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(34, 313)
+rotation = -0.0838544
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(65, 309)
+rotation = -0.185754
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D25" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(96, 301)
+rotation = -0.329376
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D26" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(126, 291)
+rotation = -0.329376
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D27" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(156, 281)
+rotation = -0.329376
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(22, 188)
+rotation = 2.45954
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="sprites"]
+position = Vector2(46, 168)
+rotation = 2.45954
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_5to30")
+
+[node name="zip_post" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+destination = NodePath("../zip_post11")
+
+[node name="zip_post11" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(32, -48)
+rotation = 0.490524
+scale = Vector2(0.185435, 0.839782)
+destination = NodePath("../zip_post10")
+
+[node name="zip_post10" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(73, -93)
+destination = NodePath("../zip_post9")
+
+[node name="zip_post9" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(91, -59)
+rotation = -0.313756
+scale = Vector2(0.2, 0.479999)
+destination = NodePath("../zip_post8")
+
+[node name="zip_post8" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(114, -5)
+rotation = -0.729584
+scale = Vector2(0.193571, 0.711413)
+destination = NodePath("../zip_post3")
+
+[node name="zip_post3" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(152, 52)
+scale = Vector2(0.188767, 0.830598)
+destination = NodePath("../zip_post2")
+
+[node name="zip_post2" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(110, 115)
+rotation = 0.826829
+scale = Vector2(-0.145195, 1.01455)
+destination = NodePath("../zip_post4")
+
+[node name="zip_post4" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(37, 174)
+rotation = 0.872503
+scale = Vector2(-0.190733, 1.21078)
+destination = NodePath("../zip_post5")
+
+[node name="zip_post5" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(-26, 254)
+rotation = 0.146952
+scale = Vector2(-0.326329, 0.899503)
+destination = NodePath("../zip_post6")
+
+[node name="zip_post6" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("2_1p2dt")]
+position = Vector2(22, 315)
+rotation = 0.171085
+scale = Vector2(0.742823, 0.338184)
+destination = NodePath("../zip_post7")
+
+[node name="zip_post7" parent="." instance=ExtResource("2_1p2dt")]
+position = Vector2(136, 288)
+rotation = 1.28147
+scale = Vector2(0.2, 1.16)

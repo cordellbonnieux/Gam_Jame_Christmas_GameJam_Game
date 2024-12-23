@@ -6,9 +6,10 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 [node name="snow_effect_background" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(576, 0)
-amount = 32
-lifetime = 3.0
+position = Vector2(581, 4)
+amount = 300
+lifetime = 4.0
+speed_scale = 0.3
 local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(1152, 0)

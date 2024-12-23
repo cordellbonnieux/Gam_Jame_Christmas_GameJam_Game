@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbuoh55jyng2j"]
+
+[ext_resource type="Script" path="res://interactables/xmas_lights/xmas_lights.gd" id="1_yc84x"]
+[ext_resource type="Texture2D" uid="uid://dhhhln2iaix3m" path="res://tiles/foreground/xmas_lights.png" id="2_hxu4p"]
+[ext_resource type="PackedScene" uid="uid://cnpf5feskpylk" path="res://interactables/zip_post/zip_post.tscn" id="3_lmnm1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0j3e"]
+atlas = ExtResource("2_hxu4p")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn1a5"]
+atlas = ExtResource("2_hxu4p")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wj8n"]
+atlas = ExtResource("2_hxu4p")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opopf"]
+atlas = ExtResource("2_hxu4p")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4t1gc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0j3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn1a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wj8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opopf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
+
+[node name="xmas_lights" type="Node2D"]
+script = ExtResource("1_yc84x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(32, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(64, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(96, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(128, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(160, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(192, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(224, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(256, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(288, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(320, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(352, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(384, 0)
+sprite_frames = SubResource("SpriteFrames_4t1gc")
+frame_progress = 0.495984
+
+[node name="zip_post" parent="." instance=ExtResource("3_lmnm1")]
+position = Vector2(384, 0)
+scale = Vector2(0.5, 0.15)
