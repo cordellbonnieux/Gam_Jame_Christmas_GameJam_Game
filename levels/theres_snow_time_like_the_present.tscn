@@ -1,7 +1,8 @@
-[gd_scene load_steps=76 format=4 uid="uid://du5njk6cl8jve"]
+[gd_scene load_steps=78 format=4 uid="uid://du5njk6cl8jve"]
 
 [ext_resource type="Texture2D" uid="uid://bd8kxtcua3jwc" path="res://tiles/background/snowy_cliff_bg.png" id="1_0hgsg"]
 [ext_resource type="PackedScene" uid="uid://cppoepxd8yjf6" path="res://surfaces/stone1/stone_1.tscn" id="1_0vkjw"]
+[ext_resource type="Texture2D" uid="uid://0fve262bco2n" path="res://art/main/bg.png" id="1_8dqwm"]
 [ext_resource type="PackedScene" uid="uid://cgljdfv6woyh7" path="res://surfaces/fir_tree/fir_tree.tscn" id="1_k8xc5"]
 [ext_resource type="PackedScene" uid="uid://bjw2xeqsdrf5c" path="res://efx/snow_effect_background.tscn" id="1_m7lxa"]
 [ext_resource type="Texture2D" uid="uid://bfevm1k847eob" path="res://tiles/background/snowy_backdrop.png" id="1_prxnj"]
@@ -41,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://da1kx41dwysoa" path="res://interactables/gift/gift.tscn" id="32_d7cew"]
 [ext_resource type="PackedScene" uid="uid://cm1ln8my7l3ir" path="res://enemies/dog/boss_dog.tscn" id="38_4tl8e"]
 [ext_resource type="Texture2D" uid="uid://dpm453cwd3jgd" path="res://tiles/foreground/blue_house_siding_right_corner.png" id="40_42y0j"]
+[ext_resource type="PackedScene" uid="uid://qhertpmt5kw6" path="res://player/camera.tscn" id="43_5xfdw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u53dj"]
 texture = ExtResource("1_0hgsg")
@@ -198,6 +200,10 @@ size = Vector2(5, 168)
 size = Vector2(20, 764)
 
 [node name="TheresSnowTimeLikeThePresent" type="Node2D"]
+
+[node name="follow-bg" type="Sprite2D" parent="."]
+position = Vector2(0, -200)
+texture = ExtResource("1_8dqwm")
 
 [node name="background" type="Node2D" parent="."]
 
@@ -2333,3 +2339,7 @@ scale = Vector2(0.64101, 0.64101)
 position = Vector2(184, 159)
 rotation = -0.0501874
 scale = Vector2(0.94754, 0.94754)
+
+[node name="Camera" parent="." node_paths=PackedStringArray("follow_target", "follower_bg") instance=ExtResource("43_5xfdw")]
+follow_target = NodePath("../player")
+follower_bg = NodePath("../follow-bg")

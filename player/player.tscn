@@ -39,7 +39,9 @@ animation = &"attacking"
 shape = SubResource("CapsuleShape2D_7mwuv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 offset = Vector2(0, -25)
+enabled = false
 zoom = Vector2(3, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
