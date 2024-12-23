@@ -10,7 +10,12 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	pass
+	if fsm.current_state.name == "menu" || fsm.current_state.name == "cutscene":
+		if $intro && !$intro.playing:
+			$intro.play()
+	elif fsm.current_state.name == "game":
+		if $intro && $intro.playing:
+			$intro.stop()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("cane"):
@@ -35,7 +40,6 @@ func clean_up_game() -> void:
 func _on_menu_state_entered() -> void:
 	if main_menu && !main_menu.visible:
 		main_menu.visible = true
-
 
 func _on_menu_state_exited() -> void:
 	if main_menu && main_menu.visible:

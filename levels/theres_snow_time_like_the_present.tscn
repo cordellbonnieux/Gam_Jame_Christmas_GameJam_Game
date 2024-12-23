@@ -1218,7 +1218,7 @@ position = Vector2(-133, 256)
 position = Vector2(-446, 256)
 
 [node name="player" parent="." instance=ExtResource("4_ngv3a")]
-position = Vector2(13184, 899)
+position = Vector2(10288, 656)
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -2024,6 +2024,11 @@ rotation = 0.523598
 
 [node name="xmas_lights18" parent="foreground/area3_fg/lights/xmas_lights/xmas_lights2/xmas_lights3/xmas_lights4/xmas_lights5/xmas_lights6/xmas_lights7/xmas_lights8/xmas_lights9/xmas_lights10/xmas_lights11/xmas_lights12/xmas_lights13/xmas_lights14/xmas_lights15/xmas_lights16/xmas_lights17" instance=ExtResource("30_4svah")]
 position = Vector2(32.5269, -3.29614e-05)
+
+[node name="vent_cover2" type="Sprite2D" parent="foreground/area3_fg"]
+position = Vector2(-1417, -162)
+scale = Vector2(-1.14834, -0.604172)
+texture = ExtResource("31_w8atx")
 
 [node name="enemies_and_pickups" type="Node2D" parent="."]
 

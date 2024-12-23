@@ -55,6 +55,13 @@ func _process(_delta: float) -> void:
 			modulate.a = 0.2
 		else:
 			modulate.a = 1
+	
+	#if !fsm.current_state.name == "dead":
+	#	if $theme && !$theme.playing:
+	#		$theme.play()
+	#else:
+	#	if $theme && $theme.playing:
+	#		$theme.stop()
 
 
 func _physics_process(delta) -> void:

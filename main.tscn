@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0gd8ulbcugng"]
+[gd_scene load_steps=15 format=3 uid="uid://d0gd8ulbcugng"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5k84b"]
 [ext_resource type="PackedScene" uid="uid://bjw2xeqsdrf5c" path="res://efx/snow_effect_background.tscn" id="2_3o57i"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://classes/StateMachine.gd" id="4_s3qfd"]
 [ext_resource type="Texture2D" uid="uid://cummrqltobfbq" path="res://game_logo.png" id="4_xvrpg"]
 [ext_resource type="Script" path="res://classes/State.gd" id="5_nqts2"]
+[ext_resource type="AudioStream" uid="uid://batsfxt8c6nny" path="res://audio/intro_song.wav" id="12_urf74"]
 
 [sub_resource type="Animation" id="Animation_5d4gh"]
 length = 0.001
@@ -205,6 +206,9 @@ script = ExtResource("5_nqts2")
 
 [node name="game" type="Node" parent="StateMachine"]
 script = ExtResource("5_nqts2")
+
+[node name="intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_urf74")
 
 [connection signal="state_entered" from="StateMachine/menu" to="." method="_on_menu_state_entered"]
 [connection signal="state_exited" from="StateMachine/menu" to="." method="_on_menu_state_exited"]
