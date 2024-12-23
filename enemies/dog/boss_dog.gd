@@ -98,11 +98,15 @@ func flip_x() -> void:
 
 func wake_up() -> void:
 	if fsm.current_state.name == "sleeping":
+		if !$"wakeup-bark".playing:
+			$"wakeup-bark".play()
 		fsm.current_state.exit("seeking")
 
 
 func damage(_amount: int = 1) -> void:
 	if fsm.current_state.name == "dazed":
+		if !$"dazed-wimper".playing:
+			$"dazed-wimper".play()
 		health -= 1
 		if health <= 0:
 			fsm.current_state.exit("dead")
@@ -132,9 +136,12 @@ func _on_precharging_state_entered() -> void:
 
 func _on_charging_state_entered() -> void:
 	anim.play("charging")
-
+	if !$"chargebuildup-growl".playing:
+		$"chargebuildup-growl".play()
 
 func _on_dazed_state_entered() -> void:
+	if !$"dazed-wimper".playing:
+		$"dazed-wimper".play()
 	anim.play("dazed")
 	daze_timer.start()
 
@@ -151,6 +158,8 @@ func _on_dead_state_entered() -> void:
 
 func _on_moving_state_entered() -> void:
 	anim.play("moving")
+	if !$"walk-breathing".playing:
+		$"walk-breathing".play()
 
 
 func _on_seeking_state_entered() -> void:
