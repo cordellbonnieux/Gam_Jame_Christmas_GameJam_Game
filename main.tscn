@@ -81,6 +81,7 @@ script = ExtResource("1_5k84b")
 [node name="main_menu" type="CanvasLayer" parent="."]
 
 [node name="background" type="Node2D" parent="main_menu"]
+visible = false
 position = Vector2(576, 324)
 
 [node name="background" type="Sprite2D" parent="main_menu/background"]
@@ -107,6 +108,37 @@ autoplay = "default"
 [node name="snow_effect_foreground" parent="main_menu" instance=ExtResource("2_3o57i")]
 
 [node name="snow_effect_foreground2" parent="main_menu" instance=ExtResource("2_3o57i")]
+
+[node name="MarginContainer2" type="MarginContainer" parent="main_menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="main_menu/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_qwyc2")
+
+[node name="TextureRect" type="TextureRect" parent="main_menu/MarginContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.5
+offset_right = 237.5
+offset_bottom = 294.0
+grow_horizontal = 2
+texture = ExtResource("4_xvrpg")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="main_menu/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("3_68pj0")
+
+[node name="TextureRect3" type="TextureRect" parent="main_menu/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("4_pofyn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="main_menu"]
 anchors_preset = 7
